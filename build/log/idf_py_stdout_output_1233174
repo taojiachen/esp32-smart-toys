@@ -1,0 +1,1934 @@
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x28 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x1918
+load:0x403c8700,len:0x4
+load:0x403c8704,len:0xe5c
+load:0x403cb700,len:0x303c
+entry 0x403c893c
+[0;32mI (27) boot: ESP-IDF v5.3.1-dirty 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Oct 25 2024 14:16:11[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v0.2[0m
+[0;32mI (34) qio_mode: Enabling default flash chip QIO[0m
+[0;32mI (40) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (44) boot.esp32s3: SPI Mode       : QIO[0m
+[0;32mI (49) boot.esp32s3: SPI Flash Size : 16MB[0m
+[0;32mI (54) boot: Enabling RNG early entropy source...[0m
+[0;32mI (59) boot: Partition Table:[0m
+[0;32mI (63) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (70) boot:  0 nvs              WiFi data        01 02 00010000 00006000[0m
+[0;32mI (78) boot:  1 fctry            WiFi data        01 02 00016000 00006000[0m
+[0;32mI (85) boot:  2 factory          factory app      00 00 00020000 00400000[0m
+[0;32mI (93) boot:  3 storage          Unknown data     01 82 00420000 00600000[0m
+[0;32mI (100) boot:  4 model            Unknown data     01 82 00a20000 0050c000[0m
+[0;32mI (108) boot: End of partition table[0m
+[0;32mI (112) esp_image: segment 0: paddr=00020020 vaddr=3c120020 size=43df0h (278000) map[0m
+[0;32mI (163) esp_image: segment 1: paddr=00063e18 vaddr=3fc9b900 size=082fch ( 33532) load[0m
+[0;32mI (169) esp_image: segment 2: paddr=0006c11c vaddr=40374000 size=03efch ( 16124) load[0m
+[0;32mI (172) esp_image: segment 3: paddr=00070020 vaddr=42000020 size=1105fch (1115644) map[0m
+[0;32mI (346) esp_image: segment 4: paddr=00180624 vaddr=40377efc size=13948h ( 80200) load[0m
+[0;32mI (362) esp_image: segment 5: paddr=00193f74 vaddr=50000000 size=00004h (     4) load[0m
+[0;32mI (372) boot: Loaded app from partition at offset 0x20000[0m
+[0;32mI (372) boot: Disabling RNG early entropy source...[0m
+[0;33mW (384) flash HPM: HPM mode is optional feature that depends on flash model. Read Docs First![0m
+[0;33mW (385) flash HPM: HPM mode with DC adjustment is disabled. Some flash models may not be supported. Read Docs First![0m
+[0;33mW (393) flash HPM: High performance mode of this flash model hasn't been supported.[0m
+[0;32mI (402) MSPI Timing: Flash timing tuning index: 2[0m
+[0;32mI (407) octal_psram: vendor id    : 0x0d (AP)[0m
+[0;32mI (412) octal_psram: dev id       : 0x02 (generation 3)[0m
+[0;32mI (418) octal_psram: density      : 0x03 (64 Mbit)[0m
+[0;32mI (424) octal_psram: good-die     : 0x01 (Pass)[0m
+[0;32mI (429) octal_psram: Latency      : 0x01 (Fixed)[0m
+[0;32mI (434) octal_psram: VCC          : 0x01 (3V)[0m
+[0;32mI (439) octal_psram: SRF          : 0x01 (Fast Refresh)[0m
+[0;32mI (445) octal_psram: BurstType    : 0x01 (Hybrid Wrap)[0m
+[0;32mI (451) octal_psram: BurstLen     : 0x01 (32 Byte)[0m
+[0;32mI (456) octal_psram: Readlatency  : 0x02 (10 cycles@Fixed)[0m
+[0;32mI (462) octal_psram: DriveStrength: 0x00 (1/1)[0m
+[0;32mI (474) MSPI Timing: PSRAM timing tuning index: 1[0m
+[0;32mI (474) esp_psram: Found 8MB PSRAM device[0m
+[0;32mI (478) esp_psram: Speed: 120MHz[0m
+[0;32mI (496) mmu_psram: Read only data copied and mapped to SPIRAM[0m
+[0;32mI (560) mmu_psram: Instructions copied and mapped to SPIRAM[0m
+[0;32mI (560) cpu_start: Multicore app[0m
+[0;32mI (734) esp_psram: SPI SRAM memory test OK[0m
+[0;32mI (742) cpu_start: Pro cpu start user code[0m
+[0;32mI (742) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (742) app_init: Application information:[0m
+[0;32mI (745) app_init: Project name:     esp-ai[0m
+[0;32mI (750) app_init: App version:      1[0m
+[0;32mI (754) app_init: Compile time:     Oct 26 2024 21:38:18[0m
+[0;32mI (760) app_init: ELF file SHA256:  6cc759c82...[0m
+[0;32mI (766) app_init: ESP-IDF:          v5.3.1-dirty[0m
+[0;32mI (771) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (776) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (781) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (785) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (793) heap_init: At 3FCAB100 len 0003E610 (249 KiB): RAM[0m
+[0;32mI (799) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (805) heap_init: At 600FE100 len 00001EE8 (7 KiB): RTCRAM[0m
+[0;32mI (811) esp_psram: Adding pool of 6720K of PSRAM memory to heap allocator[0m
+[0;32mI (819) spi_flash: detected chip: generic[0m
+[0;32mI (823) spi_flash: flash io: qio[0m
+[0;32mI (827) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (834) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (841) coexist: coex firmware version: 4482466[0m
+[0;32mI (861) coexist: coexist rom version e7ae62f[0m
+[0;32mI (862) main_task: Started on CPU0[0m
+[0;32mI (863) esp_psram: Reserving pool of 32K of internal memory for DMA/internal allocations[0m
+[0;32mI (868) main_task: Calling app_main()[0m
+[0;32mI (878) pp: pp rom version: e7ae62f[0m
+[0;32mI (878) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (883) wifi:wifi driver task: 3fcbd0f0, prio:23, stack:6656, core=0[0m
+[0;32mI (892) wifi:wifi firmware version: ccaebfa[0m
+[0;32mI (892) wifi:wifi certification version: v7.0[0m
+[0;32mI (896) wifi:config NVS flash: enabled[0m
+[0;32mI (900) wifi:config nano formating: disabled[0m
+[0;32mI (904) wifi:Init data frame dynamic rx buffer num: 6[0m
+[0;32mI (908) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (913) wifi:Init management short buffer num: 6[0m
+[0;32mI (917) wifi:Init static tx buffer num: 16[0m
+[0;32mI (921) wifi:Init tx cache buffer num: 32[0m
+[0;32mI (924) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (928) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (933) wifi:Init static rx buffer num: 3[0m
+[0;32mI (936) wifi:Init dynamic rx buffer num: 6[0m
+[0;32mI (940) wifi_init: accept mbox: 6[0m
+[0;32mI (944) wifi_init: tcpip mbox: 16[0m
+[0;32mI (948) wifi_init: udp mbox: 6[0m
+[0;32mI (952) wifi_init: tcp mbox: 6[0m
+[0;32mI (955) wifi_init: tcp tx win: 5760[0m
+[0;32mI (960) wifi_init: tcp rx win: 5760[0m
+[0;32mI (964) wifi_init: tcp mss: 1440[0m
+[0;32mI (968) wifi_init: WiFi/LWIP prefer SPIRAM[0m
+[0;32mI (973) phy_init: phy_version 680,a6008b2,Jun  4 2024,16:41:10[0m
+[0;33mW (1011) phy_init: saving new calibration data because of checksum failure, mode(0)[0m
+[0;32mI (1021) wifi:mode : sta (f0:9e:9e:22:22:dc)[0m
+[0;32mI (1021) wifi:enable tsf[0m
+[0;32mI (1022) BLE_INIT: BT controller compile version [aa16a46][0m
+[0;32mI (1023) BLE_INIT: Bluetooth MAC: f0:9e:9e:22:22:de[0m
+[0;32mI (1029) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1036) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1046) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1047) BLUFI_EXAMPLE: BD ADDR: f0:9e:9e:22:22:de
+[0m
+[0;32mI (1049) BLUFI_EXAMPLE: BLUFI init finish
+[0m
+[0;32mI (1055) BLUFI_EXAMPLE: BLUFI VERSION 0103
+[0m
+[0;32mI (1058) sntp: Boot count: 1[0m
+[0;32mI (1062) sntp: Time is not set yet. Connecting to WiFi and getting time over NTP.[0m
+[0;32mI (1070) sntp: Initializing SNTP[0m
+[0;32mI (1074) sntp: Waiting for system time to be set... (1/10)[0m
+[0;32mI (1107) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1160) wifi:connected with TJC, aid = 16, channel 11, BW20, bssid = fe:e3:bf:ca:bb:97[0m
+[0;32mI (1160) wifi:security: WPA2-PSK, phy: bgn, rssi: -22[0m
+[0;32mI (1162) wifi:pm start, type: 1[0m
+
+[0;32mI (1164) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1172) wifi:set rx beacon pti, rx_bcn_pti: 14, bcn_timeout: 25000, mt_pti: 14, mt_time: 10000[0m
+[0;32mI (1213) wifi:dp: 2, bi: 102400, li: 4, scale listen interval from 307200 us to 409600 us[0m
+[0;32mI (1214) wifi:AP's beacon interval = 102400 us, DTIM period = 2[0m
+[0;32mI (2181) esp_netif_handlers: sta ip: 192.168.148.76, mask: 255.255.255.0, gw: 192.168.148.182[0m
+[0;32mI (2181) BLUFI_EXAMPLE: BLUFI BLE is not connected yet
+[0m
+[0;32mI (3080) sntp: Waiting for system time to be set... (2/10)[0m
+[0;32mI (4798) sntp: Notification of a time synchronization event, sec=1730043266[0m
+[0;32mI (5080) sntp: The current date/time in Shanghai is: Sun Oct 27 23:34:26 2024[0m
+[0;33mW (5080) i2s_common: dma frame num is out of dma buffer size, limited to 1023[0m
+[0;32mI (5085) MODEL_LOADER: The storage free size is 24576 KB[0m
+[0;32mI (5090) MODEL_LOADER: The partition size is 5168 KB[0m
+[0;32mI (5096) MODEL_LOADER: Successfully load srmodels[0m
+[0;32mI (5101) AFE_SR: afe interface for speech recognition
+[0m
+[0;32mI (5107) AFE_SR: AFE version: SR_V220727
+[0m
+[0;32mI (5112) AFE_SR: Initial auido front-end, total channel: 3, mic num: 2, ref num: 1
+[0m
+[0;32mI (5120) AFE_SR: aec_init: 0, se_init: 1, vad_init: 1
+[0m
+[0;32mI (5126) AFE_SR: wakenet_init: 1
+[0m
+MC Quantized wakenet9: wakenet9_v1h24_嗨，乐鑫_3_0.608_0.615, tigger:v3, mode:2, p:0, (Sep  4 2024 11:49:31)
+[0;32mI (5241) AFE_SR: wake num: 3, mode: 0, (Sep  4 2024 11:49:31)
+[0m
+[0;32mI (5241) app_sr: load wakenet:wn9_hilexin[0m
+Build fst from commands.
+Quantized MultiNet7:rnnt_ctc_2.0, name:mn7_cn, (Sep  4 2024 11:49:30)
+Quantized MultiNet7 search method: 2, time out:5.8 s
+[0;32mI (6238) app_sr: load multinet:mn7_cn[0m
+Build fst from commands.
+[0;32mI (6266) MN_COMMAND: ---------------------SPEECH COMMANDS---------------------[0m
+[0;32mI (6266) MN_COMMAND: Command ID0, phrase ID0: da kai kong qi j0;32mI (6270) MN_COMMAND: Comman ID1, phrase ID1: guan bi kong qi jing hua qi[0m
+[0;32mI (6277) MN_COMMAND: Command ID2, phrase ID2: da kai tai deng[0m
+[0;32mI (6284) MN_COMMAND: Command ID3, phrase ID3: guan bi tai deng[0m
+[0;32mI (6290) MN_COMMAND: Command ID4, phrase ID4: tai deng tiao liang[0m
+[0;32mI (6297) MN_COMMAND: Command ID5, phrase ID5: tai deng tiao an[0m
+[0;32mI (6304) MN_COMMAND: Command ID6, phrase ID6: da kai deng dai[0m
+[0;32mI (6310) MN_COMMAND: Command ID7, phrase ID7: guan bi deng dai[0m
+[0;32mI (6317) MN_COMMAND: Command ID8, phrase ID8: bo fang yin yue[0m
+[0;32mI (6323) MN_COMMAND: Command ID9, phrase ID9: ting zhi bo fang[0m
+[0;32mI (6329) MN_COMMAND: Command ID10, phrase ID10: da kai shi jian[0m
+[0;32mI (6336) MN_COMMAND: Command ID11, phrase ID11: da kai ri li[0m
+[0;32mI (6342) MN_COMMAND: ---------------------------------------------------------
+[0m
+12 active speech commands:
+Command 0: da kai kong qi jing hua qi
+Command 1: guan bi kong qi jing hua qi
+Command 2: da kai tai deng
+Command 3: guan bi tai deng
+Command 4: tai deng tiao liang
+Command 5: tai deng tiao an
+Command 6: da kai deng dai
+Command 7: guan bi deng dai
+Command 8: bo fang yin yue
+Command 9: ting zhi bo fang
+Command 10: da kai shi jian
+Command 11: da kai ri li
+[0;32mI (6385) app_sr: audio_chunksize=1024, feed_channel=3[0m
+[0;32mI (6385) app_sr: ------------detect start------------
+[0m
+[0;31mE (6390) board: 2048
+[0m
+[0;31mE (6400) board: 2048
+[0m
+[0;31mE (6415) board: 2048
+[0m
+[0;31mE (6427) board: 2048
+[0m
+[0;31mE (6440) board: 2048
+[0m
+[0;31mE (6453) board: 2048
+[0m
+[0;31mE (6465) board: 2048
+[0m
+[0;31mE (6477) board: 2048
+[0m
+[0;31mE (6490) board: 2048
+[0m
+[0;31mE (6502) board: 2048
+[0m
+[0;31mE (6515) board: 2048
+[0m
+[0;31mE (6527) board: 2048
+[0m
+[0;31mE (6540) board: 2048
+[0m
+[0;31mE (6552) board: 2048
+[0m
+[0;31mE (6565) board: 2048
+[0m
+[0;31mE (6577) board: 2048
+[0m
+[0;31mE (6590) board: 2048
+[0m
+[0;31mE (6603) board: 2048
+[0m
+[0;31mE (6615) board: 2048
+[0m
+[0;31mE (6627) board: 2048
+[0m
+[0;31mE (6640) board: 2048
+[0m
+[0;31mE (6390) app_sr_handler: ======== sr_handler_task running ==========[0m
+[0;31mE (6683) board: 2048
+[0m
+[0;31mE (6693) board: 2048
+[0m
+[0;31mE (6747) board: 2048
+[0m
+[0;32mI (6752) board: Partition size: total: 5775761, used: 2258498[0m
+[0;32mI (6752) main: Free memory after start: 318491 bytes[0m
+[0;31mE (6757) board: 2048
+[0m
+[0;31mE (6811) board: 2048
+[0m
+[0;31mE (6820) board: 2048
+[0m
+[0;31mE (6875) board: 2048
+[0m
+[0;31mE (6884) board: 2048
+[0m
+[0;31mE (6939) board: 2048
+[0m
+[0;31mE (6948) board: 2048
+[0m
+[0;31mE (7003) board: 2048
+[0m
+[0;31mE (7012) board: 2048
+[0m
+[0;31mE (7067) board: 2048
+[0m
+[0;31mE (7076) board: 2048
+[0m
+[0;31mE (7131) board: 2048
+[0m
+[0;31mE (7140) board: 2048
+[0m
+[0;31mE (7195) board: 2048
+[0m
+[0;31mE (7204) board: 2048
+[0m
+[0;31mE (7259) board: 2048
+[0m
+[0;31mE (7268) board: 2048
+[0m
+[0;31mE (7322) board: 2048
+[0m
+[0;31mE (7332) board: 2048
+[0m
+[0;31mE (7386) board: 2048
+[0m
+[0;31mE (7396) board: 2048
+[0m
+[0;31mE (7450) board: 2048
+[0m
+[0;31mE (7460) board: 2048
+[0m
+[0;31mE (7514) board: 2048
+[0m
+[0;31mE (7524) board: 2048
+[0m
+[0;31mE (7578) board: 2048
+[0m
+[0;31mE (7588) board: 2048
+[0m
+[0;31mE (7642) board: 2048
+[0m
+[0;31mE (7652) board: 2048
+[0m
+[0;31mE (7706) board: 2048
+[0m
+[0;31mE (7716) board: 2048
+[0m
+[0;31mE (7770) board: 2048
+[0m
+[0;31mE (7780) board: 2048
+[0m
+[0;31mE (7834) board: 2048
+[0m
+[0;31mE (7843) board: 2048
+[0m
+[0;31mE (7898) board: 2048
+[0m
+[0;31mE (7907) board: 2048
+[0m
+[0;31mE (7962) board: 2048
+[0m
+[0;31mE (7971) board: 2048
+[0m
+[0;31mE (8026) board: 2048
+[0m
+[0;31mE (8035) board: 2048
+[0m
+[0;31mE (8090) board: 2048
+[0m
+[0;31mE (8099) board: 2048
+[0m
+[0;31mE (8154) board: 2048
+[0m
+[0;31mE (8163) board: 2048
+[0m
+[0;31mE (8218) board: 2048
+[0m
+[0;31mE (8227) board: 2048
+[0m
+[0;31mE (8282) board: 2048
+[0m
+[0;31mE (8291) board: 2048
+[0m
+[0;31mE (8345) board: 2048
+[0m
+[0;31mE (8355) board: 2048
+[0m
+[0;31mE (8409) board: 2048
+[0m
+[0;31mE (8419) board: 2048
+[0m
+[0;31mE (8473) board: 2048
+[0m
+[0;31mE (8483) board: 2048
+[0m
+[0;31mE (8537) board: 2048
+[0m
+[0;31mE (8547) board: 2048
+[0m
+[0;31mE (8601) board: 2048
+[0m
+[0;31mE (8611) board: 2048
+[0m
+[0;31mE (8665) board: 2048
+[0m
+[0;31mE (8675) board: 2048
+[0m
+[0;31mE (8729) board: 2048
+[0m
+[0;31mE (8739) board: 2048
+[0m
+[0;31mE (8793) board: 2048
+[0m
+[0;31mE (8803) board: 2048
+[0m
+[0;31mE (8857) board: 2048
+[0m
+[0;31mE (8866) board: 2048
+[0m
+[0;31mE (8921) board: 2048
+[0m
+[0;31mE (8930) board: 2048
+[0m
+[0;31mE (8985) board: 2048
+[0m
+[0;31mE (8994) board: 2048
+[0m
+[0;31mE (9049) board: 2048
+[0m
+[0;31mE (9058) board: 2048
+[0m
+[0;31mE (9113) board: 2048
+[0m
+[0;31mE (9122) board: 2048
+[0m
+[0;31mE (9177) board: 2048
+[0m
+[0;31mE (9186) board: 2048
+[0m
+[0;31mE (9241) board: 2048
+[0m
+[0;31mE (9250) board: 2048
+[0m
+[0;31mE (9305) board: 2048
+[0m
+[0;31mE (9314) board: 2048
+[0m
+[0;31mE (9368) board: 2048
+[0m
+[0;31mE (9378) board: 2048
+[0m
+[0;31mE (9432) board: 2048
+[0m
+[0;31mE (9442) board: 2048
+[0m
+[0;31mE (9496) board: 2048
+[0m
+[0;31mE (9506) board: 2048
+[0m
+[0;31mE (9560) board: 2048
+[0m
+[0;31mE (9570) board: 2048
+[0m
+[0;31mE (9624) board: 2048
+[0m
+[0;31mE (9634) board: 2048
+[0m
+[0;31mE (9688) board: 2048
+[0m
+[0;31mE (9698) board: 2048
+[0m
+[0;31mE (9752) board: 2048
+[0m
+[0;31mE (9762) board: 2048
+[0m
+[0;31mE (9816) board: 2048
+[0m
+[0;31mE (9826) board: 2048
+[0m
+[0;31mE (9880) board: 2048
+[0m
+[0;31mE (9889) board: 2048
+[0m
+[0;31mE (9944) board: 2048
+[0m
+[0;31mE (9953) board: 2048
+[0m
+[0;31mE (10008) board: 2048
+[0m
+[0;31mE (10017) board: 2048
+[0m
+[0;31mE (10072) board: 2048
+[0m
+[0;31mE (10081) board: 2048
+[0m
+[0;31mE (10136) board: 2048
+[0m
+[0;31mE (10145) board: 2048
+[0m
+[0;31mE (10200) board: 2048
+[0m
+[0;31mE (10209) board: 2048
+[0m
+[0;31mE (10264) board: 2048
+[0m
+[0;31mE (10273) board: 2048
+[0m
+[0;31mE (10328) board: 2048
+[0m
+[0;31mE (10337) board: 2048
+[0m
+[0;31mE (10391) board: 2048
+[0m
+[0;31mE (10401) board: 2048
+[0m
+[0;31mE (10455) board: 2048
+[0m
+[0;31mE (10465) board: 2048
+[0m
+[0;31mE (10519) board: 2048
+[0m
+[0;31mE (10529) board: 2048
+[0m
+[0;31mE (10583) board: 2048
+[0m
+[0;31mE (10593) board: 2048
+[0m
+[0;31mE (10647) board: 2048
+[0m
+[0;31mE (10657) board: 2048
+[0m
+[0;31mE (10711) board: 2048
+[0m
+[0;31mE (10721) board: 2048
+[0m
+[0;31mE (10775) board: 2048
+[0m
+[0;31mE (10785) board: 2048
+[0m
+[0;31mE (10839) board: 2048
+[0m
+[0;31mE (10849) board: 2048
+[0m
+[0;31mE (10903) board: 2048
+[0m
+[0;31mE (10912) board: 2048
+[0m
+[0;31mE (10967) board: 2048
+[0m
+[0;31mE (10976) board: 2048
+[0m
+[0;31mE (11031) board: 2048
+[0m
+[0;31mE (11040) board: 2048
+[0m
+[0;31mE (11095) board: 2048
+[0m
+[0;31mE (11104) board: 2048
+[0m
+[0;31mE (11159) board: 2048
+[0m
+[0;31mE (11168) board: 2048
+[0m
+[0;31mE (11223) board: 2048
+[0m
+[0;31mE (11232) board: 2048
+[0m
+[0;31mE (11287) board: 2048
+[0m
+[0;31mE (11296) board: 2048
+[0m
+[0;31mE (11351) board: 2048
+[0m
+[0;31mE (11360) board: 2048
+[0m
+[0;31mE (11414) board: 2048
+[0m
+[0;31mE (11424) board: 2048
+[0m
+[0;31mE (11478) board: 2048
+[0m
+[0;31mE (11488) board: 2048
+[0m
+[0;31mE (11542) board: 2048
+[0m
+[0;31mE (11552) board: 2048
+[0m
+[0;31mE (11606) board: 2048
+[0m
+[0;31mE (11616) board: 2048
+[0m
+[0;31mE (11670) board: 2048
+[0m
+[0;31mE (11680) board: 2048
+[0m
+[0;31mE (11734) board: 2048
+[0m
+[0;31mE (11744) board: 2048
+[0m
+[0;31mE (11798) board: 2048
+[0m
+[0;31mE (11808) board: 2048
+[0m
+[0;31mE (11862) board: 2048
+[0m
+[0;31mE (11872) board: 2048
+[0m
+[0;31mE (11926) board: 2048
+[0m
+[0;31mE (11935) board: 2048
+[0m
+[0;31mE (11990) board: 2048
+[0m
+[0;31mE (11999) board: 2048
+[0m
+[0;31mE (12054) board: 2048
+[0m
+[0;31mE (12063) board: 2048
+[0m
+[0;31mE (12118) board: 2048
+[0m
+[0;31mE (12127) board: 2048
+[0m
+[0;31mE (12182) board: 2048
+[0m
+[0;31mE (12191) board: 2048
+[0m
+[0;31mE (12246) board: 2048
+[0m
+[0;31mE (12255) board: 2048
+[0m
+[0;31mE (12310) board: 2048
+[0m
+[0;31mE (12319) board: 2048
+[0m
+[0;31mE (12374) board: 2048
+[0m
+[0;31mE (12383) board: 2048
+[0m
+[0;31mE (12437) board: 2048
+[0m
+[0;31mE (12447) board: 2048
+[0m
+[0;31mE (12501) board: 2048
+[0m
+[0;31mE (12511) board: 2048
+[0m
+[0;31mE (12565) board: 2048
+[0m
+[0;31mE (12575) board: 2048
+[0m
+[0;31mE (12629) board: 2048
+[0m
+[0;31mE (12639) board: 2048
+[0m
+[0;31mE (12693) board: 2048
+[0m
+[0;31mE (12703) board: 2048
+[0m
+[0;31mE (12757) board: 2048
+[0m
+[0;31mE (12767) board: 2048
+[0m
+[0;31mE (12821) board: 2048
+[0m
+[0;31mE (12831) board: 2048
+[0m
+[0;31mE (12885) board: 2048
+[0m
+[0;31mE (12895) board: 2048
+[0m
+[0;31mE (12949) board: 2048
+[0m
+[0;31mE (12958) board: 2048
+[0m
+[0;31mE (13013) board: 2048
+[0m
+[0;31mE (13022) board: 2048
+[0m
+[0;31mE (13077) board: 2048
+[0m
+[0;31mE (13086) board: 2048
+[0m
+[0;31mE (13141) board: 2048
+[0m
+[0;31mE (13150) board: 2048
+[0m
+[0;31mE (13205) board: 2048
+[0m
+[0;31mE (13214) board: 2048
+[0m
+[0;31mE (13269) board: 2048
+[0m
+[0;31mE (13278) board: 2048
+[0m
+[0;31mE (13333) board: 2048
+[0m
+[0;31mE (13342) board: 2048
+[0m
+[0;31mE (13397) board: 2048
+[0m
+[0;31mE (13406) board: 2048
+[0m
+[0;31mE (13460) board: 2048
+[0m
+[0;31mE (13470) board: 2048
+[0m
+[0;31mE (13524) board: 2048
+[0m
+[0;31mE (13534) board: 2048
+[0m
+[0;31mE (13588) board: 2048
+[0m
+[0;31mE (13598) board: 2048
+[0m
+[0;31mE (13652) board: 2048
+[0m
+[0;31mE (13662) board: 2048
+[0m
+[0;31mE (13716) board: 2048
+[0m
+[0;31mE (13726) board: 2048
+[0m
+[0;31mE (13780) board: 2048
+[0m
+[0;31mE (13790) board: 2048
+[0m
+[0;31mE (13844) board: 2048
+[0m
+[0;31mE (13854) board: 2048
+[0m
+[0;31mE (13908) board: 2048
+[0m
+[0;31mE (13918) board: 2048
+[0m
+[0;31mE (13972) board: 2048
+[0m
+[0;31mE (13981) board: 2048
+[0m
+[0;31mE (14036) board: 2048
+[0m
+[0;31mE (14045) board: 2048
+[0m
+[0;31mE (14100) board: 2048
+[0m
+[0;31mE (14109) board: 2048
+[0m
+[0;31mE (14164) board: 2048
+[0m
+[0;31mE (14173) board: 2048
+[0m
+[0;31mE (14228) board: 2048
+[0m
+[0;31mE (14237) board: 2048
+[0m
+[0;31mE (14292) board: 2048
+[0m
+[0;31mE (14301) board: 2048
+[0m
+[0;31mE (14356) board: 2048
+[0m
+[0;31mE (14365) board: 2048
+[0m
+[0;31mE (14420) board: 2048
+[0m
+[0;31mE (14429) board: 2048
+[0m
+[0;31mE (14483) board: 2048
+[0m
+[0;31mE (14493) board: 2048
+[0m
+[0;31mE (14547) board: 2048
+[0m
+[0;31mE (14557) board: 2048
+[0m
+[0;31mE (14611) board: 2048
+[0m
+[0;31mE (14621) board: 2048
+[0m
+[0;31mE (14675) board: 2048
+[0m
+[0;31mE (14685) board: 2048
+[0m
+[0;31mE (14739) board: 2048
+[0m
+[0;31mE (14749) board: 2048
+[0m
+[0;31mE (14803) board: 2048
+[0m
+[0;31mE (14813) board: 2048
+[0m
+[0;31mE (14867) board: 2048
+[0m
+[0;31mE (14877) board: 2048
+[0m
+[0;31mE (14931) board: 2048
+[0m
+[0;31mE (14941) board: 2048
+[0m
+[0;31mE (14995) board: 2048
+[0m
+[0;31mE (15004) board: 2048
+[0m
+[0;31mE (15059) board: 2048
+[0m
+[0;31mE (15068) board: 2048
+[0m
+[0;31mE (15123) board: 2048
+[0m
+[0;31mE (15132) board: 2048
+[0m
+[0;31mE (15187) board: 2048
+[0m
+[0;31mE (15196) board: 2048
+[0m
+[0;31mE (15251) board: 2048
+[0m
+[0;31mE (15260) board: 2048
+[0m
+[0;31mE (15315) board: 2048
+[0m
+[0;31mE (15324) board: 2048
+[0m
+[0;31mE (15379) board: 2048
+[0m
+[0;31mE (15388) board: 2048
+[0m
+[0;31mE (15443) board: 2048
+[0m
+[0;31mE (15452) board: 2048
+[0m
+[0;31mE (15506) board: 2048
+[0m
+[0;31mE (15516) board: 2048
+[0m
+[0;31mE (15570) board: 2048
+[0m
+[0;31mE (15580) board: 2048
+[0m
+[0;31mE (15634) board: 2048
+[0m
+[0;31mE (15644) board: 2048
+[0m
+[0;31mE (15698) board: 2048
+[0m
+[0;31mE (15708) board: 2048
+[0m
+[0;31mE (15762) board: 2048
+[0m
+[0;31mE (15772) board: 2048
+[0m
+[0;31mE (15826) board: 2048
+[0m
+[0;31mE (15836) board: 2048
+[0m
+[0;31mE (15890) board: 2048
+[0m
+[0;31mE (15900) board: 2048
+[0m
+[0;31mE (15954) board: 2048
+[0m
+[0;31mE (15964) board: 2048
+[0m
+[0;31mE (16018) board: 2048
+[0m
+[0;31mE (16027) board: 2048
+[0m
+[0;31mE (16082) board: 2048
+[0m
+[0;31mE (16091) board: 2048
+[0m
+[0;31mE (16146) board: 2048
+[0m
+[0;31mE (16155) board: 2048
+[0m
+[0;31mE (16210) board: 2048
+[0m
+[0;31mE (16219) board: 2048
+[0m
+[0;31mE (16274) board: 2048
+[0m
+[0;31mE (16283) board: 2048
+[0m
+[0;31mE (16338) board: 2048
+[0m
+[0;31mE (16347) board: 2048
+[0m
+[0;31mE (16402) board: 2048
+[0m
+[0;31mE (16411) board: 2048
+[0m
+[0;31mE (16466) board: 2048
+[0m
+[0;31mE (16475) board: 2048
+[0m
+[0;31mE (16529) board: 2048
+[0m
+[0;31mE (16539) board: 2048
+[0m
+[0;31mE (16593) board: 2048
+[0m
+[0;31mE (16603) board: 2048
+[0m
+[0;31mE (16657) board: 2048
+[0m
+[0;31mE (16667) board: 2048
+[0m
+[0;31mE (16721) board: 2048
+[0m
+[0;31mE (16731) board: 2048
+[0m
+[0;31mE (16785) board: 2048
+[0m
+[0;31mE (16795) board: 2048
+[0m
+[0;31mE (16849) board: 2048
+[0m
+[0;31mE (16859) board: 2048
+[0m
+[0;31mE (16913) board: 2048
+[0m
+[0;31mE (16923) board: 2048
+[0m
+[0;31mE (16977) board: 2048
+[0m
+[0;31mE (16987) board: 2048
+[0m
+[0;31mE (17041) board: 2048
+[0m
+[0;31mE (17050) board: 2048
+[0m
+[0;31mE (17105) board: 2048
+[0m
+[0;31mE (17114) board: 2048
+[0m
+[0;31mE (17169) board: 2048
+[0m
+[0;31mE (17178) board: 2048
+[0m
+[0;31mE (17233) board: 2048
+[0m
+[0;31mE (17242) board: 2048
+[0m
+[0;31mE (17297) board: 2048
+[0m
+[0;31mE (17306) board: 2048
+[0m
+[0;31mE (17361) board: 2048
+[0m
+[0;31mE (17370) board: 2048
+[0m
+[0;31mE (17425) board: 2048
+[0m
+[0;31mE (17434) board: 2048
+[0m
+[0;31mE (17489) board: 2048
+[0m
+[0;31mE (17498) board: 2048
+[0m
+[0;31mE (17552) board: 2048
+[0m
+[0;31mE (17562) board: 2048
+[0m
+[0;31mE (17616) board: 2048
+[0m
+[0;31mE (17626) board: 2048
+[0m
+[0;31mE (17680) board: 2048
+[0m
+[0;31mE (17690) board: 2048
+[0m
+[0;31mE (17744) board: 2048
+[0m
+[0;31mE (17754) board: 2048
+[0m
+[0;31mE (17808) board: 2048
+[0m
+[0;31mE (17818) board: 2048
+[0m
+[0;31mE (17872) board: 2048
+[0m
+[0;31mE (17882) board: 2048
+[0m
+[0;31mE (17936) board: 2048
+[0m
+[0;31mE (17946) board: 2048
+[0m
+[0;31mE (18000) board: 2048
+[0m
+[0;31mE (18010) board: 2048
+[0m
+[0;31mE (18064) board: 2048
+[0m
+[0;31mE (18073) board: 2048
+[0m
+[0;31mE (18128) board: 2048
+[0m
+[0;31mE (18137) board: 2048
+[0m
+[0;31mE (18192) board: 2048
+[0m
+[0;31mE (18201) board: 2048
+[0m
+[0;31mE (18256) board: 2048
+[0m
+[0;31mE (18265) board: 2048
+[0m
+[0;31mE (18320) board: 2048
+[0m
+[0;31mE (18329) board: 2048
+[0m
+[0;31mE (18384) board: 2048
+[0m
+[0;31mE (18393) board: 2048
+[0m
+[0;31mE (18448) board: 2048
+[0m
+[0;31mE (18457) board: 2048
+[0m
+[0;31mE (18512) board: 2048
+[0m
+[0;31mE (18521) board: 2048
+[0m
+[0;31mE (18575) board: 2048
+[0m
+[0;31mE (18585) board: 2048
+[0m
+[0;31mE (18639) board: 2048
+[0m
+[0;31mE (18649) board: 2048
+[0m
+[0;31mE (18703) board: 2048
+[0m
+[0;31mE (18713) board: 2048
+[0m
+[0;31mE (18767) board: 2048
+[0m
+[0;31mE (18777) board: 2048
+[0m
+[0;31mE (18831) board: 2048
+[0m
+[0;31mE (18841) board: 2048
+[0m
+[0;31mE (18895) board: 2048
+[0m
+[0;31mE (18905) board: 2048
+[0m
+[0;31mE (18959) board: 2048
+[0m
+[0;31mE (18969) board: 2048
+[0m
+[0;31mE (19023) board: 2048
+[0m
+[0;31mE (19033) board: 2048
+[0m
+[0;31mE (19087) board: 2048
+[0m
+[0;31mE (19096) board: 2048
+[0m
+[0;31mE (19151) board: 2048
+[0m
+[0;31mE (19160) board: 2048
+[0m
+[0;31mE (19215) board: 2048
+[0m
+[0;31mE (19224) board: 2048
+[0m
+[0;31mE (19279) board: 2048
+[0m
+[0;31mE (19288) board: 2048
+[0m
+[0;31mE (19343) board: 2048
+[0m
+[0;31mE (19352) board: 2048
+[0m
+[0;31mE (19407) board: 2048
+[0m
+[0;31mE (19416) board: 2048
+[0m
+[0;31mE (19471) board: 2048
+[0m
+[0;31mE (19480) board: 2048
+[0m
+[0;31mE (19535) board: 2048
+[0m
+[0;31mE (19544) board: 2048
+[0m
+[0;31mE (19598) board: 2048
+[0m
+[0;31mE (19608) board: 2048
+[0m
+[0;31mE (19662) board: 2048
+[0m
+[0;31mE (19672) board: 2048
+[0m
+[0;31mE (19726) board: 2048
+[0m
+[0;31mE (19736) board: 2048
+[0m
+[0;31mE (19790) board: 2048
+[0m
+[0;31mE (19800) board: 2048
+[0m
+[0;31mE (19854) board: 2048
+[0m
+[0;31mE (19864) board: 2048
+[0m
+[0;31mE (19918) board: 2048
+[0m
+[0;31mE (19928) board: 2048
+[0m
+[0;31mE (19982) board: 2048
+[0m
+[0;31mE (19992) board: 2048
+[0m
+[0;31mE (20046) board: 2048
+[0m
+[0;31mE (20056) board: 2048
+[0m
+[0;31mE (20110) board: 2048
+[0m
+[0;31mE (20119) board: 2048
+[0m
+[0;31mE (20174) board: 2048
+[0m
+[0;31mE (20183) board: 2048
+[0m
+[0;31mE (20238) board: 2048
+[0m
+[0;31mE (20247) board: 2048
+[0m
+[0;31mE (20302) board: 2048
+[0m
+[0;31mE (20311) board: 2048
+[0m
+[0;31mE (20366) board: 2048
+[0m
+[0;31mE (20375) board: 2048
+[0m
+[0;31mE (20430) board: 2048
+[0m
+[0;31mE (20439) board: 2048
+[0m
+[0;31mE (20494) board: 2048
+[0m
+[0;31mE (20503) board: 2048
+[0m
+[0;31mE (20558) board: 2048
+[0m
+[0;31mE (20567) board: 2048
+[0m
+[0;31mE (20621) board: 2048
+[0m
+[0;31mE (20631) board: 2048
+[0m
+[0;31mE (20685) board: 2048
+[0m
+[0;31mE (20695) board: 2048
+[0m
+[0;31mE (20749) board: 2048
+[0m
+[0;31mE (20759) board: 2048
+[0m
+[0;31mE (20813) board: 2048
+[0m
+[0;31mE (20823) board: 2048
+[0m
+[0;31mE (20877) board: 2048
+[0m
+[0;31mE (20887) board: 2048
+[0m
+[0;31mE (20941) board: 2048
+[0m
+[0;31mE (20951) board: 2048
+[0m
+[0;31mE (21005) board: 2048
+[0m
+[0;31mE (21015) board: 2048
+[0m
+[0;31mE (21069) board: 2048
+[0m
+[0;31mE (21079) board: 2048
+[0m
+[0;31mE (21133) board: 2048
+[0m
+[0;31mE (21142) board: 2048
+[0m
+[0;31mE (21197) board: 2048
+[0m
+[0;31mE (21206) board: 2048
+[0m
+[0;31mE (21261) board: 2048
+[0m
+[0;31mE (21270) board: 2048
+[0m
+[0;31mE (21325) board: 2048
+[0m
+[0;31mE (21334) board: 2048
+[0m
+[0;31mE (21389) board: 2048
+[0m
+[0;31mE (21398) board: 2048
+[0m
+[0;31mE (21453) board: 2048
+[0m
+[0;31mE (21462) board: 2048
+[0m
+[0;31mE (21517) board: 2048
+[0m
+[0;31mE (21526) board: 2048
+[0m
+[0;31mE (21581) board: 2048
+[0m
+[0;31mE (21590) board: 2048
+[0m
+[0;31mE (21644) board: 2048
+[0m
+[0;31mE (21654) board: 2048
+[0m
+[0;31mE (21708) board: 2048
+[0m
+[0;31mE (21718) board: 2048
+[0m
+[0;31mE (21772) board: 2048
+[0m
+[0;31mE (21782) board: 2048
+[0m
+[0;31mE (21836) board: 2048
+[0m
+[0;31mE (21846) board: 2048
+[0m
+[0;31mE (21900) board: 2048
+[0m
+[0;31mE (21910) board: 2048
+[0m
+[0;31mE (21964) board: 2048
+[0m
+[0;31mE (21974) board: 2048
+[0m
+[0;31mE (22028) board: 2048
+[0m
+[0;31mE (22038) board: 2048
+[0m
+[0;31mE (22092) board: 2048
+[0m
+[0;31mE (22102) board: 2048
+[0m
+[0;31mE (22156) board: 2048
+[0m
+[0;31mE (22165) board: 2048
+[0m
+[0;31mE (22220) board: 2048
+[0m
+[0;31mE (22229) board: 2048
+[0m
+[0;31mE (22284) board: 2048
+[0m
+[0;31mE (22293) board: 2048
+[0m
+[0;31mE (22348) board: 2048
+[0m
+[0;31mE (22357) board: 2048
+[0m
+[0;31mE (22412) board: 2048
+[0m
+[0;31mE (22421) board: 2048
+[0m
+[0;31mE (22476) board: 2048
+[0m
+[0;31mE (22485) board: 2048
+[0m
+[0;31mE (22540) board: 2048
+[0m
+[0;31mE (22549) board: 2048
+[0m
+[0;31mE (22604) board: 2048
+[0m
+[0;31mE (22613) board: 2048
+[0m
+[0;31mE (22667) board: 2048
+[0m
+[0;31mE (22677) board: 2048
+[0m
+[0;31mE (22731) board: 2048
+[0m
+[0;31mE (22741) board: 2048
+[0m
+[0;31mE (22795) board: 2048
+[0m
+[0;31mE (22805) board: 2048
+[0m
+[0;31mE (22859) board: 2048
+[0m
+[0;31mE (22869) board: 2048
+[0m
+[0;31mE (22923) board: 2048
+[0m
+[0;31mE (22933) board: 2048
+[0m
+[0;31mE (22987) board: 2048
+[0m
+[0;31mE (22997) board: 2048
+[0m
+[0;31mE (23051) board: 2048
+[0m
+[0;31mE (23061) board: 2048
+[0m
+[0;31mE (23115) board: 2048
+[0m
+[0;31mE (23125) board: 2048
+[0m
+[0;31mE (23179) board: 2048
+[0m
+[0;31mE (23188) board: 2048
+[0m
+[0;31mE (23243) board: 2048
+[0m
+[0;31mE (23252) board: 2048
+[0m
+[0;31mE (23307) board: 2048
+[0m
+[0;31mE (23316) board: 2048
+[0m
+[0;31mE (23371) board: 2048
+[0m
+[0;31mE (23380) board: 2048
+[0m
+[0;31mE (23435) board: 2048
+[0m
+[0;31mE (23444) board: 2048
+[0m
+[0;31mE (23499) board: 2048
+[0m
+[0;31mE (23508) board: 2048
+[0m
+[0;31mE (23563) board: 2048
+[0m
+[0;31mE (23572) board: 2048
+[0m
+[0;31mE (23627) board: 2048
+[0m
+[0;31mE (23636) board: 2048
+[0m
+[0;31mE (23690) board: 2048
+[0m
+[0;31mE (23700) board: 2048
+[0m
+[0;31mE (23754) board: 2048
+[0m
+[0;31mE (23764) board: 2048
+[0m
+[0;31mE (23818) board: 2048
+[0m
+[0;31mE (23828) board: 2048
+[0m
+[0;31mE (23882) board: 2048
+[0m
+[0;31mE (23892) board: 2048
+[0m
+[0;31mE (23946) board: 2048
+[0m
+[0;31mE (23956) board: 2048
+[0m
+[0;31mE (24010) board: 2048
+[0m
+[0;31mE (24020) board: 2048
+[0m
+[0;31mE (24074) board: 2048
+[0m
+[0;31mE (24084) board: 2048
+[0m
+[0;31mE (24138) board: 2048
+[0m
+[0;31mE (24148) board: 2048
+[0m
+[0;31mE (24202) board: 2048
+[0m
+[0;31mE (24211) board: 2048
+[0m
+[0;31mE (24266) board: 2048
+[0m
+[0;31mE (24275) board: 2048
+[0m
+[0;31mE (24330) board: 2048
+[0m
+[0;31mE (24339) board: 2048
+[0m
+[0;31mE (24394) board: 2048
+[0m
+[0;31mE (24403) board: 2048
+[0m
+[0;31mE (24458) board: 2048
+[0m
+[0;31mE (24467) board: 2048
+[0m
+[0;31mE (24522) board: 2048
+[0m
+[0;31mE (24531) board: 2048
+[0m
+[0;31mE (24586) board: 2048
+[0m
+[0;31mE (24595) board: 2048
+[0m
+[0;31mE (24650) board: 2048
+[0m
+[0;31mE (24659) board: 2048
+[0m
+[0;31mE (24713) board: 2048
+[0m
+[0;31mE (24723) board: 2048
+[0m
+[0;31mE (24777) board: 2048
+[0m
+[0;31mE (24787) board: 2048
+[0m
+[0;31mE (24841) board: 2048
+[0m
+[0;31mE (24851) board: 2048
+[0m
+[0;31mE (24905) board: 2048
+[0m
+[0;31mE (24915) board: 2048
+[0m
+[0;31mE (24969) board: 2048
+[0m
+[0;31mE (24979) board: 2048
+[0m
+[0;31mE (25033) board: 2048
+[0m
+[0;31mE (25043) board: 2048
+[0m
+[0;31mE (25097) board: 2048
+[0m
+[0;31mE (25107) board: 2048
+[0m
+[0;31mE (25161) board: 2048
+[0m
+[0;31mE (25171) board: 2048
+[0m
+[0;31mE (25225) board: 2048
+[0m
+[0;31mE (25234) board: 2048
+[0m
+[0;31mE (25289) board: 2048
+[0m
+[0;31mE (25298) board: 2048
+[0m
+[0;31mE (25353) board: 2048
+[0m
+[0;31mE (25362) board: 2048
+[0m
+[0;31mE (25417) board: 2048
+[0m
+[0;31mE (25426) board: 2048
+[0m
+[0;31mE (25481) board: 2048
+[0m
+[0;31mE (25490) board: 2048
+[0m
+[0;31mE (25545) board: 2048
+[0m
+[0;31mE (25554) board: 2048
+[0m
+[0;31mE (25609) board: 2048
+[0m
+[0;31mE (25618) board: 2048
+[0m
+[0;31mE (25673) board: 2048
+[0m
+[0;31mE (25682) board: 2048
+[0m
+[0;31mE (25736) board: 2048
+[0m
+[0;31mE (25746) board: 2048
+[0m
+[0;31mE (25800) board: 2048
+[0m
+[0;31mE (25810) board: 2048
+[0m
+[0;31mE (25864) board: 2048
+[0m
+[0;31mE (25874) board: 2048
+[0m
+[0;31mE (25928) board: 2048
+[0m
+[0;31mE (25938) board: 2048
+[0m
+[0;31mE (25992) board: 2048
+[0m
+[0;31mE (26002) board: 2048
+[0m
+[0;31mE (26056) board: 2048
+[0m
+[0;31mE (26066) board: 2048
+[0m
+[0;31mE (26120) board: 2048
+[0m
+[0;31mE (26130) board: 2048
+[0m
+[0;31mE (26184) board: 2048
+[0m
+[0;31mE (26193) board: 2048
+[0m
+[0;31mE (26248) board: 2048
+[0m
+[0;31mE (26257) board: 2048
+[0m
+[0;31mE (26312) board: 2048
+[0m
+[0;31mE (26321) board: 2048
+[0m
+[0;31mE (26376) board: 2048
+[0m
+[0;31mE (26385) board: 2048
+[0m
+[0;31mE (26440) board: 2048
+[0m
+[0;31mE (26449) board: 2048
+[0m
+[0;31mE (26504) board: 2048
+[0m
+[0;31mE (26513) board: 2048
+[0m
+[0;31mE (26568) board: 2048
+[0m
+[0;31mE (26577) board: 2048
+[0m
+[0;31mE (26632) board: 2048
+[0m
+[0;31mE (26641) board: 2048
+[0m
+[0;31mE (26696) board: 2048
+[0m
+[0;31mE (26705) board: 2048
+[0m
+[0;31mE (26759) board: 2048
+[0m
+[0;31mE (26769) board: 2048
+[0m
+[0;31mE (26823) board: 2048
+[0m
+[0;31mE (26833) board: 2048
+[0m
+[0;31mE (26887) board: 2048
+[0m
+[0;31mE (26897) board: 2048
+[0m
+[0;31mE (26951) board: 2048
+[0m
+[0;31mE (26961) board: 2048
+[0m
+[0;31mE (27015) board: 2048
+[0m
+[0;31mE (27025) board: 2048
+[0m
+[0;31mE (27079) board: 2048
+[0m
+[0;31mE (27089) board: 2048
+[0m
+[0;31mE (27143) board: 2048
+[0m
+[0;31mE (27153) board: 2048
+[0m
+[0;31mE (27207) board: 2048
+[0m
+[0;31mE (27216) board: 2048
+[0m
+[0;31mE (27271) board: 2048
+[0m
+[0;31mE (27280) board: 2048
+[0m
+[0;31mE (27335) board: 2048
+[0m
+[0;31mE (27344) board: 2048
+[0m
+[0;31mE (27399) board: 2048
+[0m
+[0;31mE (27408) board: 2048
+[0m
+[0;31mE (27463) board: 2048
+[0m
+[0;31mE (27472) board: 2048
+[0m
+[0;31mE (27527) board: 2048
+[0m
+[0;31mE (27536) board: 2048
+[0m
+[0;31mE (27591) board: 2048
+[0m
+[0;31mE (27600) board: 2048
+[0m
+[0;31mE (27655) board: 2048
+[0m
+[0;31mE (27664) board: 2048
+[0m
+[0;31mE (27719) board: 2048
+[0m
+[0;31mE (27728) board: 2048
+[0m
+[0;31mE (27783) board: 2048
+[0m
+[0;31mE (27792) board: 2048
+[0m
+[0;31mE (27846) board: 2048
+[0m
+[0;31mE (27856) board: 2048
+[0m
+[0;31mE (27910) board: 2048
+[0m
+[0;31mE (27920) board: 2048
+[0m
+[0;31mE (27974) board: 2048
+[0m
+[0;31mE (27984) board: 2048
+[0m
+[0;31mE (28038) board: 2048
+[0m
+[0;31mE (28048) board: 2048
+[0m
+[0;31mE (28102) board: 2048
+[0m
+[0;31mE (28112) board: 2048
+[0m
+[0;31mE (28166) board: 2048
+[0m
+[0;31mE (28176) board: 2048
+[0m
+[0;31mE (28230) board: 2048
+[0m
+[0;31mE (28239) board: 2048
+[0m
+[0;31mE (28294) board: 2048
+[0m
+[0;31mE (28303) board: 2048
+[0m
+[0;31mE (28358) board: 2048
+[0m
+[0;31mE (28367) board: 2048
+[0m
+[0;31mE (28422) board: 2048
+[0m
+[0;31mE (28431) board: 2048
+[0m
+[0;31mE (28486) board: 2048
+[0m
+[0;31mE (28495) board: 2048
+[0m
+[0;31mE (28550) board: 2048
+[0m
+[0;31mE (28559) board: 2048
+[0m
+[0;31mE (28614) board: 2048
+[0m
+[0;31mE (28623) board: 2048
+[0m
+[0;31mE (28678) board: 2048
+[0m
+[0;31mE (28687) board: 2048
+[0m
+[0;31mE (28742) board: 2048
+[0m
+[0;31mE (28751) board: 2048
+[0m
+[0;31mE (28805) board: 2048
+[0m
+[0;31mE (28815) board: 2048
+[0m
+[0;31mE (28869) board: 2048
+[0m
+[0;31mE (28879) board: 2048
+[0m
+[0;31mE (28933) board: 2048
+[0m
+[0;31mE (28943) board: 2048
+[0m
+[0;31mE (28997) board: 2048
+[0m
+[0;31mE (29007) board: 2048
+[0m
+[0;31mE (29061) board: 2048
+[0m
+[0;31mE (29071) board: 2048
+[0m
+[0;31mE (29125) board: 2048
+[0m
+[0;31mE (29135) board: 2048
+[0m
+[0;31mE (29189) board: 2048
+[0m
+[0;31mE (29199) board: 2048
+[0m
+[0;31mE (29253) board: 2048
+[0m
+[0;31mE (29263) board: 2048
+[0m
+[0;31mE (29317) board: 2048
+[0m
+[0;31mE (29326) board: 2048
+[0m
+[0;31mE (29381) board: 2048
+[0m
+[0;31mE (29390) board: 2048
+[0m
+[0;31mE (29445) board: 2048
+[0m
+[0;31mE (29454) board: 2048
+[0m
+[0;31mE (29509) board: 2048
+[0m
+[0;31mE (29518) board: 2048
+[0m
+[0;31mE (29573) board: 2048
+[0m
+[0;31mE (29582) board: 2048
+[0m
+[0;31mE (29637) board: 2048
+[0m
+[0;31mE (29646) board: 2048
+[0m
+[0;31mE (29701) board: 2048
+[0m
+[0;31mE (29710) board: 2048
+[0m
+[0;31mE (29765) board: 2048
+[0m
+[0;31mE (29774) board: 2048
+[0m
+[0;31mE (29828) board: 2048
+[0m
+[0;31mE (29838) board: 2048
+[0m
+[0;31mE (29892) board: 2048
+[0m
+[0;31mE (29902) board: 2048
+[0m
+[0;31mE (29956) board: 2048
+[0m
+[0;31mE (29966) board: 2048
+[0m
+[0;31mE (30020) board: 2048
+[0m
+[0;31mE (30030) board: 2048
+[0m
+[0;31mE (30084) board: 2048
+[0m
+[0;31mE (30094) board: 2048
+[0m
+[0;31mE (30148) board: 2048
+[0m
+[0;31mE (30158) board: 2048
+[0m
+[0;31mE (30212) board: 2048
+[0m
+[0;31mE (30222) board: 2048
+[0m
+[0;31mE (30276) board: 2048
+[0m
+[0;31mE (30286) board: 2048
+[0m
+[0;31mE (30340) board: 2048
+[0m
+[0;31mE (30349) board: 2048
+[0m
+[0;31mE (30404) board: 2048
+[0m
+[0;31mE (30413) board: 2048
+[0m
+[0;31mE (30468) board: 2048
+[0m
+[0;31mE (30477) board: 2048
+[0m
+[0;31mE (30532) board: 2048
+[0m
+[0;31mE (30541) board: 2048
+[0m
+[0;31mE (30596) board: 2048
+[0m
+[0;31mE (30605) board: 2048
+[0m
+[0;31mE (30660) board: 2048
+[0m
+[0;31mE (30669) board: 2048
+[0m
+[0;31mE (30724) board: 2048
+[0m
+[0;31mE (30733) board: 2048
+[0m
+[0;31mE (30788) board: 2048
+[0m
+[0;31mE (30797) board: 2048
+[0m
+[0;31mE (30851) board: 2048
+[0m
+[0;31mE (30861) board: 2048
+[0m
+[0;31mE (30915) board: 2048
+[0m
+[0;31mE (30925) board: 2048
+[0m
+[0;31mE (30979) board: 2048
+[0m
+[0;31mE (30989) board: 2048
+[0m
+[0;31mE (31043) board: 2048
+[0m
+[0;31mE (31053) board: 2048
+[0m
+[0;31mE (31107) board: 2048
+[0m
+[0;31mE (31117) board: 2048
+[0m
+[0;31mE (31171) board: 2048
+[0m
+[0;31mE (31181) board: 2048
+[0m
+[0;31mE (31235) board: 2048
+[0m
+[0;31mE (31245) board: 2048
+[0m
+[0;31mE (31299) board: 2048
+[0m
+[0;31mE (31309) board: 2048
+[0m
+[0;31mE (31363) board: 2048
+[0m
+[0;31mE (31372) board: 2048
+[0m
+[0;31mE (31427) board: 2048
+[0m
+[0;31mE (31436) board: 2048
+[0m
+[0;31mE (31491) board: 2048
+[0m
+[0;31mE (31500) board: 2048
+[0m
+[0;31mE (31555) board: 2048
+[0m
+[0;31mE (31564) board: 2048
+[0m
+[0;31mE (31619) board: 2048
+[0m
+[0;31mE (31628) board: 2048
+[0m
+[0;31mE (31683) board: 2048
+[0m
+[0;31mE (31692) board: 2048
+[0m
+[0;31mE (31747) board: 2048
+[0m
+[0;31mE (31756) board: 2048
+[0m
+[0;31mE (31811) board: 2048
+[0m
+[0;31mE (31820) board: 2048
+[0m
+[0;31mE (31874) board: 2048
+[0m
+[0;31mE (31884) board: 2048
+[0m
+[0;31mE (31938) board: 2048
+[0m
+[0;31mE (31948) board: 2048
+[0m
+[0;31mE (32002) board: 2048
+[0m
+[0;31mE (32012) board: 2048
+[0m
+[0;31mE (32066) board: 2048
+[0m
+[0;31mE (32076) board: 2048
+[0m
+[0;31mE (32130) board: 2048
+[0m
+[0;31mE (32140) board: 2048
+[0m
+[0;31mE (32194) board: 2048
+[0m
+[0;31mE (32204) board: 2048
+[0m
+[0;31mE (32258) board: 2048
+[0m
+[0;31mE (32268) board: 2048
+[0m
+[0;31mE (32322) board: 2048
+[0m
+[0;31mE (32332) board: 2048
+[0m
+[0;31mE (32386) board: 2048
+[0m
+[0;31mE (32395) board: 2048
+[0m
+[0;31mE (32450) board: 2048
+[0m
+[0;31mE (32459) board: 2048
+[0m
+[0;31mE (32514) board: 2048
+[0m
+[0;31mE (32523) board: 2048
+[0m
+[0;31mE (32578) board: 2048
+[0m
+[0;31mE (32587) board: 2048
+[0m
+[0;31mE (32642) board: 2048
+[0m
+[0;31mE (32651) board: 2048
+[0m
+[0;31mE (32706) board: 2048
+[0m
+[0;31mE (32715) board: 2048
+[0m
+[0;31mE (32770) board: 2048
+[0m
+[0;31mE (32779) board: 2048
+[0m
+[0;31mE (32834) board: 2048
+[0m
+[0;31mE (32843) board: 2048
+[0m
+[0;31mE (32897) board: 2048
+[0m
+[0;31mE (32907) board: 2048
+[0m
+[0;31mE (32961) board: 2048
+[0m
+[0;31mE (32971) board: 2048
+[0m
+[0;31mE (33025) board: 2048
+[0m
+[0;31mE (33035) board: 2048
+[0m
+[0;31mE (33089) board: 2048
+[0m
+[0;31mE (33099) board: 2048
+[0m
+[0;31mE (33153) board: 2048
+[0m
+[0;31mE (33163) board: 2048
+[0m
+[0;31mE (33217) board: 2048
+[0m
+[0;31mE (33227) board: 2048
+[0m
+[0;31mE (33281) board: 2048
+[0m
+[0;31mE (33291) board: 2048
+[0m
+[0;31mE (33345) board: 2048
+[0m
+[0;31mE (33354) board: 2048
+[0m
+[0;31mE (33409) board: 2048
+[0m
+[0;31mE (33418) board: 2048
+[0m
+[0;31mE (33473) board: 2048
+[0m
+[0;31mE (33482) board: 2048
+[0m
+[0;31mE (33537) board: 2048
+[0m
+[0;31mE (33546) board: 2048
+[0m
+[0;31mE (33601) board: 2048
+[0m
+[0;31mE (33610) board: 2048
+[0m
+[0;31mE (33665) board: 2048
+[0m
+[0;31mE (33674) board: 2048
+[0m
+[0;31mE (33729) board: 2048
+[0m
+[0;31mE (33738) board: 2048
+[0m

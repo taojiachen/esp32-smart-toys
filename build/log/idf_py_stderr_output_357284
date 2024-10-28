@@ -1,0 +1,921 @@
+[0;33m--- esp-idf-monitor 1.5.0 on /dev/ttyUSB0 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0;33m--- 0x40041a76: ets_delay_us in ROM
+[0m
+[0;33m--- 0x40041a76: ets_delay_us in ROM
+[0m
+[0;33m--- 0x4207959c: spiffs_cache_page_remove_oldest at /home/tjc/esp/esp-idf/components/spiffs/spiffs/src/spiffs_cache.c:77
+0x420795b4: spiffs_cache_page_remove_oldest at /home/tjc/esp/esp-idf/components/spiffs/spiffs/src/spiffs_cache.c:68
+[0m
+[0;33m--- 0x4004f422: Cache_Resume_ICache in ROM
+[0m
+[0;33m--- 0x400570e8: memset in ROM
+0x400570f3: memset in ROM
+[0m
+[0;33m--- 0x4004f41f: Cache_Resume_ICache in ROM
+0x40386660: cache_ll_l1_resume_icache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:251 (discriminator 4)
+ (inlined by) cache_ll_resume_cache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:286 (discriminator 4)
+ (inlined by) cache_hal_resume at /home/tjc/esp/esp-idf/components/hal/cache_hal.c:212 (discriminator 4)
+0x4037c489: spi_flash_restore_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:379
+0x4037c60b: spi_flash_enable_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:368
+0x40376055: panic_enable_cache at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:231
+ (inlined by) xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:251
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+0x4004f2d0: Cache_Disable_ICache in ROM
+0x40375ea5: esp_restart_noos at /home/tjc/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:105
+0x420045ce: panic_restart at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:264
+0x420042b2: esp_panic_handler at /home/tjc/esp/esp-idf/components/esp_system/panic.c:439
+0x42004552: panic_handler at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:218
+0x4037605f: xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:253
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+[0m
+[0;33m--- 0x4004f422: Cache_Resume_ICache in ROM
+[0m
+[0;33m--- 0x400570e8: memset in ROM
+0x400570f3: memset in ROM
+[0m
+[0;33m--- 0x4004f41f: Cache_Resume_ICache in ROM
+0x40386660: cache_ll_l1_resume_icache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:251 (discriminator 4)
+ (inlined by) cache_ll_resume_cache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:286 (discriminator 4)
+ (inlined by) cache_hal_resume at /home/tjc/esp/esp-idf/components/hal/cache_hal.c:212 (discriminator 4)
+0x4037c489: spi_flash_restore_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:379
+0x4037c60b: spi_flash_enable_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:368
+0x40376055: panic_enable_cache at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:231
+ (inlined by) xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:251
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+0x4004f2d0: Cache_Disable_ICache in ROM
+0x40375ea5: esp_restart_noos at /home/tjc/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:105
+0x420045ce: panic_restart at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:264
+0x420042b2: esp_panic_handler at /home/tjc/esp/esp-idf/components/esp_system/panic.c:439
+0x42004552: panic_handler at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:218
+0x4037605f: xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:253
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+0x4004f41f: Cache_Resume_ICache in ROM
+0x40386660: cache_ll_l1_resume_icache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:251 (discriminator 4)
+ (inlined by) cache_ll_resume_cache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:286 (discriminator 4)
+ (inlined by) cache_hal_resume at /home/tjc/esp/esp-idf/components/hal/cache_hal.c:212 (discriminator 4)
+0x4037c489: spi_flash_restore_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:379
+0x4037c60b: spi_flash_enable_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:368
+0x40376055: panic_enable_cache at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:231
+ (inlined by) xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:251
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+0x4004f2d0: Cache_Disable_ICache in ROM
+0x40375ea5: esp_restart_noos at /home/tjc/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:105
+0x420045ce: panic_restart at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:264
+0x420042b2: esp_panic_handler at /home/tjc/esp/esp-idf/components/esp_system/panic.c:439
+0x42004552: panic_handler at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:218
+0x4037605f: xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:253
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+[0m
+[0;33m--- 0x4004f422: Cache_Resume_ICache in ROM
+[0m
+[0;33m--- 0x400570e8: memset in ROM
+0x400570f3: memset in ROM
+[0m
+[0;33m--- 0x4004f41f: Cache_Resume_ICache in ROM
+0x40386660: cache_ll_l1_resume_icache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:251 (discriminator 4)
+ (inlined by) cache_ll_resume_cache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:286 (discriminator 4)
+ (inlined by) cache_hal_resume at /home/tjc/esp/esp-idf/components/hal/cache_hal.c:212 (discriminator 4)
+0x4037c489: spi_flash_restore_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:379
+0x4037c60b: spi_flash_enable_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:368
+0x40376055: panic_enable_cache at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:231
+ (inlined by) xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:251
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+0x4004f2d0: Cache_Disable_ICache in ROM
+0x40375ea5: esp_restart_noos at /home/tjc/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:105
+0x420045ce: panic_restart at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:264
+0x420042b2: esp_panic_handler at /home/tjc/esp/esp-idf/components/esp_system/panic.c:439
+0x42004552: panic_handler at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:218
+0x4037605f: xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:253
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+0x4004f41f: Cache_Resume_ICache in ROM
+0x40386660: cache_ll_l1_resume_icache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:251 (discriminator 4)
+ (inlined by) cache_ll_resume_cache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:286 (discriminator 4)
+ (inlined by) cache_hal_resume at /home/tjc/esp/esp-idf/components/hal/cache_hal.c:212 (discriminator 4)
+0x4037c489: spi_flash_restore_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:379
+0x4037c60b: spi_flash_enable_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:368
+0x40376055: panic_enable_cache at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:231
+ (inlined by) xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:251
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+0x4004f2d0: Cache_Disable_ICache in ROM
+0x40375ea5: esp_restart_noos at /home/tjc/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:105
+0x420045ce: panic_restart at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:264
+0x420042b2: esp_panic_handler at /home/tjc/esp/esp-idf/components/esp_system/panic.c:439
+0x42004552: panic_handler at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:218
+0x4037605f: xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:253
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+0x4004f41f: Cache_Resume_ICache in ROM
+0x40386660: cache_ll_l1_resume_icache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:251 (discriminator 4)
+ (inlined by) cache_ll_resume_cache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:286 (discriminator 4)
+ (inlined by) cache_hal_resume at /home/tjc/esp/esp-idf/components/hal/cache_hal.c:212 (discriminator 4)
+0x4037c489: spi_flash_restore_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:379
+0x4037c60b: spi_flash_enable_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:368
+0x40376055: panic_enable_cache at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:231
+ (inlined by) xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:251
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+0x4004f2d0: Cache_Disable_ICache in ROM
+0x40375ea5: esp_restart_noos at /home/tjc/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:105
+0x420045ce: panic_restart at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:264
+0x420042b2: esp_panic_handler at /home/tjc/esp/esp-idf/components/esp_system/panic.c:439
+0x42004552: panic_handler at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:218
+0x4037605f: xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:253
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+[0m
+[0;33m--- 0x4004f422: Cache_Resume_ICache in ROM
+[0m
+[0;33m--- 0x400570e8: memset in ROM
+0x400570f3: memset in ROM
+[0m
+[0;33m--- 0x4004f41f: Cache_Resume_ICache in ROM
+0x40386660: cache_ll_l1_resume_icache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:251 (discriminator 4)
+ (inlined by) cache_ll_resume_cache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:286 (discriminator 4)
+ (inlined by) cache_hal_resume at /home/tjc/esp/esp-idf/components/hal/cache_hal.c:212 (discriminator 4)
+0x4037c489: spi_flash_restore_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:379
+0x4037c60b: spi_flash_enable_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:368
+0x40376055: panic_enable_cache at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:231
+ (inlined by) xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:251
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+0x4004f2d0: Cache_Disable_ICache in ROM
+0x40375ea5: esp_restart_noos at /home/tjc/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:105
+0x420045ce: panic_restart at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:264
+0x420042b2: esp_panic_handler at /home/tjc/esp/esp-idf/components/esp_system/panic.c:439
+0x42004552: panic_handler at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:218
+0x4037605f: xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:253
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+0x4004f41f: Cache_Resume_ICache in ROM
+0x40386660: cache_ll_l1_resume_icache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:251 (discriminator 4)
+ (inlined by) cache_ll_resume_cache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:286 (discriminator 4)
+ (inlined by) cache_hal_resume at /home/tjc/esp/esp-idf/components/hal/cache_hal.c:212 (discriminator 4)
+0x4037c489: spi_flash_restore_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:379
+0x4037c60b: spi_flash_enable_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:368
+0x40376055: panic_enable_cache at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:231
+ (inlined by) xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:251
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+0x4004f2d0: Cache_Disable_ICache in ROM
+0x40375ea5: esp_restart_noos at /home/tjc/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:105
+0x420045ce: panic_restart at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:264
+0x420042b2: esp_panic_handler at /home/tjc/esp/esp-idf/components/esp_system/panic.c:439
+0x42004552: panic_handler at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:218
+0x4037605f: xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:253
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+0x4004f41f: Cache_Resume_ICache in ROM
+0x40386660: cache_ll_l1_resume_icache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:251 (discriminator 4)
+ (inlined by) cache_ll_resume_cache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:286 (discriminator 4)
+ (inlined by) cache_hal_resume at /home/tjc/esp/esp-idf/components/hal/cache_hal.c:212 (discriminator 4)
+0x4037c489: spi_flash_restore_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:379
+0x4037c60b: spi_flash_enable_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:368
+0x40376055: panic_enable_cache at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:231
+ (inlined by) xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:251
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+0x4004f2d0: Cache_Disable_ICache in ROM
+0x40375ea5: esp_restart_noos at /home/tjc/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:105
+0x420045ce: panic_restart at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:264
+0x420042b2: esp_panic_handler at /home/tjc/esp/esp-idf/components/esp_system/panic.c:439
+0x42004552: panic_handler at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:218
+0x4037605f: xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:253
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+0x4004f41f: Cache_Resume_ICache in ROM
+0x40386660: cache_ll_l1_resume_icache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:251 (discriminator 4)
+ (inlined by) cache_ll_resume_cache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:286 (discriminator 4)
+ (inlined by) cache_hal_resume at /home/tjc/esp/esp-idf/components/hal/cache_hal.c:212 (discriminator 4)
+0x4037c489: spi_flash_restore_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:379
+0x4037c60b: spi_flash_enable_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:368
+0x40376055: panic_enable_cache at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:231
+ (inlined by) xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:251
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+0x4004f2d0: Cache_Disable_ICache in ROM
+0x40375ea5: esp_restart_noos at /home/tjc/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:105
+0x420045ce: panic_restart at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:264
+0x420042b2: esp_panic_handler at /home/tjc/esp/esp-idf/components/esp_system/panic.c:439
+0x42004552: panic_handler at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:218
+0x4037605f: xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:253
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+[0m
+[0;33m--- 0x4004f422: Cache_Resume_ICache in ROM
+[0m
+[0;33m--- 0x400570e8: memset in ROM
+0x400570f3: memset in ROM
+[0m
+[0;33m--- 0x4004f41f: Cache_Resume_ICache in ROM
+0x40386660: cache_ll_l1_resume_icache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:251 (discriminator 4)
+ (inlined by) cache_ll_resume_cache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:286 (discriminator 4)
+ (inlined by) cache_hal_resume at /home/tjc/esp/esp-idf/components/hal/cache_hal.c:212 (discriminator 4)
+0x4037c489: spi_flash_restore_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:379
+0x4037c60b: spi_flash_enable_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:368
+0x40376055: panic_enable_cache at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:231
+ (inlined by) xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:251
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+0x4004f2d0: Cache_Disable_ICache in ROM
+0x40375ea5: esp_restart_noos at /home/tjc/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:105
+0x420045ce: panic_restart at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:264
+0x420042b2: esp_panic_handler at /home/tjc/esp/esp-idf/components/esp_system/panic.c:439
+0x42004552: panic_handler at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:218
+0x4037605f: xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:253
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+0x4004f41f: Cache_Resume_ICache in ROM
+0x40386660: cache_ll_l1_resume_icache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:251 (discriminator 4)
+ (inlined by) cache_ll_resume_cache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:286 (discriminator 4)
+ (inlined by) cache_hal_resume at /home/tjc/esp/esp-idf/components/hal/cache_hal.c:212 (discriminator 4)
+0x4037c489: spi_flash_restore_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:379
+0x4037c60b: spi_flash_enable_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:368
+0x40376055: panic_enable_cache at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:231
+ (inlined by) xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:251
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+0x4004f2d0: Cache_Disable_ICache in ROM
+0x40375ea5: esp_restart_noos at /home/tjc/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:105
+0x420045ce: panic_restart at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:264
+0x420042b2: esp_panic_handler at /home/tjc/esp/esp-idf/components/esp_system/panic.c:439
+0x42004552: panic_handler at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:218
+0x4037605f: xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:253
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+0x4004f41f: Cache_Resume_ICache in ROM
+0x40386660: cache_ll_l1_resume_icache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:251 (discriminator 4)
+ (inlined by) cache_ll_resume_cache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:286 (discriminator 4)
+ (inlined by) cache_hal_resume at /home/tjc/esp/esp-idf/components/hal/cache_hal.c:212 (discriminator 4)
+0x4037c489: spi_flash_restore_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:379
+0x4037c60b: spi_flash_enable_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:368
+0x40376055: panic_enable_cache at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:231
+ (inlined by) xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:251
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+0x4004f2d0: Cache_Disable_ICache in ROM
+0x40375ea5: esp_restart_noos at /home/tjc/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:105
+0x420045ce: panic_restart at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:264
+0x420042b2: esp_panic_handler at /home/tjc/esp/esp-idf/components/esp_system/panic.c:439
+[0m
+[0;33m--- 0x4037605f: xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:253
+[0m
+[0;33m--- 0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+[0m
+[0;33m--- 0x40386660: cache_ll_l1_resume_icache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:251 (discriminator 4)
+ (inlined by) cache_ll_resume_cache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:286 (discriminator 4)
+ (inlined by) cache_hal_resume at /home/tjc/esp/esp-idf/components/hal/cache_hal.c:212 (discriminator 4)
+[0m
+[0;33m--- 0x4037c489: spi_flash_restore_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:379
+[0m
+[0;33m--- 0x40376055: panic_enable_cache at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:231
+ (inlined by) xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:251
+[0m
+[0;33m--- 0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+[0m
+[0;33m--- 0x40375ea5: esp_restart_noos at /home/tjc/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:105
+[0m
+[0;33m--- 0x420045ce: panic_restart at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:264
+[0m
+[0;33m--- 0x420042b2: esp_panic_handler at /home/tjc/esp/esp-idf/components/esp_system/panic.c:439
+0x42004552: panic_handler at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:218
+[0m
+[0;33m--- 0x4037605f: xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:253
+[0m
+[0;33m--- 0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+[0m
+[0;33m--- 0x40386660: cache_ll_l1_resume_icache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:251 (discriminator 4)
+ (inlined by) cache_ll_resume_cache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:286 (discriminator 4)
+ (inlined by) cache_hal_resume at /home/tjc/esp/esp-idf/components/hal/cache_hal.c:212 (discriminator 4)
+[0m
+[0;33m--- 0x4037c489: spi_flash_restore_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:379
+[0m
+[0;33m--- 0x40376055: panic_enable_cache at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:231
+ (inlined by) xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:251
+[0m
+[0;33m--- 0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+[0m
+[0;33m--- 0x40375ea5: esp_restart_noos at /home/tjc/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:105
+[0m
+[0;33m--- 0x420045ce: panic_restart at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:264
+[0m
+[0;33m--- 0x42004552: panic_handler at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:218
+[0m
+[0;33m--- 0x4037605f: xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:253
+[0m
+[0;33m--- 0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+[0m
+[0;33m--- 0x4004f422: Cache_Resume_ICache in ROM
+[0m
+[0;33m--- 0x400570e8: memset in ROM
+0x400570f3: memset in ROM
+[0m
+[0;33m--- 0x4004f41f: Cache_Resume_ICache in ROM
+0x40386660: cache_ll_l1_resume_icache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:251 (discriminator 4)
+ (inlined by) cache_ll_resume_cache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:286 (discriminator 4)
+ (inlined by) cache_hal_resume at /home/tjc/esp/esp-idf/components/hal/cache_hal.c:212 (discriminator 4)
+0x4037c489: spi_flash_restore_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:379
+0x4037c60b: spi_flash_enable_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:368
+0x40376055: panic_enable_cache at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:231
+ (inlined by) xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:251
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+0x4004f2d0: Cache_Disable_ICache in ROM
+0x40375ea5: esp_restart_noos at /home/tjc/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:105
+0x420045ce: panic_restart at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:264
+0x420042b2: esp_panic_handler at /home/tjc/esp/esp-idf/components/esp_system/panic.c:439
+0x42004552: panic_handler at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:218
+0x4037605f: xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:253
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+0x4004f41f: Cache_Resume_ICache in ROM
+0x40386660: cache_ll_l1_resume_icache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:251 (discriminator 4)
+ (inlined by) cache_ll_resume_cache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:286 (discriminator 4)
+ (inlined by) cache_hal_resume at /home/tjc/esp/esp-idf/components/hal/cache_hal.c:212 (discriminator 4)
+0x4037c489: spi_flash_restore_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:379
+0x4037c60b: spi_flash_enable_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:368
+0x40376055: panic_enable_cache at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:231
+ (inlined by) xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:251
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+0x4004f2d0: Cache_Disable_ICache in ROM
+0x40375ea5: esp_restart_noos at /home/tjc/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:105
+0x420045ce: panic_restart at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:264
+0x420042b2: esp_panic_handler at /home/tjc/esp/esp-idf/components/esp_system/panic.c:439
+0x42004552: panic_handler at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:218
+0x4037605f: xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:253
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+0x4004f41f: Cache_Resume_ICache in ROM
+0x40386660: cache_ll_l1_resume_icache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:251 (discriminator 4)
+ (inlined by) cache_ll_resume_cache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:286 (discriminator 4)
+ (inlined by) cache_hal_resume at /home/tjc/esp/esp-idf/components/hal/cache_hal.c:212 (discriminator 4)
+0x4037c489: spi_flash_restore_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:379
+0x4037c60b: spi_flash_enable_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:368
+0x40376055: panic_enable_cache at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:231
+ (inlined by) xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:251
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+0x4004f2d0: Cache_Disable_ICache in ROM
+0x40375ea5: esp_restart_noos at /home/tjc/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:105
+0x420045ce: panic_restart at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:264
+0x420042b2: esp_panic_handler at /home/tjc/esp/esp-idf/components/esp_system/panic.c:439
+0x42004552: panic_handler at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:218
+0x4037605f: xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:253
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+0x4004f41f: Cache_Resume_ICache in ROM
+0x40386660: cache_ll_l1_resume_icache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:251 (discriminator 4)
+ (inlined by) cache_ll_resume_cache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:286 (discriminator 4)
+ (inlined by) cache_hal_resume at /home/tjc/esp/esp-idf/components/hal/cache_hal.c:212 (discriminator 4)
+0x4037c489: spi_flash_restore_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:379
+0x4037c60b: spi_flash_enable_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:368
+0x40376055: panic_enable_cache at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:231
+ (inlined by) xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:251
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+0x4004f2d0: Cache_Disable_ICache in ROM
+0x40375ea5: esp_restart_noos at /home/tjc/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:105
+0x420045ce: panic_restart at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:264
+0x420042b2: esp_panic_handler at /home/tjc/esp/esp-idf/components/esp_system/panic.c:439
+0x42004552: panic_handler at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:218
+0x4037605f: xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:253
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+0x4004f41f: Cache_Resume_ICache in ROM
+0x40386660: cache_ll_l1_resume_icache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:251 (discriminator 4)
+ (inlined by) cache_ll_resume_cache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:286 (discriminator 4)
+ (inlined by) cache_hal_resume at /home/tjc/esp/esp-idf/components/hal/cache_hal.c:212 (discriminator 4)
+0x4037c489: spi_flash_restore_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:379
+0x4037c60b: spi_flash_enable_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:368
+0x40376055: panic_enable_cache at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:231
+ (inlined by) xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:251
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+0x4004f2d0: Cache_Disable_ICache in ROM
+0x40375ea5: esp_restart_noos at /home/tjc/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:105
+0x420045ce: panic_restart at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:264
+0x420042b2: esp_panic_handler at /home/tjc/esp/esp-idf/components/esp_system/panic.c:439
+0x42004552: panic_handler at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:218
+0x4037605f: xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:253
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+0x4004f41f: Cache_Resume_ICache in ROM
+0x40386660: cache_ll_l1_resume_icache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:251 (discriminator 4)
+ (inlined by) cache_ll_resume_cache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:286 (discriminator 4)
+ (inlined by) cache_hal_resume at /home/tjc/esp/esp-idf/components/hal/cache_hal.c:212 (discriminator 4)
+0x4037c489: spi_flash_restore_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:379
+0x4037c60b: spi_flash_enable_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:368
+0x40376055: panic_enable_cache at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:231
+ (inlined by) xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:251
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+0x4004f2d0: Cache_Disable_ICache in ROM
+0x40375ea5: esp_restart_noos at /home/tjc/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:105
+0x420045ce: panic_restart at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:264
+0x420042b2: esp_panic_handler at /home/tjc/esp/esp-idf/components/esp_system/panic.c:439
+0x42004552: panic_handler at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:218
+0x4037605f: xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:253
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+[0m
+[0;33m--- 0x4004f422: Cache_Resume_ICache in ROM
+[0m
+[0;33m--- 0x400570e8: memset in ROM
+0x400570f3: memset in ROM
+[0m
+[0;33m--- 0x4004f41f: Cache_Resume_ICache in ROM
+0x40386660: cache_ll_l1_resume_icache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:251 (discriminator 4)
+ (inlined by) cache_ll_resume_cache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:286 (discriminator 4)
+ (inlined by) cache_hal_resume at /home/tjc/esp/esp-idf/components/hal/cache_hal.c:212 (discriminator 4)
+0x4037c489: spi_flash_restore_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:379
+0x4037c60b: spi_flash_enable_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:368
+0x40376055: panic_enable_cache at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:231
+ (inlined by) xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:251
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+0x4004f2d0: Cache_Disable_ICache in ROM
+0x40375ea5: esp_restart_noos at /home/tjc/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:105
+0x420045ce: panic_restart at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:264
+0x420042b2: esp_panic_handler at /home/tjc/esp/esp-idf/components/esp_system/panic.c:439
+0x42004552: panic_handler at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:218
+0x4037605f: xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:253
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+0x4004f41f: Cache_Resume_ICache in ROM
+0x40386660: cache_ll_l1_resume_icache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:251 (discriminator 4)
+ (inlined by) cache_ll_resume_cache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:286 (discriminator 4)
+ (inlined by) cache_hal_resume at /home/tjc/esp/esp-idf/components/hal/cache_hal.c:212 (discriminator 4)
+0x4037c489: spi_flash_restore_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:379
+0x4037c60b: spi_flash_enable_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:368
+0x40376055: panic_enable_cache at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:231
+ (inlined by) xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:251
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+0x4004f2d0: Cache_Disable_ICache in ROM
+0x40375ea5: esp_restart_noos at /home/tjc/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:105
+0x420045ce: panic_restart at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:264
+0x420042b2: esp_panic_handler at /home/tjc/esp/esp-idf/components/esp_system/panic.c:439
+0x42004552: panic_handler at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:218
+0x4037605f: xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:253
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+0x4004f41f: Cache_Resume_ICache in ROM
+0x40386660: cache_ll_l1_resume_icache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:251 (discriminator 4)
+ (inlined by) cache_ll_resume_cache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:286 (discriminator 4)
+ (inlined by) cache_hal_resume at /home/tjc/esp/esp-idf/components/hal/cache_hal.c:212 (discriminator 4)
+0x4037c489: spi_flash_restore_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:379
+0x4037c60b: spi_flash_enable_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:368
+0x40376055: panic_enable_cache at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:231
+ (inlined by) xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:251
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+0x4004f2d0: Cache_Disable_ICache in ROM
+0x40375ea5: esp_restart_noos at /home/tjc/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:105
+0x420045ce: panic_restart at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:264
+0x420042b2: esp_panic_handler at /home/tjc/esp/esp-idf/components/esp_system/panic.c:439
+0x42004552: panic_handler at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:218
+0x4037605f: xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:253
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+0x4004f41f: Cache_Resume_ICache in ROM
+0x40386660: cache_ll_l1_resume_icache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:251 (discriminator 4)
+ (inlined by) cache_ll_resume_cache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:286 (discriminator 4)
+ (inlined by) cache_hal_resume at /home/tjc/esp/esp-idf/components/hal/cache_hal.c:212 (discriminator 4)
+0x4037c489: spi_flash_restore_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:379
+0x4037c60b: spi_flash_enable_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:368
+0x40376055: panic_enable_cache at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:231
+ (inlined by) xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:251
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+0x4004f2d0: Cache_Disable_ICache in ROM
+0x40375ea5: esp_restart_noos at /home/tjc/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:105
+0x420045ce: panic_restart at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:264
+0x420042b2: esp_panic_handler at /home/tjc/esp/esp-idf/components/esp_system/panic.c:439
+0x42004552: panic_handler at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:218
+0x4037605f: xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:253
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+0x4004f41f: Cache_Resume_ICache in ROM
+0x40386660: cache_ll_l1_resume_icache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:251 (discriminator 4)
+ (inlined by) cache_ll_resume_cache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:286 (discriminator 4)
+ (inlined by) cache_hal_resume at /home/tjc/esp/esp-idf/components/hal/cache_hal.c:212 (discriminator 4)
+0x4037c489: spi_flash_restore_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:379
+0x4037c60b: spi_flash_enable_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:368
+0x40376055: panic_enable_cache at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:231
+ (inlined by) xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:251
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+0x4004f2d0: Cache_Disable_ICache in ROM
+0x40375ea5: esp_restart_noos at /home/tjc/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:105
+0x420045ce: panic_restart at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:264
+0x420042b2: esp_panic_handler at /home/tjc/esp/esp-idf/components/esp_system/panic.c:439
+0x42004552: panic_handler at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:218
+0x4037605f: xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:253
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+0x4004f41f: Cache_Resume_ICache in ROM
+0x40386660: cache_ll_l1_resume_icache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:251 (discriminator 4)
+ (inlined by) cache_ll_resume_cache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:286 (discriminator 4)
+ (inlined by) cache_hal_resume at /home/tjc/esp/esp-idf/components/hal/cache_hal.c:212 (discriminator 4)
+0x4037c489: spi_flash_restore_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:379
+0x4037c60b: spi_flash_enable_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:368
+0x40376055: panic_enable_cache at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:231
+ (inlined by) xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:251
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+0x4004f2d0: Cache_Disable_ICache in ROM
+0x40375ea5: esp_restart_noos at /home/tjc/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:105
+0x420045ce: panic_restart at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:264
+0x420042b2: esp_panic_handler at /home/tjc/esp/esp-idf/components/esp_system/panic.c:439
+0x42004552: panic_handler at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:218
+0x4037605f: xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:253
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+0x4004f41f: Cache_Resume_ICache in ROM
+0x40386660: cache_ll_l1_resume_icache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:251 (discriminator 4)
+ (inlined by) cache_ll_resume_cache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:286 (discriminator 4)
+ (inlined by) cache_hal_resume at /home/tjc/esp/esp-idf/components/hal/cache_hal.c:212 (discriminator 4)
+0x4037c489: spi_flash_restore_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:379
+0x4037c60b: spi_flash_enable_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:368
+0x40376055: panic_enable_cache at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:231
+ (inlined by) xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:251
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+0x4004f2d0: Cache_Disable_ICache in ROM
+0x40375ea5: esp_restart_noos at /home/tjc/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:105
+0x420045ce: panic_restart at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:264
+0x420042b2: esp_panic_handler at /home/tjc/esp/esp-idf/components/esp_system/panic.c:439
+0x42004552: panic_handler at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:218
+0x4037605f: xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:253
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+[0m
+[0;33m--- 0x4004f422: Cache_Resume_ICache in ROM
+[0m
+[0;33m--- 0x400570e8: memset in ROM
+0x400570f3: memset in ROM
+[0m
+[0;33m--- 0x4004f41f: Cache_Resume_ICache in ROM
+0x40386660: cache_ll_l1_resume_icache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:251 (discriminator 4)
+ (inlined by) cache_ll_resume_cache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:286 (discriminator 4)
+ (inlined by) cache_hal_resume at /home/tjc/esp/esp-idf/components/hal/cache_hal.c:212 (discriminator 4)
+0x4037c489: spi_flash_restore_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:379
+0x4037c60b: spi_flash_enable_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:368
+0x40376055: panic_enable_cache at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:231
+ (inlined by) xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:251
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+0x4004f2d0: Cache_Disable_ICache in ROM
+0x40375ea5: esp_restart_noos at /home/tjc/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:105
+0x420045ce: panic_restart at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:264
+0x420042b2: esp_panic_handler at /home/tjc/esp/esp-idf/components/esp_system/panic.c:439
+0x42004552: panic_handler at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:218
+0x4037605f: xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:253
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+0x4004f41f: Cache_Resume_ICache in ROM
+0x40386660: cache_ll_l1_resume_icache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:251 (discriminator 4)
+ (inlined by) cache_ll_resume_cache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:286 (discriminator 4)
+ (inlined by) cache_hal_resume at /home/tjc/esp/esp-idf/components/hal/cache_hal.c:212 (discriminator 4)
+0x4037c489: spi_flash_restore_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:379
+0x4037c60b: spi_flash_enable_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:368
+0x40376055: panic_enable_cache at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:231
+ (inlined by) xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:251
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+0x4004f2d0: Cache_Disable_ICache in ROM
+0x40375ea5: esp_restart_noos at /home/tjc/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:105
+0x420045ce: panic_restart at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:264
+0x420042b2: esp_panic_handler at /home/tjc/esp/esp-idf/components/esp_system/panic.c:439
+0x42004552: panic_handler at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:218
+0x4037605f: xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:253
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+0x4004f41f: Cache_Resume_ICache in ROM
+0x40386660: cache_ll_l1_resume_icache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:251 (discriminator 4)
+ (inlined by) cache_ll_resume_cache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:286 (discriminator 4)
+ (inlined by) cache_hal_resume at /home/tjc/esp/esp-idf/components/hal/cache_hal.c:212 (discriminator 4)
+0x4037c489: spi_flash_restore_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:379
+0x4037c60b: spi_flash_enable_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:368
+0x40376055: panic_enable_cache at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:231
+ (inlined by) xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:251
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+0x4004f2d0: Cache_Disable_ICache in ROM
+0x40375ea5: esp_restart_noos at /home/tjc/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:105
+0x420045ce: panic_restart at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:264
+0x420042b2: esp_panic_handler at /home/tjc/esp/esp-idf/components/esp_system/panic.c:439
+0x42004552: panic_handler at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:218
+0x4037605f: xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:253
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+0x4004f41f: Cache_Resume_ICache in ROM
+0x40386660: cache_ll_l1_resume_icache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:251 (discriminator 4)
+ (inlined by) cache_ll_resume_cache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:286 (discriminator 4)
+ (inlined by) cache_hal_resume at /home/tjc/esp/esp-idf/components/hal/cache_hal.c:212 (discriminator 4)
+0x4037c489: spi_flash_restore_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:379
+0x4037c60b: spi_flash_enable_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:368
+0x40376055: panic_enable_cache at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:231
+ (inlined by) xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:251
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+0x4004f2d0: Cache_Disable_ICache in ROM
+0x40375ea5: esp_restart_noos at /home/tjc/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:105
+0x420045ce: panic_restart at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:264
+0x420042b2: esp_panic_handler at /home/tjc/esp/esp-idf/components/esp_system/panic.c:439
+0x42004552: panic_handler at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:218
+0x4037605f: xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:253
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+0x4004f41f: Cache_Resume_ICache in ROM
+0x40386660: cache_ll_l1_resume_icache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:251 (discriminator 4)
+ (inlined by) cache_ll_resume_cache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:286 (discriminator 4)
+ (inlined by) cache_hal_resume at /home/tjc/esp/esp-idf/components/hal/cache_hal.c:212 (discriminator 4)
+0x4037c489: spi_flash_restore_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:379
+0x4037c60b: spi_flash_enable_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:368
+0x40376055: panic_enable_cache at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:231
+ (inlined by) xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:251
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+0x4004f2d0: Cache_Disable_ICache in ROM
+0x40375ea5: esp_restart_noos at /home/tjc/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:105
+0x420045ce: panic_restart at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:264
+0x420042b2: esp_panic_handler at /home/tjc/esp/esp-idf/components/esp_system/panic.c:439
+0x42004552: panic_handler at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:218
+0x4037605f: xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:253
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+0x4004f41f: Cache_Resume_ICache in ROM
+0x40386660: cache_ll_l1_resume_icache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:251 (discriminator 4)
+ (inlined by) cache_ll_resume_cache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:286 (discriminator 4)
+ (inlined by) cache_hal_resume at /home/tjc/esp/esp-idf/components/hal/cache_hal.c:212 (discriminator 4)
+0x4037c489: spi_flash_restore_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:379
+0x4037c60b: spi_flash_enable_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:368
+0x40376055: panic_enable_cache at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:231
+ (inlined by) xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:251
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+0x4004f2d0: Cache_Disable_ICache in ROM
+0x40375ea5: esp_restart_noos at /home/tjc/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:105
+0x420045ce: panic_restart at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:264
+0x420042b2: esp_panic_handler at /home/tjc/esp/esp-idf/components/esp_system/panic.c:439
+[0m
+[0;33m--- 0x42004552: panic_handler at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:218
+[0m
+[0;33m--- 0x4037605f: xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:253
+[0m
+[0;33m--- 0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+[0m
+[0;33m--- 0x4004f41f: Cache_Resume_ICache in ROM
+[0m
+[0;33m--- 0x4037c489: spi_flash_restore_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:379
+[0m
+[0;33m--- 0x4037c60b: spi_flash_enable_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:368
+[0m
+[0;33m--- 0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+[0m
+[0;33m--- 0x4004f2d0: Cache_Disable_ICache in ROM
+[0m
+[0;33m--- 0x420045ce: panic_restart at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:264
+[0m
+[0;33m--- 0x420042b2: esp_panic_handler at /home/tjc/esp/esp-idf/components/esp_system/panic.c:439
+[0m
+[0;33m--- 0x4037605f: xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:253
+[0m
+[0;33m--- 0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+[0m
+[0;33m--- 0x4004f41f: Cache_Resume_ICache in ROM
+[0m
+[0;33m--- 0x40386660: cache_ll_l1_resume_icache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:251 (discriminator 4)
+ (inlined by) cache_ll_resume_cache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:286 (discriminator 4)
+ (inlined by) cache_hal_resume at /home/tjc/esp/esp-idf/components/hal/cache_hal.c:212 (discriminator 4)
+[0m
+[0;33m--- 0x4037c489: spi_flash_restore_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:379
+[0m
+[0;33m--- 0x4037c60b: spi_flash_enable_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:368
+[0m
+[0;33m--- 0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+[0m
+[0;33m--- 0x4004f2d0: Cache_Disable_ICache in ROM
+[0m
+[0;33m--- 0x420045ce: panic_restart at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:264
+[0m
+[0;33m--- 0x420042b2: esp_panic_handler at /home/tjc/esp/esp-idf/components/esp_system/panic.c:439
+[0m
+[0;33m--- 0x4004f422: Cache_Resume_ICache in ROM
+[0m
+[0;33m--- 0x400570e8: memset in ROM
+0x400570f3: memset in ROM
+[0m
+[0;33m--- 0x4004f41f: Cache_Resume_ICache in ROM
+0x40386660: cache_ll_l1_resume_icache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:251 (discriminator 4)
+ (inlined by) cache_ll_resume_cache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:286 (discriminator 4)
+ (inlined by) cache_hal_resume at /home/tjc/esp/esp-idf/components/hal/cache_hal.c:212 (discriminator 4)
+0x4037c489: spi_flash_restore_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:379
+0x4037c60b: spi_flash_enable_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:368
+0x40376055: panic_enable_cache at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:231
+ (inlined by) xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:251
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+0x4004f2d0: Cache_Disable_ICache in ROM
+0x40375ea5: esp_restart_noos at /home/tjc/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:105
+0x420045ce: panic_restart at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:264
+0x420042b2: esp_panic_handler at /home/tjc/esp/esp-idf/components/esp_system/panic.c:439
+0x42004552: panic_handler at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:218
+0x4037605f: xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:253
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+0x4004f41f: Cache_Resume_ICache in ROM
+0x40386660: cache_ll_l1_resume_icache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:251 (discriminator 4)
+ (inlined by) cache_ll_resume_cache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:286 (discriminator 4)
+ (inlined by) cache_hal_resume at /home/tjc/esp/esp-idf/components/hal/cache_hal.c:212 (discriminator 4)
+0x4037c489: spi_flash_restore_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:379
+0x4037c60b: spi_flash_enable_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:368
+0x40376055: panic_enable_cache at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:231
+ (inlined by) xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:251
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+0x4004f2d0: Cache_Disable_ICache in ROM
+0x40375ea5: esp_restart_noos at /home/tjc/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:105
+0x420045ce: panic_restart at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:264
+0x420042b2: esp_panic_handler at /home/tjc/esp/esp-idf/components/esp_system/panic.c:439
+0x42004552: panic_handler at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:218
+0x4037605f: xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:253
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+0x4004f41f: Cache_Resume_ICache in ROM
+0x40386660: cache_ll_l1_resume_icache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:251 (discriminator 4)
+ (inlined by) cache_ll_resume_cache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:286 (discriminator 4)
+ (inlined by) cache_hal_resume at /home/tjc/esp/esp-idf/components/hal/cache_hal.c:212 (discriminator 4)
+0x4037c489: spi_flash_restore_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:379
+0x4037c60b: spi_flash_enable_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:368
+0x40376055: panic_enable_cache at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:231
+ (inlined by) xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:251
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+0x4004f2d0: Cache_Disable_ICache in ROM
+0x40375ea5: esp_restart_noos at /home/tjc/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:105
+0x420045ce: panic_restart at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:264
+0x420042b2: esp_panic_handler at /home/tjc/esp/esp-idf/components/esp_system/panic.c:439
+0x42004552: panic_handler at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:218
+0x4037605f: xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:253
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+0x4004f41f: Cache_Resume_ICache in ROM
+0x40386660: cache_ll_l1_resume_icache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:251 (discriminator 4)
+ (inlined by) cache_ll_resume_cache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:286 (discriminator 4)
+ (inlined by) cache_hal_resume at /home/tjc/esp/esp-idf/components/hal/cache_hal.c:212 (discriminator 4)
+0x4037c489: spi_flash_restore_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:379
+0x4037c60b: spi_flash_enable_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:368
+0x40376055: panic_enable_cache at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:231
+ (inlined by) xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:251
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+0x4004f2d0: Cache_Disable_ICache in ROM
+0x40375ea5: esp_restart_noos at /home/tjc/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:105
+0x420045ce: panic_restart at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:264
+0x420042b2: esp_panic_handler at /home/tjc/esp/esp-idf/components/esp_system/panic.c:439
+0x42004552: panic_handler at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:218
+0x4037605f: xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:253
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+0x4004f41f: Cache_Resume_ICache in ROM
+0x40386660: cache_ll_l1_resume_icache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:251 (discriminator 4)
+ (inlined by) cache_ll_resume_cache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:286 (discriminator 4)
+ (inlined by) cache_hal_resume at /home/tjc/esp/esp-idf/components/hal/cache_hal.c:212 (discriminator 4)
+0x4037c489: spi_flash_restore_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:379
+0x4037c60b: spi_flash_enable_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:368
+0x40376055: panic_enable_cache at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:231
+ (inlined by) xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:251
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+0x4004f2d0: Cache_Disable_ICache in ROM
+0x40375ea5: esp_restart_noos at /home/tjc/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:105
+0x420045ce: panic_restart at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:264
+0x420042b2: esp_panic_handler at /home/tjc/esp/esp-idf/components/esp_system/panic.c:439
+0x42004552: panic_handler at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:218
+0x4037605f: xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:253
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+0x4004f41f: Cache_Resume_ICache in ROM
+0x40386660: cache_ll_l1_resume_icache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:251 (discriminator 4)
+ (inlined by) cache_ll_resume_cache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:286 (discriminator 4)
+ (inlined by) cache_hal_resume at /home/tjc/esp/esp-idf/components/hal/cache_hal.c:212 (discriminator 4)
+0x4037c489: spi_flash_restore_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:379
+0x4037c60b: spi_flash_enable_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:368
+0x40376055: panic_enable_cache at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:231
+ (inlined by) xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:251
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+0x4004f2d0: Cache_Disable_ICache in ROM
+0x40375ea5: esp_restart_noos at /home/tjc/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:105
+0x420045ce: panic_restart at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:264
+0x420042b2: esp_panic_handler at /home/tjc/esp/esp-idf/components/esp_system/panic.c:439
+0x42004552: panic_handler at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:218
+0x4037605f: xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:253
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+0x4004f41f: Cache_Resume_ICache in ROM
+0x40386660: cache_ll_l1_resume_icache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:251 (discriminator 4)
+ (inlined by) cache_ll_resume_cache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:286 (discriminator 4)
+ (inlined by) cache_hal_resume at /home/tjc/esp/esp-idf/components/hal/cache_hal.c:212 (discriminator 4)
+0x4037c489: spi_flash_restore_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:379
+0x4037c60b: spi_flash_enable_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:368
+0x40376055: panic_enable_cache at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:231
+ (inlined by) xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:251
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+0x4004f2d0: Cache_Disable_ICache in ROM
+0x40375ea5: esp_restart_noos at /home/tjc/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:105
+0x420045ce: panic_restart at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:264
+0x420042b2: esp_panic_handler at /home/tjc/esp/esp-idf/components/esp_system/panic.c:439
+0x42004552: panic_handler at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:218
+0x4037605f: xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:253
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+0x4004f41f: Cache_Resume_ICache in ROM
+0x40386660: cache_ll_l1_resume_icache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:251 (discriminator 4)
+ (inlined by) cache_ll_resume_cache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:286 (discriminator 4)
+ (inlined by) cache_hal_resume at /home/tjc/esp/esp-idf/components/hal/cache_hal.c:212 (discriminator 4)
+0x4037c489: spi_flash_restore_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:379
+0x4037c60b: spi_flash_enable_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:368
+0x40376055: panic_enable_cache at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:231
+ (inlined by) xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:251
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+0x4004f2d0: Cache_Disable_ICache in ROM
+0x40375ea5: esp_restart_noos at /home/tjc/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:105
+0x420045ce: panic_restart at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:264
+0x420042b2: esp_panic_handler at /home/tjc/esp/esp-idf/components/esp_system/panic.c:439
+[0m
+[0;33m--- 0x4004f422: Cache_Resume_ICache in ROM
+[0m
+[0;33m--- 0x400570e8: memset in ROM
+0x400570f3: memset in ROM
+[0m
+[0;33m--- 0x4004f41f: Cache_Resume_ICache in ROM
+0x40386660: cache_ll_l1_resume_icache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:251 (discriminator 4)
+ (inlined by) cache_ll_resume_cache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:286 (discriminator 4)
+ (inlined by) cache_hal_resume at /home/tjc/esp/esp-idf/components/hal/cache_hal.c:212 (discriminator 4)
+0x4037c489: spi_flash_restore_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:379
+0x4037c60b: spi_flash_enable_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:368
+0x40376055: panic_enable_cache at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:231
+ (inlined by) xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:251
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+0x4004f2d0: Cache_Disable_ICache in ROM
+0x40375ea5: esp_restart_noos at /home/tjc/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:105
+0x420045ce: panic_restart at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:264
+0x420042b2: esp_panic_handler at /home/tjc/esp/esp-idf/components/esp_system/panic.c:439
+0x42004552: panic_handler at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:218
+0x4037605f: xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:253
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+0x4004f41f: Cache_Resume_ICache in ROM
+0x40386660: cache_ll_l1_resume_icache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:251 (discriminator 4)
+ (inlined by) cache_ll_resume_cache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:286 (discriminator 4)
+ (inlined by) cache_hal_resume at /home/tjc/esp/esp-idf/components/hal/cache_hal.c:212 (discriminator 4)
+0x4037c489: spi_flash_restore_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:379
+0x4037c60b: spi_flash_enable_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:368
+0x40376055: panic_enable_cache at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:231
+ (inlined by) xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:251
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+0x4004f2d0: Cache_Disable_ICache in ROM
+0x40375ea5: esp_restart_noos at /home/tjc/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:105
+0x420045ce: panic_restart at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:264
+0x420042b2: esp_panic_handler at /home/tjc/esp/esp-idf/components/esp_system/panic.c:439
+0x42004552: panic_handler at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:218
+0x4037605f: xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:253
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+0x4004f41f: Cache_Resume_ICache in ROM
+0x40386660: cache_ll_l1_resume_icache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:251 (discriminator 4)
+ (inlined by) cache_ll_resume_cache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:286 (discriminator 4)
+ (inlined by) cache_hal_resume at /home/tjc/esp/esp-idf/components/hal/cache_hal.c:212 (discriminator 4)
+0x4037c489: spi_flash_restore_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:379
+0x4037c60b: spi_flash_enable_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:368
+0x40376055: panic_enable_cache at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:231
+ (inlined by) xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:251
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+0x4004f2d0: Cache_Disable_ICache in ROM
+0x40375ea5: esp_restart_noos at /home/tjc/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:105
+0x420045ce: panic_restart at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:264
+0x420042b2: esp_panic_handler at /home/tjc/esp/esp-idf/components/esp_system/panic.c:439
+0x42004552: panic_handler at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:218
+0x4037605f: xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:253
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+0x4004f41f: Cache_Resume_ICache in ROM
+0x40386660: cache_ll_l1_resume_icache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:251 (discriminator 4)
+ (inlined by) cache_ll_resume_cache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:286 (discriminator 4)
+ (inlined by) cache_hal_resume at /home/tjc/esp/esp-idf/components/hal/cache_hal.c:212 (discriminator 4)
+0x4037c489: spi_flash_restore_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:379
+0x4037c60b: spi_flash_enable_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:368
+0x40376055: panic_enable_cache at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:231
+ (inlined by) xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:251
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+0x4004f2d0: Cache_Disable_ICache in ROM
+0x40375ea5: esp_restart_noos at /home/tjc/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:105
+0x420045ce: panic_restart at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:264
+0x420042b2: esp_panic_handler at /home/tjc/esp/esp-idf/components/esp_system/panic.c:439
+0x42004552: panic_handler at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:218
+0x4037605f: xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:253
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+0x4004f41f: Cache_Resume_ICache in ROM
+0x40386660: cache_ll_l1_resume_icache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:251 (discriminator 4)
+ (inlined by) cache_ll_resume_cache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:286 (discriminator 4)
+ (inlined by) cache_hal_resume at /home/tjc/esp/esp-idf/components/hal/cache_hal.c:212 (discriminator 4)
+0x4037c489: spi_flash_restore_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:379
+0x4037c60b: spi_flash_enable_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:368
+0x40376055: panic_enable_cache at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:231
+ (inlined by) xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:251
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+0x4004f2d0: Cache_Disable_ICache in ROM
+0x40375ea5: esp_restart_noos at /home/tjc/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:105
+0x420045ce: panic_restart at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:264
+0x420042b2: esp_panic_handler at /home/tjc/esp/esp-idf/components/esp_system/panic.c:439
+0x42004552: panic_handler at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:218
+0x4037605f: xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:253
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+0x4004f41f: Cache_Resume_ICache in ROM
+0x40386660: cache_ll_l1_resume_icache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:251 (discriminator 4)
+ (inlined by) cache_ll_resume_cache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:286 (discriminator 4)
+ (inlined by) cache_hal_resume at /home/tjc/esp/esp-idf/components/hal/cache_hal.c:212 (discriminator 4)
+0x4037c489: spi_flash_restore_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:379
+0x4037c60b: spi_flash_enable_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:368
+0x40376055: panic_enable_cache at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:231
+ (inlined by) xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:251
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+0x4004f2d0: Cache_Disable_ICache in ROM
+0x40375ea5: esp_restart_noos at /home/tjc/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:105
+0x420045ce: panic_restart at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:264
+0x420042b2: esp_panic_handler at /home/tjc/esp/esp-idf/components/esp_system/panic.c:439
+0x42004552: panic_handler at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:218
+0x4037605f: xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:253
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+0x4004f41f: Cache_Resume_ICache in ROM
+0x40386660: cache_ll_l1_resume_icache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:251 (discriminator 4)
+ (inlined by) cache_ll_resume_cache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:286 (discriminator 4)
+ (inlined by) cache_hal_resume at /home/tjc/esp/esp-idf/components/hal/cache_hal.c:212 (discriminator 4)
+0x4037c489: spi_flash_restore_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:379
+0x4037c60b: spi_flash_enable_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:368
+0x40376055: panic_enable_cache at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:231
+ (inlined by) xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:251
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+0x4004f2d0: Cache_Disable_ICache in ROM
+0x40375ea5: esp_restart_noos at /home/tjc/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:105
+0x420045ce: panic_restart at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:264
+0x420042b2: esp_panic_handler at /home/tjc/esp/esp-idf/components/esp_system/panic.c:439
+0x42004552: panic_handler at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:218
+0x4037605f: xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:253
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+0x4004f41f: Cache_Resume_ICache in ROM
+0x40386660: cache_ll_l1_resume_icache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:251 (discriminator 4)
+ (inlined by) cache_ll_resume_cache at /home/tjc/esp/esp-idf/components/hal/esp32s3/include/hal/cache_ll.h:286 (discriminator 4)
+ (inlined by) cache_hal_resume at /home/tjc/esp/esp-idf/components/hal/cache_hal.c:212 (discriminator 4)
+0x4037c489: spi_flash_restore_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:379
+0x4037c60b: spi_flash_enable_cache at /home/tjc/esp/esp-idf/components/spi_flash/cache_utils.c:368
+0x40376055: panic_enable_cache at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:231
+ (inlined by) xt_unhandled_exception at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:251
+0x4037ba48: _xt_handle_exc at /home/tjc/esp/esp-idf/components/xtensa/xtensa_vectors.S:805
+0x4004f2d0: Cache_Disable_ICache in ROM
+0x40375ea5: esp_restart_noos at /home/tjc/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:105
+0x420045ce: panic_restart at /home/tjc/esp/esp-idf/components/esp_system/port/panic_handler.c:264
+0x420042b2: esp_panic_handler at /home/tjc/esp/esp-idf/components/esp_system/panic.c:439
+[0m
+[0;33m--- 0x40041a76: ets_delay_us in ROM
+[0m
+[0;33m--- 0x40041a76: ets_delay_us in ROM
+[0m
+[0;33m--- 0x40041a76: ets_delay_us in ROM
+[0m
+[0m

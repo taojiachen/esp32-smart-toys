@@ -1,0 +1,29 @@
+[0;33m--- esp-idf-monitor 1.5.0 on /dev/ttyUSB0 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0;33m--- 0x40056f60: memcpy in ROM
+[0m
+[0;33m--- 0x40056f5c: memcpy in ROM
+0x40056f72: memcpy in ROM
+[0m
+[0;33m--- 0x40056f5d: memcpy in ROM
+0x4208205a: i2s_channel_read at /home/tjc/esp/esp-idf/components/esp_driver_i2s/i2s_common.c:1263
+0x4200da71: bsp_i2s_read at /home/tjc/esp/develop/esp-ai/build/../components/hardware_driver/boards/esp32-s3/bsp_board.c:116
+0x4200d8ad: esp_i2s_read at /home/tjc/esp/develop/esp-ai/build/../components/hardware_driver/esp_board_init.c:25
+0x4200b97c: audio_feed_task at /home/tjc/esp/develop/esp-ai/build/../main/app/app_sr.c:67
+[0m
+[0;33m--- 0x4037f9ae: esp_cpu_wait_for_intr at /home/tjc/esp/esp-idf/components/esp_hw_support/cpu.c:64
+[0m
+[0;33m--- 0x40056f60: memcpy in ROM
+[0m
+[0;33m--- 0x40056f5c: memcpy in ROM
+0x40056f72: memcpy in ROM
+[0m
+[0;33m--- 0x40056f5d: memcpy in ROM
+0x4208205a: i2s_channel_read at /home/tjc/esp/esp-idf/components/esp_driver_i2s/i2s_common.c:1263
+0x4200da71: bsp_i2s_read at /home/tjc/esp/develop/esp-ai/build/../components/hardware_driver/boards/esp32-s3/bsp_board.c:116
+0x4200d8ad: esp_i2s_read at /home/tjc/esp/develop/esp-ai/build/../components/hardware_driver/esp_board_init.c:25
+0x4200b97c: audio_feed_task at /home/tjc/esp/develop/esp-ai/build/../main/app/app_sr.c:67
+[0m
+[0;33m--- 0x4037f9ae: esp_cpu_wait_for_intr at /home/tjc/esp/esp-idf/components/esp_hw_support/cpu.c:64
+[0m
+[0m

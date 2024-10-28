@@ -1,0 +1,725 @@
+[0;32mI (163) esp_image: segment 1: paddr=00063e28 vaddr=3f�ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x28 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x1918
+load:0x403c8700,len:0x4
+load:0x403c8704,len:0xe5c
+load:0x403cb700,len:0x303c
+entry 0x403c893c
+[0;32mI (27) boot: ESP-IDF v5.3.1-dirty 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Oct 25 2024 14:16:11[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v0.2[0m
+[0;32mI (34) qio_mode: Enabling default flash chip QIO[0m
+[0;32mI (40) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (44) boot.esp32s3: SPI Mode       : QIO[0m
+[0;32mI (49) boot.esp32s3: SPI Flash Size : 16MB[0m
+[0;32mI (54) boot: Enabling RNG early entropy source...[0m
+[0;32mI (59) boot: Partition Table:[0m
+[0;32mI (63) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (70) boot:  0 nvs              WiFi data        01 02 00010000 00006000[0m
+[0;32mI (78) boot:  1 fctry            WiFi data        01 02 00016000 00006000[0m
+[0;32mI (85) boot:  2 factory          factory app      00 00 00020000 00400000[0m
+[0;32mI (93) boot:  3 storage          Unknown data     01 82 00420000 00600000[0m
+[0;32mI (100) boot:  4 model            Unknown data     01 82 00a20000 0050c000[0m
+[0;32mI (108) boot: End of partition table[0m
+[0;32mI (112) esp_image: segment 0: paddr=00020020 vaddr=3c120020 size=43e00h (278016) map[0m
+[0;32mI (163) esp_image: segment 1: paddr=00063e28 vaddr=3fc9b900 size=082fch ( 33532) load[0m
+[0;32mI (169) esp_image: segment 2: paddr=0006c12c vaddr=40374000 size=03eech ( 16108) load[0m
+[0;32mI (172) esp_image: segment 3: paddr=00070020 vaddr=42000020 size=1105e8h (1115624) map[0m
+[0;32mI (346) esp_image: segment 4: paddr=00180610 vaddr=40377eec size=13958h ( 80216) load[0m
+[0;32mI (362) esp_image: segment 5: paddr=00193f70 vaddr=50000000 size=00004h (     4) load[0m
+[0;32mI (372) boot: Loaded app from partition at offset 0x20000[0m
+[0;32mI (372) boot: Disabling RNG early entropy source...[0m
+[0;33mW (384) flash HPM: HPM mode is optional feature that depends on flash model. Read Docs First![0m
+[0;33mW (385) flash HPM: HPM mode with DC adjustment is disabled. Some flash models may not be supported. Read Docs First![0m
+[0;33mW (393) flash HPM: High performance mode of this flash model hasn't been supported.[0m
+[0;32mI (402) MSPI Timing: Flash timing tuning index: 2[0m
+[0;32mI (407) octal_psram: vendor id    : 0x0d (AP)[0m
+[0;32mI (412) octal_psram: dev id       : 0x02 (generation 3)[0m
+[0;32mI (418) octal_psram: density      : 0x03 (64 Mbit)[0m
+[0;32mI (424) octal_psram: good-die     : 0x01 (Pass)[0m
+[0;32mI (429) octal_psram: Latency      : 0x01 (Fixed)[0m
+[0;32mI (434) octal_psram: VCC          : 0x01 (3V)[0m
+[0;32mI (439) octal_psram: SRF          : 0x01 (Fast Refresh)[0m
+[0;32mI (445) octal_psram: BurstType    : 0x01 (Hybrid Wrap)[0m
+[0;32mI (451) octal_psram: BurstLen     : 0x01 (32 Byte)[0m
+[0;32mI (456) octal_psram: Readlatency  : 0x02 (10 cycles@Fixed)[0m
+[0;32mI (462) octal_psram: DriveStrength: 0x00 (1/1)[0m
+[0;32mI (474) MSPI Timing: PSRAM timing tuning index: 1[0m
+[0;32mI (474) esp_psram: Found 8MB PSRAM device[0m
+[0;32mI (478) esp_psram: Speed: 120MHz[0m
+[0;32mI (496) mmu_psram: Read only data copied and mapped to SPIRAM[0m
+[0;32mI (560) mmu_psram: Instructions copied and mapped to SPIRAM[0m
+[0;32mI (560) cpu_start: Multicore app[0m
+[0;32mI (734) esp_psram: SPI SRAM memory test OK[0m
+[0;32mI (742) cpu_start: Pro cpu start user code[0m
+[0;32mI (742) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (742) app_init: Application information:[0m
+[0;32mI (745) app_init: Project name:     esp-ai[0m
+[0;32mI (750) app_init: App version:      1[0m
+[0;32mI (754) app_init: Compile time:     Oct 25 2024 14:15:58[0m
+[0;32mI (760) app_init: ELF file SHA256:  5db5ab774...[0m
+[0;32mI (766) app_init: ESP-IDF:          v5.3.1-dirty[0m
+[0;32mI (771) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (776) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (781) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (785) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (793) heap_init: At 3FCAB0F8 len 0003E618 (249 KiB): RAM[0m
+[0;32mI (799) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (805) heap_init: At 600FE100 len 00001EE8 (7 KiB): RTCRAM[0m
+[0;32mI (811) esp_psram: Adding pool of 6720K of PSRAM memory to heap allocator[0m
+[0;32mI (819) spi_flash: detected chip: generic[0m
+[0;32mI (823) spi_flash: flash io: qio[0m
+[0;32mI (827) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (834) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (841) coexist: coex firmware version: 4482466[0m
+[0;32mI (861) coexist: coexist rom version e7ae62f[0m
+[0;32mI (862) main_task: Started on CPU0[0m
+[0;32mI (863) esp_psram: Reserving pool of 32K of internal memory for DMA/internal allocations[0m
+[0;32mI (868) main_task: Calling app_main()[0m
+[0;32mI (878) pp: pp rom version: e7ae62f[0m
+[0;32mI (879) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (883) wifi:wifi driver task: 3fcbd0e8, prio:23, stack:6656, core=0[0m
+[0;32mI (892) wifi:wifi firmware version: ccaebfa[0m
+[0;32mI (892) wifi:wifi certification version: v7.0[0m
+[0;32mI (896) wifi:config NVS flash: enabled[0m
+[0;32mI (900) wifi:config nano formating: disabled[0m
+[0;32mI (904) wifi:Init data frame dynamic rx buffer num: 6[0m
+[0;32mI (908) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (913) wifi:Init management short buffer num: 6[0m
+[0;32mI (917) wifi:Init static tx buffer num: 16[0m
+[0;32mI (921) wifi:Init tx cache buffer num: 32[0m
+[0;32mI (924) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (928) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (933) wifi:Init static rx buffer num: 3[0m
+[0;32mI (936) wifi:Init dynamic rx buffer num: 6[0m
+[0;32mI (940) wifi_init: accept mbox: 6[0m
+[0;32mI (944) wifi_init: tcpip mbox: 16[0m
+[0;32mI (948) wifi_init: udp mbox: 6[0m
+[0;32mI (952) wifi_init: tcp mbox: 6[0m
+[0;32mI (955) wifi_init: tcp tx win: 5760[0m
+[0;32mI (960) wifi_init: tcp rx win: 5760[0m
+[0;32mI (964) wifi_init: tcp mss: 1440[0m
+[0;32mI (968) wifi_init: WiFi/LWIP prefer SPIRAM[0m
+[0;32mI (973) phy_init: phy_version 680,a6008b2,Jun  4 2024,16:41:10[0m
+[0;33mW (1008) phy_init: saving new calibration data because of checksum failure, mode(0)[0m
+[0;32mI (1082) wifi:mode : sta (f0:9e:9e:22:22:dc)[0m
+[0;32mI (1082) wifi:enable tsf[0m
+[0;32mI (1083) BLE_INIT: BT controller compile version [aa16a46][0m
+[0;32mI (1084) BLE_INIT: Bluetooth MAC: f0:9e:9e:22:22:de[0m
+[0;32mI (1097) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1097) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1101) BLUFI_EXAMPLE: BD ADDR: f0:9e:9e:22:22:de
+[0m
+[0;32mI (1106) BLUFI_EXAMPLE: BLUFI init finish
+[0m
+[0;32mI (1107) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1117) BLUFI_EXAMPLE: BLUFI VERSION 0103
+[0m
+[0;32mI (1119) sntp: Boot count: 1[0m
+[0;32mI (1123) sntp: Time is not set yet. Connecting to WiFi and getting time over NTP.[0m
+[0;32mI (1131) sntp: Initializing SNTP[0m
+[0;32mI (1135) sntp: Waiting for system time to be set... (1/10)[0m
+[0;32mI (1164) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1228) wifi:connected with TJC, aid = 12, channel 1, BW20, bssid = fe:e3:bf:ca:bb:97[0m
+[0;32mI (1228) wifi:security: WPA2-PSK, phy: bgn, rssi: -32[0m
+[0;32mI (1230) wifi:pm start, type: 1[0m
+
+[0;32mI (1232) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1240) wifi:set rx beacon pti, rx_bcn_pti: 14, bcn_timeout: 25000, mt_pti: 14, mt_time: 10000[0m
+[0;32mI (1263) wifi:dp: 2, bi: 102400, li: 4, scale listen interval from 307200 us to 409600 us[0m
+[0;32mI (1264) wifi:AP's beacon interval = 102400 us, DTIM period = 2[0m
+[0;32mI (2249) esp_netif_handlers: sta ip: 192.168.100.76, mask: 255.255.255.0, gw: 192.168.100.201[0m
+[0;32mI (2249) BLUFI_EXAMPLE: BLUFI BLE is not connected yet
+[0m
+[0;32mI (3141) sntp: Waiting for system time to be set... (2/10)[0m
+[0;32mI (3418) sntp: Notification of a time synchronization event, sec=1729839156[0m
+[0;32mI (5141) sntp: The current date/time in Shanghai is: Fri Oct 25 14:52:38 2024[0m
+[0;33mW (5141) i2s_platform: i2s controller 0 has been occupied by i2s_driver[0m
+[0;31mE (5145) board: 麦克风, 扬声器, 初始化成功, i2s初始化完毕![0m
+[0;32mI (5152) MODEL_LOADER: The storage free size is 24576 KB[0m
+[0;32mI (5158) MODEL_LOADER: The partition size is 5168 KB[0m
+[0;32mI (5164) MODEL_LOADER: Successfully load srmodels[0m
+[0;32mI (5169) AFE_SR: afe interface for speech recognition
+[0m
+[0;32mI (5175) AFE_SR: AFE version: SR_V220727
+[0m
+[0;32mI (5180) AFE_SR: Initial auido front-end, total channel: 3, mic num: 2, ref num: 1
+[0m
+[0;32mI (5188) AFE_SR: aec_init: 0, se_init: 1, vad_init: 1
+[0m
+[0;32mI (5194) AFE_SR: wakenet_init: 1
+[0m
+MC Quantized wakenet9: wakenet9_v1h24_嗨，乐鑫_3_0.608_0.615, tigger:v3, mode:2, p:0, (Sep  4 2024 11:49:31)
+[0;32mI (5309) AFE_SR: wake num: 3, mode: 0, (Sep  4 2024 11:49:31)
+[0m
+[0;32mI (5309) app_sr: load wakenet:wn9_hilexin[0m
+Build fst from commands.
+Quantized MultiNet7:rnnt_ctc_2.0, name:mn7_cn, (Sep  4 2024 11:49:30)
+Quantized MultiNet7 search method: 2, time out:5.8 s
+[0;32mI (6173) app_sr: load multinet:mn7_cn[0m
+Build fst from commands.
+[0;32mI (6200) MN_COMMAND: ---------------------SPEECH COMMANDS---------------------[0m
+[0;32mI (6200) MN_COMMAND: Command ID0, phrase ID0: da kai kong qi jing hua qi[0m
+[0;32mI (6205) MN_COMMAND: Command ID1, phrase ID1: guan bi kong qi jing hua qi[0m
+[0;32mI (6212) MN_COMMAND: Command ID2, phrase ID2: da kai tai deng[0m
+[0;32mI (6218) MN_COMMAND: Command ID3, phrase ID3: guan bi tai deng[0m
+[0;32mI (6225) MN_COMMAND: Command ID4, phrase ID4: tai deng tiao liang[0m
+[0;32mI (6232) MN_COMMAND: Command ID5, phrase ID5: tai deng tiao an[0m
+[0;32mI (6238) MN_COMMAND: Command ID6, phrase ID6: da kai deng dai[0m
+[0;32mI (6245) MN_COMMAND: Command ID7, phrase ID7: guan bi deng dai[0m
+[0;32mI (6251) MN_COMMAND: Command ID8, phrase ID8: bo fang yin yue[0m
+[0;32mI (6258) MN_COMMAND: Command ID9, phrase ID9: ting zhi bo fang[0m
+[0;32mI (6264) MN_COMMAND: Command ID10, phrase ID10: da kai shi jian[0m
+[0;32mI (6271) MN_COMMAND: Command ID11, phrase ID11: da kai ri li[0m
+[0;32mI (6277) MN_COMMAND: ---------------------------------------------------------
+[0m
+12 active speech commands:
+Command 0: da kai kong qi jing hua qi
+Command 1: guan bi kong qi jing hua qi
+Command 2: da kai tai deng
+Command 3: guan bi tai deng
+Command 4: tai deng tiao liang
+Command 5: tai deng tiao an
+Command 6: da kai deng dai
+Command 7: guan bi deng dai
+Command 8: bo fang yin yue
+Command 9: ting zhi bo fang
+Command 10: da kai shi jian
+Command 11: da kai ri li
+[0;32mI (6319) app_sr: audio_chunksize=1024, feed_channel=3[0m
+[0;32mI (6319) app_sr: ------------detect start------------
+[0m
+[0;31mE (6325) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (6331) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (6325) app_sr_handler: ======== sr_handler_task running ==========[0m
+[0;31mE (6346) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (6352) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (6365) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (6419) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (6422) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (6428) app_sr: ======== audio_detect_task running ==========[0m
+[0;32mI (6470) board: Partition size: total: 5775761, used: 2258498[0m
+[0;32mI (6470) main: Free memory after start: 318499 bytes[0m
+[0;31mE (6482) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (6486) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (6490) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (6546) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (6552) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (6556) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (6610) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (6613) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (6619) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (6674) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (6678) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (6681) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (6738) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (6744) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (6748) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (6802) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (6805) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (6811) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (6866) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (6870) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (6873) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (6930) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (6936) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (6940) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (6994) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (6998) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (7003) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (7058) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (7062) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (7065) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (7122) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (7128) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (7132) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (7186) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (7189) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (7195) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (7250) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (7254) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (7257) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (7314) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (7320) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (7324) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (7378) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (7381) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (7387) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (7442) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (7446) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (7449) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (7506) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (7512) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (7516) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (7570) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (7573) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (7579) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (7634) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (7638) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (7641) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (7698) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (7704) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (7708) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (7762) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (7765) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (7771) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (7827) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (7830) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (7833) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (7890) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (7896) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (7900) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (7954) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (7957) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (7963) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (8018) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (8022) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (8025) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (8082) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (8088) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (8092) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (8146) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (8149) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (8155) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (8210) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (8214) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (8217) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (8274) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (8280) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (8284) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (8338) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (8341) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (8347) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (8402) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (8406) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (8409) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (8466) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (8472) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (8476) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (8530) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (8534) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (8539) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (8594) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (8598) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (8601) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (8658) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (8664) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (8668) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (8722) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (8725) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (8731) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (8786) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (8790) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (8793) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (8850) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (8856) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (8860) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (8914) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (8917) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (8923) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (8978) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (8982) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (8985) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (9042) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (9048) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (9052) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (9106) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (9109) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (9115) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (9170) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (9174) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (9177) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (9234) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (9240) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (9244) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (9298) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (9302) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (9307) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (9362) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (9366) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (9369) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (9426) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (9432) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (9436) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (9490) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (9493) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (9499) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (9554) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (9558) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (9561) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (9618) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (9624) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (9628) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (9682) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (9685) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (9691) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (9746) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (9750) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (9753) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (9810) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (9816) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (9820) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (9874) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (9877) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (9883) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (9938) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (9942) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (9945) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (10002) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (10008) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (10012) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (10066) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (10070) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (10075) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (10130) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (10134) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (10137) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (10194) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (10200) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (10204) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (10258) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (10261) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (10267) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (10322) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (10326) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (10329) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (10386) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (10392) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (10396) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (10450) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (10453) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (10459) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (10514) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (10518) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (10521) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (10578) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (10584) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (10588) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (10642) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (10645) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (10651) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (10706) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (10710) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (10713) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (10770) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (10776) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (10780) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (10834) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (10837) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (10843) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (10898) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (10902) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (10905) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (10962) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (10968) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (10972) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (11026) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (11030) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (11035) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (11090) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (11094) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (11097) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (11154) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (11160) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (11164) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (11218) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (11221) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (11227) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (11282) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (11286) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (11289) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (11346) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (11352) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (11356) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (11410) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (11413) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (11419) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (11474) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (11478) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (11481) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (11538) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (11544) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (11548) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (11602) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (11606) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (11611) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (11666) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (11670) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (11673) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (11730) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (11736) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (11740) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (11794) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (11797) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (11803) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (11858) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (11862) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (11865) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (11922) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (11928) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (11932) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (11986) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (11989) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (11995) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (12050) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (12054) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (12057) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (12114) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (12120) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (12124) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (12178) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (12181) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (12187) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (12242) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (12246) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (12249) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (12306) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (12312) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (12316) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (12370) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (12373) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (12379) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (12434) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (12438) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (12441) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (12498) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (12504) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (12508) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (12562) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (12565) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (12571) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (12626) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (12630) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (12633) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (12690) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (12696) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (12700) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (12754) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (12757) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (12763) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (12818) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (12822) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (12825) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (12882) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (12888) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (12892) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (12946) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (12949) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (12955) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (13010) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (13014) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (13017) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (13074) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (13080) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (13084) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (13138) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (13142) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (13147) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (13202) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (13206) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (13209) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (13266) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (13272) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (13276) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (13330) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (13334) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (13339) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (13394) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (13398) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (13401) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (13458) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (13464) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (13468) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (13522) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (13525) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (13531) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (13586) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (13590) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (13593) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (13650) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (13656) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (13660) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (13714) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (13717) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (13723) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (13778) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (13782) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (13785) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (13842) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (13848) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (13852) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (13906) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (13909) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (13915) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (13970) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (13974) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (13977) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (14034) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (14040) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (14044) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (14098) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (14101) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (14107) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (14162) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (14166) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (14169) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (14226) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (14232) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (14236) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (14290) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (14293) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (14299) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (14354) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (14358) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (14361) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (14418) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (14424) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (14428) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (14482) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (14485) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (14491) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (14546) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (14550) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (14553) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (14610) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (14616) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (14620) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (14674) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (14678) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (14683) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (14738) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (14742) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (14745) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (14802) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (14808) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (14812) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (14866) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (14869) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (14875) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (14930) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (14934) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (14937) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (14994) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (15000) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (15004) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (15058) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (15061) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (15067) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (15122) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (15126) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (15129) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (15186) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (15192) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (15196) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (15250) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (15253) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (15259) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (15314) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (15318) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (15321) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (15378) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (15384) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (15388) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (15442) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (15445) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (15451) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (15506) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (15510) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (15513) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (15570) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (15576) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (15580) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (15634) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (15638) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (15643) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (15698) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (15702) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (15705) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (15762) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (15768) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (15772) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (15826) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (15829) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (15835) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (15890) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (15894) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (15897) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (15954) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (15960) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (15964) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (16018) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (16021) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (16027) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (16082) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (16086) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (16089) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (16146) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (16152) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (16156) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (16210) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (16214) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (16219) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (16274) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (16278) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (16281) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (16338) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (16344) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (16348) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (16402) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (16405) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (16411) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (16466) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (16470) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (16473) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (16530) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (16536) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (16540) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (16594) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (16597) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (16603) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (16658) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (16662) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (16665) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (16722) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (16728) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (16732) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (16786) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (16789) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (16795) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (16850) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (16854) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (16857) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (16914) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (16920) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (16924) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (16978) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (16982) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (16987) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (17042) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (17046) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (17049) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (17106) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (17112) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (17116) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (17170) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (17173) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (17179) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (17234) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (17238) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (17241) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (17298) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (17304) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (17308) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (17362) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (17365) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (17371) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (17426) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (17430) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (17433) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (17490) board: i2s正在读取数据!(麦克风)[0m
+[0;31mE (17496) app_sr: ======== audio_detect_task running ==========[0m
+[0;31mE (17500) app_sr: ======== audio_detect_task running ==========[0m

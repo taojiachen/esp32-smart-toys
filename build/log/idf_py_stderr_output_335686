@@ -1,0 +1,105 @@
+[0;33m--- esp-idf-monitor 1.5.0 on /dev/ttyUSB0 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0;33m--- 0x40375fda: panic_abort at /home/tjc/esp/esp-idf/components/esp_system/panic.c:463
+0x40382cfd: esp_system_abort at /home/tjc/esp/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x403896d9: __assert_func at /home/tjc/esp/esp-idf/components/newlib/assert.c:80
+0x403888e1: remove_free_block at /home/tjc/esp/esp-idf/components/heap/tlsf/tlsf.c:330 (discriminator 1)
+ (inlined by) block_locate_free at /home/tjc/esp/esp-idf/components/heap/tlsf/tlsf.c:567 (discriminator 1)
+ (inlined by) tlsf_malloc at /home/tjc/esp/esp-idf/components/heap/tlsf/tlsf.c:1015 (discriminator 1)
+0x4038835f: multi_heap_malloc_impl at /home/tjc/esp/esp-idf/components/heap/multi_heap.c:211
+0x40376b47: aligned_or_unaligned_alloc at /home/tjc/esp/esp-idf/components/heap/heap_caps_base.c:77
+ (inlined by) heap_caps_aligned_alloc_base at /home/tjc/esp/esp-idf/components/heap/heap_caps_base.c:150
+0x40376b69: heap_caps_malloc_base at /home/tjc/esp/esp-idf/components/heap/heap_caps_base.c:170
+0x4037674f: heap_caps_malloc_prefer at /home/tjc/esp/esp-idf/components/heap/heap_caps.c:180
+0x4037d911: wifi_malloc at /home/tjc/esp/esp-idf/components/esp_wifi/esp32s3/esp_adapter.c:71
+0x420bea0b: ieee80211_timer_process at ??:?
+0x420c736b: pp_timer_process at ??:?
+0x420c4805: lmac_stop_hw_txq at ??:?
+0x4207d62d: timer_process_alarm at /home/tjc/esp/esp-idf/components/esp_timer/src/esp_timer.c:456
+ (inlined by) timer_task at /home/tjc/esp/esp-idf/components/esp_timer/src/esp_timer.c:482
+[0m
+[0;33m--- 0x40375f38: esp_restart_noos at /home/tjc/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:158
+[0m
+[0;33m--- 0x40375fda: panic_abort at /home/tjc/esp/esp-idf/components/esp_system/panic.c:463
+0x40382cfd: esp_system_abort at /home/tjc/esp/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x403896d9: __assert_func at /home/tjc/esp/esp-idf/components/newlib/assert.c:80
+0x403888f2: remove_free_block at /home/tjc/esp/esp-idf/components/heap/tlsf/tlsf.c:331 (discriminator 1)
+ (inlined by) block_locate_free at /home/tjc/esp/esp-idf/components/heap/tlsf/tlsf.c:567 (discriminator 1)
+ (inlined by) tlsf_malloc at /home/tjc/esp/esp-idf/components/heap/tlsf/tlsf.c:1015 (discriminator 1)
+0x4038835f: multi_heap_malloc_impl at /home/tjc/esp/esp-idf/components/heap/multi_heap.c:211
+0x40376b47: aligned_or_unaligned_alloc at /home/tjc/esp/esp-idf/components/heap/heap_caps_base.c:77
+ (inlined by) heap_caps_aligned_alloc_base at /home/tjc/esp/esp-idf/components/heap/heap_caps_base.c:150
+0x40376b69: heap_caps_malloc_base at /home/tjc/esp/esp-idf/components/heap/heap_caps_base.c:170
+0x403765fd: heap_caps_malloc at /home/tjc/esp/esp-idf/components/heap/heap_caps.c:84
+0x4200a497: esp_vfs_register_common at /home/tjc/esp/esp-idf/components/vfs/vfs.c:90
+0x4200a555: esp_vfs_register at /home/tjc/esp/esp-idf/components/vfs/vfs.c:127 (discriminator 1)
+0x42075c89: esp_vfs_spiffs_register at /home/tjc/esp/esp-idf/components/spiffs/esp_spiffs.c:453
+0x4200da7b: bsp_spiffs_mount at /home/tjc/esp/develop/esp-ai/build/../components/hardware_driver/boards/esp32-s3/bsp_board.c:168
+0x4200d83b: esp_spiffs_mount at /home/tjc/esp/develop/esp-ai/build/../components/hardware_driver/esp_board_init.c:10
+0x4200b510: app_main at /home/tjc/esp/develop/esp-ai/build/../main/main.c:35
+0x4210f7d3: main_task at /home/tjc/esp/esp-idf/components/freertos/app_startup.c:208
+[0m
+[0;33m--- 0x40375f38: esp_restart_noos at /home/tjc/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:158
+[0m
+[0;33m--- 0x403888f5: remove_free_block at /home/tjc/esp/esp-idf/components/heap/tlsf/tlsf.c:332
+ (inlined by) block_locate_free at /home/tjc/esp/esp-idf/components/heap/tlsf/tlsf.c:567
+ (inlined by) tlsf_malloc at /home/tjc/esp/esp-idf/components/heap/tlsf/tlsf.c:1015
+[0m
+[0;33m--- 0x4208433c: dns_alloc_pcb at /home/tjc/esp/esp-idf/components/lwip/lwip/src/core/dns.c:968
+ (inlined by) dns_enqueue at /home/tjc/esp/esp-idf/components/lwip/lwip/src/core/dns.c:1553
+ (inlined by) dns_gethostbyname_addrtype at /home/tjc/esp/esp-idf/components/lwip/lwip/src/core/dns.c:1722
+0x42084348: dns_alloc_pcb at /home/tjc/esp/esp-idf/components/lwip/lwip/src/core/dns.c:967 (discriminator 1)
+ (inlined by) dns_enqueue at /home/tjc/esp/esp-idf/components/lwip/lwip/src/core/dns.c:1553 (discriminator 1)
+ (inlined by) dns_gethostbyname_addrtype at /home/tjc/esp/esp-idf/components/lwip/lwip/src/core/dns.c:1722 (discriminator 1)
+[0m
+[0;33m--- 0x403888f2: remove_free_block at /home/tjc/esp/esp-idf/components/heap/tlsf/tlsf.c:331 (discriminator 1)
+ (inlined by) block_locate_free at /home/tjc/esp/esp-idf/components/heap/tlsf/tlsf.c:567 (discriminator 1)
+ (inlined by) tlsf_malloc at /home/tjc/esp/esp-idf/components/heap/tlsf/tlsf.c:1015 (discriminator 1)
+0x4038835f: multi_heap_malloc_impl at /home/tjc/esp/esp-idf/components/heap/multi_heap.c:211
+0x40376b47: aligned_or_unaligned_alloc at /home/tjc/esp/esp-idf/components/heap/heap_caps_base.c:77
+ (inlined by) heap_caps_aligned_alloc_base at /home/tjc/esp/esp-idf/components/heap/heap_caps_base.c:150
+0x40376b69: heap_caps_malloc_base at /home/tjc/esp/esp-idf/components/heap/heap_caps_base.c:170
+0x4037674f: heap_caps_malloc_prefer at /home/tjc/esp/esp-idf/components/heap/heap_caps.c:180
+0x42084564: mem_malloc at /home/tjc/esp/esp-idf/components/lwip/lwip/src/core/mem.c:209
+0x420845f8: do_memp_malloc_pool at /home/tjc/esp/esp-idf/components/lwip/lwip/src/core/memp.c:254
+0x42084637: memp_malloc at /home/tjc/esp/esp-idf/components/lwip/lwip/src/core/memp.c:350
+0x4208c519: udp_new at /home/tjc/esp/esp-idf/components/lwip/lwip/src/core/udp.c:1240
+ (inlined by) udp_new_ip_type at /home/tjc/esp/esp-idf/components/lwip/lwip/src/core/udp.c:1278
+0x4208445d: dns_alloc_random_port at /home/tjc/esp/esp-idf/components/lwip/lwip/src/core/dns.c:933
+ (inlined by) dns_alloc_pcb at /home/tjc/esp/esp-idf/components/lwip/lwip/src/core/dns.c:973
+ (inlined by) dns_enqueue at /home/tjc/esp/esp-idf/components/lwip/lwip/src/core/dns.c:1553
+ (inlined by) dns_gethostbyname_addrtype at /home/tjc/esp/esp-idf/components/lwip/lwip/src/core/dns.c:1722
+0x420844a5: dns_gethostbyname at /home/tjc/esp/esp-idf/components/lwip/lwip/src/core/dns.c:1607
+0x42083395: sntp_request at /home/tjc/esp/esp-idf/components/lwip/lwip/src/apps/sntp/sntp.c:621
+0x4208b976: sys_check_timeouts at /home/tjc/esp/esp-idf/components/lwip/lwip/src/core/timeouts.c:403
+0x42083040: tcpip_timeouts_mbox_fetch at /home/tjc/esp/esp-idf/components/lwip/lwip/src/api/tcpip.c:98
+ (inlined by) tcpip_thread at /home/tjc/esp/esp-idf/components/lwip/lwip/src/api/tcpip.c:142
+[0m
+[0;33m--- 0x40375f38: esp_restart_noos at /home/tjc/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:158
+[0m
+[0;33m--- 0x403888f5: remove_free_block at /home/tjc/esp/esp-idf/components/heap/tlsf/tlsf.c:332
+ (inlined by) block_locate_free at /home/tjc/esp/esp-idf/components/heap/tlsf/tlsf.c:567
+ (inlined by) tlsf_malloc at /home/tjc/esp/esp-idf/components/heap/tlsf/tlsf.c:1015
+[0m
+[0;33m--- 0x400556d5: strlen in ROM
+0x400556e5: strlen in ROM
+[0m
+[0;33m--- 0x403888f2: remove_free_block at /home/tjc/esp/esp-idf/components/heap/tlsf/tlsf.c:331 (discriminator 1)
+ (inlined by) block_locate_free at /home/tjc/esp/esp-idf/components/heap/tlsf/tlsf.c:567 (discriminator 1)
+ (inlined by) tlsf_malloc at /home/tjc/esp/esp-idf/components/heap/tlsf/tlsf.c:1015 (discriminator 1)
+0x4038835f: multi_heap_malloc_impl at /home/tjc/esp/esp-idf/components/heap/multi_heap.c:211
+0x40376b47: aligned_or_unaligned_alloc at /home/tjc/esp/esp-idf/components/heap/heap_caps_base.c:77
+ (inlined by) heap_caps_aligned_alloc_base at /home/tjc/esp/esp-idf/components/heap/heap_caps_base.c:150
+0x40376b69: heap_caps_malloc_base at /home/tjc/esp/esp-idf/components/heap/heap_caps_base.c:170
+0x403765fd: heap_caps_malloc at /home/tjc/esp/esp-idf/components/heap/heap_caps.c:84
+0x4200a497: esp_vfs_register_common at /home/tjc/esp/esp-idf/components/vfs/vfs.c:90
+0x4200a555: esp_vfs_register at /home/tjc/esp/esp-idf/components/vfs/vfs.c:127 (discriminator 1)
+0x42075c89: esp_vfs_spiffs_register at /home/tjc/esp/esp-idf/components/spiffs/esp_spiffs.c:453
+0x4200da7b: bsp_spiffs_mount at /home/tjc/esp/develop/esp-ai/build/../components/hardware_driver/boards/esp32-s3/bsp_board.c:168
+0x4200d83b: esp_spiffs_mount at /home/tjc/esp/develop/esp-ai/build/../components/hardware_driver/esp_board_init.c:10
+0x4200b510: app_main at /home/tjc/esp/develop/esp-ai/build/../main/main.c:35
+0x4210f7d3: main_task at /home/tjc/esp/esp-idf/components/freertos/app_startup.c:208
+[0m
+[0;33m--- 0x40375f38: esp_restart_noos at /home/tjc/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:158
+[0m
+[0m

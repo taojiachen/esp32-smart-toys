@@ -1,0 +1,138 @@
+78120) map[0m
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x29 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x1918
+load:0x403c8700,len:0x4
+load:0x403c8704,len:0xe5c
+load:0x403cb700,len:0x303c
+entry 0x403c893c
+[0;32mI (27) boot: ESP-IDF v5.3.1-dirty 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Oct 25 2024 14:16:11[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v0.2[0m
+[0;32mI (34) qio_mode: Enabling default flash chip QIO[0m
+[0;32mI (40) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (44) boot.esp32s3: SPI Mode       : QIO[0m
+[0;32mI (49) boot.esp32s3: SPI Flash Size : 16MB[0m
+[0;32mI (54) boot: Enabling RNG early entropy source...[0m
+[0;32mI (59) boot: Partition Table:[0m
+[0;32mI (63) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (70) boot:  0 nvs              WiFi data        01 02 00010000 00006000[0m
+[0;32mI (78) boot:  1 fctry            WiFi data        01 02 00016000 00006000[0m
+[0;32mI (85) boot:  2 factory          factory app      00 00 00020000 00400000[0m
+[0;32mI (93) boot:  3 storage          Unknown data     01 82 00420000 00600000[0m
+[0;32mI (100) boot:  4 model            Unknown data     01 82 00a20000 0050c000[0m
+[0;32mI (108) boot: End of partition table[0m
+[0;32mI (112) esp_image: segment 0: paddr=00020020 vaddr=3c120020 size=43e68h (278120) map[0m
+[0;32mI (163) esp_image: segment 1: paddr=00063e90 vaddr=3fc9b900 size=082fch ( 33532) load[0m
+[0;32mI (169) esp_image: segment 2: paddr=0006c194 vaddr=40374000 size=03e84h ( 16004) load[0m
+[0;32mI (172) esp_image: segment 3: paddr=00070020 vaddr=42000020 size=11072ch (1115948) map[0m
+[0;32mI (346) esp_image: segment 4: paddr=00180754 vaddr=40377e84 size=139c0h ( 80320) load[0m
+[0;32mI (362) esp_image: segm[0;32mI (734) esp_psram: SPI SRAM memory test OK[0m
+[0;32mI (742) cpu_start: Pro cpu start user code[0m
+[0;32mI (742) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (742) app_init: Application information:[0m
+[0;32mI (745) app_init: Project name:     esp-ai[0m
+[0;32mI (750) app_init: App version:      1[0m
+[0;32mI (754) app_init: Compile time:     Oct 26 2024 21:38:18[0m
+[0;32mI (760) app_init: ELF file SHA256:  4bfbe2d31...[0m
+[0;32mI (766) app_init: ESP-IDF:          v5.3.1-dirty[0m
+[0;32mI (771) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (776) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (781) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (786) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (793) heap_init: At 3FCAB0F8 len 0003E618 (249 KiB): RAM[0m
+[0;32mI (799) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (805) heap_init: At 600FE100 len 00001EE8 (7 KiB): RTCRAM[0m
+[0;32mI (811) esp_psram: Adding pool of 6720K of PSRAM memory to heap allocator[0m
+[0;32mI (819) spi_flash: detected chip: generic[0m
+[0;32mI (823) spi_flash: flash io: qio[0m
+[0;32mI (827) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (834) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (841) coexist: coex firmware version: 4482466[0m
+[0;32mI (861) coexist: coexist rom version e7ae62f[0m
+[0;32mI (862) main_task: Started on CPU0[0m
+[0;32mI (863) esp_psram: Reserving pool of 32K of internal memory for DMA/internal allocations[0m
+[0;32mI (868) main_task: Calling app_main()[0m
+[0;32mI (942) pp: pp rom version: e7ae62f[0m
+[0;32mI (942) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (944) wifi:wifi driver task: 3fcbcf20, prio:23, stack:6656, core=0[0m
+[0;32mI (948) wifi:wifi firmware version: ccaebfa[0m
+[0;32mI (950) wifi:wifi certification version: v7.0[0m
+[0;32mI (954) wifi:config NVS flash: enabled[0m
+[0;32mI (958) wifi:config nano formating: disabled[0m
+[0;32mI (962) wifi:Init data frame dynamic rx buffer num: 6[0m
+[0;32mI (967) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (971) wifi:Init management short buffer num: 6[0m
+[0;32mI (975) wifi:Init static tx buffer num: 16[0m
+[0;32mI (979) wifi:Init tx cache buffer num: 32[0m
+[0;32mI (983) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (987) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (991) wifi:Init static rx buffer num: 3[0m
+[0;32mI (994) wifi:Init dynamic rx buffer num: 6[0m
+[0;32mI (998) wifi_init: accept mbox: 6[0m
+[0;32mI (1002) wifi_init: tcpip mbox: 16[0m
+[0;32mI (1006) wifi_init: udp mbox: 6[0m
+[0;32mI (1010) wifi_init: tcp mbox: 6[0m
+[0;32mI (1014) wifi_init: tcp tx win: 5760[0m
+[0;32mI (1018) wifi_init: tcp rx win: 5760[0m
+[0;32mI (1022) wifi_init: tcp mss: 1440[0m
+[0;32mI (1026) wifi_init: WiFi/LWIP prefer SPIRAM[0m
+[0;32mI (1032) phy_init: phy_version 680,a6008b2,Jun  4 2024,16:41:10[0m
+[0;33mW (1038) phy_init: failed to load RF calibration data (0x1102), falling back to full calibration[0m
+[0;33mW (1079) phy_init: saving new calibration data because of checksum failure, mode(2)[0m
+[0;32mI (1088) wifi:mode : sta (f0:9e:9e:22:22:dc)[0m
+[0;32mI (1088) wifi:enable tsf[0m
+[0;32mI (1089) BLE_INIT: BT controller compile version [aa16a46][0m
+[0;32mI (1089) BLE_INIT: Bluetooth MAC: f0:9e:9e:22:22:de[0m
+[0;32mI (1102) BLUFI_EXAMPLE: BD ADDR: f0:9e:9e:22:22:de
+[0m
+[0;32mI (1103) BLUFI_EXAMPLE: BLUFI init finish
+[0m
+[0;32mI (1107) BLUFI_EXAMPLE: BLUFI VERSION 0103
+[0m
+[0;32mI (1110) sntp: Boot count: 1[0m
+[0;32mI (1114) sntp: Time is not set yet. Connecting to WiFi and getting time over NTP.[0m
+[0;32mI (1122) sntp: Initializing SNTP[0m
+[0;32mI (1126) sntp: Waiting for system time to be set... (1/10)[0m
+[0;32mI (3132) sntp: Waiting for system time to be set... (2/10)[0m
+[0;32mI (5132) sntp: Waiting for system time to be set... (3/10)[0m
+[0;32mI (5783) BLUFI_EXAMPLE: BLUFI ble connect
+[0m
+[0;32mI (7132) sntp: Waiting for system time to be set... (4/10)[0m
+[0;32mI (8142) BLUFI_EXAMPLE: BLUFI Set WIFI opmode 1
+[0m
+[0;32mI (8241) BLUFI_EXAMPLE: Recv STA SSID 208
+[0m
+[0;33mW (8241) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (8253) BLUFI_EXAMPLE: Recv STA PASSWORD iot208208208
+[0m
+[0;32mI (8262) BLUFI_EXAMPLE: BLUFI requset wifi connect to AP
+[0m
+[0;32mI (9132) sntp: Waiting for system time to be set... (5/10)[0m
+[0;32mI (11132) sntp: Waiting for system time to be set... (6/10)[0m
+[0;32mI (13068) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (13069) BLUFI_EXAMPLE: BLUFI WiFi starts reconnection
+[0m
+[0;32mI (13132) sntp: Waiting for system time to be set... (7/10)[0m
+[0;32mI (15132) sntp: Waiting for system time to be set... (8/10)[0m
+[0;32mI (17132) sntp: Waiting for system time to be set... (9/10)[0m
+[0;32mI (17876) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (17876) BLUFI_EXAMPLE: BLUFI WiFi starts reconnection
+[0m
+[0;32mI (19132) sntp: The current date/time in Shanghai is: Thu Jan  1 08:00:18 1970[0m
+[0;33mW (19132) i2s_common: dma framBuild fst from commands.
+Quantized MultiNet7:rnnt_ctc_2.0, name:mn7_cn, (Sep  4 2024 11:49:30)
+Quantized MultiNet7 search method: 2, time out:5.8 s
+[0[0;32mI (20661) board: Partition size: total: 5775761, used: 2258498[0m
+[0;32mI (20661) main: Free memory after start: 318499 bytes[0m
+[0;32mI (22684) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;33mW (53847) BT_HCI: hcif disc complete: hdl 0x1, rsn 0x13[0m
+[0;32mI (53847) BLUFI_EXAMPLE: BLUFI ble disconnect
+[0m

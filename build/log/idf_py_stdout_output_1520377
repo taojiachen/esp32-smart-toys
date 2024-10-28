@@ -1,0 +1,76 @@
+-- IDF_TARGET is not set, guessed 'esp32s3' from sdkconfig '/home/tjc/esp/develop/esp-ai/sdkconfig'
+-- Found Git: /usr/bin/git (found version "2.25.1") 
+-- Component directory /home/tjc/esp/develop/esp-ai/components/managed_components does not contain a CMakeLists.txt file. No component will be added
+-- Component directory /home/tjc/esp/develop/esp-ai/components/managed_components does not contain a CMakeLists.txt file. No component will be added
+-- The C compiler identification is GNU 13.2.0
+-- The CXX compiler identification is GNU 13.2.0
+-- The ASM compiler identification is GNU
+-- Found assembler: /home/tjc/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc
+-- Check for working C compiler: /home/tjc/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc
+-- Check for working C compiler: /home/tjc/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working CXX compiler: /home/tjc/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++
+-- Check for working CXX compiler: /home/tjc/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- git rev-parse returned 'fatal: not a git repository (or any of the parent directories): .git'
+-- Could not use 'git describe' to determine PROJECT_VER.
+-- Building ESP-IDF components for target esp32s3
+Processing 2 dependencies:
+[1/2] espressif/esp-dsp (1.4.12)
+[2/2] idf (5.3.1)
+-- Project sdkconfig file /home/tjc/esp/develop/esp-ai/sdkconfig
+Loading defaults file /home/tjc/esp/develop/esp-ai/sdkconfig.defaults...
+warning: unknown kconfig symbol 'BSP_LCD_RGB_BUFFER_NUMS' assigned to '3' in /home/tjc/esp/develop/esp-ai/sdkconfig.defaults
+warning: unknown kconfig symbol 'BSP_LCD_RGB_BOUNCE_BUFFER_MODE' assigned to 'y' in /home/tjc/esp/develop/esp-ai/sdkconfig.defaults
+warning: unknown kconfig symbol 'BSP_LCD_RGB_BOUNCE_BUFFER_HEIGHT' assigned to '20' in /home/tjc/esp/develop/esp-ai/sdkconfig.defaults
+warning: unknown kconfig symbol 'BSP_DISPLAY_LVGL_TASK_PRIORITY' assigned to '4' in /home/tjc/esp/develop/esp-ai/sdkconfig.defaults
+warning: unknown kconfig symbol 'BSP_DISPLAY_LVGL_TASK_CORE_ID' assigned to '0' in /home/tjc/esp/develop/esp-ai/sdkconfig.defaults
+warning: unknown kconfig symbol 'BSP_DISPLAY_LVGL_TASK_DELAY' assigned to '15' in /home/tjc/esp/develop/esp-ai/sdkconfig.defaults
+warning: unknown kconfig symbol 'BSP_DISPLAY_LVGL_TASK_STACK_SIZE_KB' assigned to '8' in /home/tjc/esp/develop/esp-ai/sdkconfig.defaults
+warning: unknown kconfig symbol 'BSP_DISPLAY_LVGL_AVOID_TEAR' assigned to 'y' in /home/tjc/esp/develop/esp-ai/sdkconfig.defaults
+warning: unknown kconfig symbol 'BSP_DISPLAY_LVGL_DIRECT_MODE' assigned to 'y' in /home/tjc/esp/develop/esp-ai/sdkconfig.defaults
+warning: unknown kconfig symbol 'LV_COLOR_SCREEN_TRANSP' assigned to 'y' in /home/tjc/esp/develop/esp-ai/sdkconfig.defaults
+warning: unknown kconfig symbol 'LV_MEM_CUSTOM' assigned to 'y' in /home/tjc/esp/develop/esp-ai/sdkconfig.defaults
+warning: unknown kconfig symbol 'LV_MEMCPY_MEMSET_STD' assigned to 'y' in /home/tjc/esp/develop/esp-ai/sdkconfig.defaults
+warning: unknown kconfig symbol 'LV_IMG_CACHE_DEF_SIZE' assigned to '2' in /home/tjc/esp/develop/esp-ai/sdkconfig.defaults
+warning: unknown kconfig symbol 'LV_USE_LOG' assigned to 'y' in /home/tjc/esp/develop/esp-ai/sdkconfig.defaults
+warning: unknown kconfig symbol 'LV_LOG_PRINTF' assigned to 'y' in /home/tjc/esp/develop/esp-ai/sdkconfig.defaults
+warning: unknown kconfig symbol 'LV_ATTRIBUTE_FAST_MEM_USE_IRAM' assigned to 'y' in /home/tjc/esp/develop/esp-ai/sdkconfig.defaults
+warning: unknown kconfig symbol 'LV_FONT_MONTSERRAT_22' assigned to 'y' in /home/tjc/esp/develop/esp-ai/sdkconfig.defaults
+warning: unknown kconfig symbol 'LV_FONT_MONTSERRAT_48' assigned to 'y' in /home/tjc/esp/develop/esp-ai/sdkconfig.defaults
+warning: unknown kconfig symbol 'LV_USE_FS_POSIX' assigned to 'y' in /home/tjc/esp/develop/esp-ai/sdkconfig.defaults
+warning: unknown kconfig symbol 'LV_FS_POSIX_LETTER' assigned to '83' in /home/tjc/esp/develop/esp-ai/sdkconfig.defaults
+warning: unknown kconfig symbol 'LV_USE_PNG' assigned to 'y' in /home/tjc/esp/develop/esp-ai/sdkconfig.defaults
+warning: unknown kconfig symbol 'LV_USE_BMP' assigned to 'y' in /home/tjc/esp/develop/esp-ai/sdkconfig.defaults
+warning: unknown kconfig symbol 'LV_USE_SJPG' assigned to 'y' in /home/tjc/esp/develop/esp-ai/sdkconfig.defaults
+warning: unknown kconfig symbol 'LV_USE_GIF' assigned to 'y' in /home/tjc/esp/develop/esp-ai/sdkconfig.defaults
+-- Compiler supported targets: xtensa-esp-elf
+-- Found Python3: /home/tjc/.espressif/python_env/idf5.3_py3.8_env/bin/python (found version "3.8.10") found components: Interpreter 
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- Performing Test C_COMPILER_SUPPORTS_WFORMAT_SIGNEDNESS
+-- Performing Test C_COMPILER_SUPPORTS_WFORMAT_SIGNEDNESS - Success
+-- App "esp-ai" version: 1
+-- Adding linker script /home/tjc/esp/develop/esp-ai/build/esp-idf/esp_system/ld/memory.ld
+-- Adding linker script /home/tjc/esp/develop/esp-ai/build/esp-idf/esp_system/ld/sections.ld.in
+-- Adding linker script /home/tjc/esp/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.ld
+-- Adding linker script /home/tjc/esp/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.api.ld
+-- Adding linker script /home/tjc/esp/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.libgcc.ld
+-- Adding linker script /home/tjc/esp/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.wdt.ld
+-- Adding linker script /home/tjc/esp/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.version.ld
+-- Adding linker script /home/tjc/esp/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.newlib.ld
+-- Adding linker script /home/tjc/esp/esp-idf/components/soc/esp32s3/ld/esp32s3.peripherals.ld
+-- Components: app_trace app_update blufi bootloader bootloader_support bt cmock console cxx driver efuse esp-sr esp-tls esp_adc esp_app_format esp_bootloader_format esp_codec_dev esp_coex esp_common esp_driver_ana_cmpr esp_driver_cam esp_driver_dac esp_driver_gpio esp_driver_gptimer esp_driver_i2c esp_driver_i2s esp_driver_isp esp_driver_jpeg esp_driver_ledc esp_driver_mcpwm esp_driver_parlio esp_driver_pcnt esp_driver_ppa esp_driver_rmt esp_driver_sdio esp_driver_sdm esp_driver_sdmmc esp_driver_sdspi esp_driver_spi esp_driver_touch_sens esp_driver_tsens esp_driver_uart esp_driver_usb_serial_jtag esp_eth esp_event esp_file_iterator esp_gdbstub esp_hid esp_http_client esp_http_server esp_https_ota esp_https_server esp_hw_support esp_lcd esp_local_ctrl esp_mm esp_netif esp_netif_stack esp_partition esp_phy esp_pm esp_psram esp_ringbuf esp_rom esp_system esp_timer esp_vfs_console esp_wifi espcoredump espressif__esp-dsp esptool_py fatfs freertos hal hardware_driver heap http_parser idf_test ieee802154 json log lwip main mbedtls mqtt newlib nvs_flash nvs_sec_provider openthread partition_table perfmon protobuf-c protocol_examples_common protocomm pthread sdmmc soc spi_flash spiffs tcp_transport touch_element ulp unity usb vfs wear_levelling wifi_provisioning wpa_supplicant xtensa
+-- Component paths: /home/tjc/esp/esp-idf/components/app_trace /home/tjc/esp/esp-idf/components/app_update /home/tjc/esp/develop/esp-ai/components/blufi /home/tjc/esp/esp-idf/components/bootloader /home/tjc/esp/esp-idf/components/bootloader_support /home/tjc/esp/esp-idf/components/bt /home/tjc/esp/esp-idf/components/cmock /home/tjc/esp/esp-idf/components/console /home/tjc/esp/esp-idf/components/cxx /home/tjc/esp/esp-idf/components/driver /home/tjc/esp/esp-idf/components/efuse /home/tjc/esp/develop/esp-ai/components/esp-sr /home/tjc/esp/esp-idf/components/esp-tls /home/tjc/esp/esp-idf/components/esp_adc /home/tjc/esp/esp-idf/components/esp_app_format /home/tjc/esp/esp-idf/components/esp_bootloader_format /home/tjc/esp/develop/esp-ai/components/esp_codec_dev /home/tjc/esp/esp-idf/components/esp_coex /home/tjc/esp/esp-idf/components/esp_common /home/tjc/esp/esp-idf/components/esp_driver_ana_cmpr /home/tjc/esp/esp-idf/components/esp_driver_cam /home/tjc/esp/esp-idf/components/esp_driver_dac /home/tjc/esp/esp-idf/components/esp_driver_gpio /home/tjc/esp/esp-idf/components/esp_driver_gptimer /home/tjc/esp/esp-idf/components/esp_driver_i2c /home/tjc/esp/esp-idf/components/esp_driver_i2s /home/tjc/esp/esp-idf/components/esp_driver_isp /home/tjc/esp/esp-idf/components/esp_driver_jpeg /home/tjc/esp/esp-idf/components/esp_driver_ledc /home/tjc/esp/esp-idf/components/esp_driver_mcpwm /home/tjc/esp/esp-idf/components/esp_driver_parlio /home/tjc/esp/esp-idf/components/esp_driver_pcnt /home/tjc/esp/esp-idf/components/esp_driver_ppa /home/tjc/esp/esp-idf/components/esp_driver_rmt /home/tjc/esp/esp-idf/components/esp_driver_sdio /home/tjc/esp/esp-idf/components/esp_driver_sdm /home/tjc/esp/esp-idf/components/esp_driver_sdmmc /home/tjc/esp/esp-idf/components/esp_driver_sdspi /home/tjc/esp/esp-idf/components/esp_driver_spi /home/tjc/esp/esp-idf/components/esp_driver_touch_sens /home/tjc/esp/esp-idf/components/esp_driver_tsens /home/tjc/esp/esp-idf/components/esp_driver_uart /home/tjc/esp/esp-idf/components/esp_driver_usb_serial_jtag /home/tjc/esp/esp-idf/components/esp_eth /home/tjc/esp/esp-idf/components/esp_event /home/tjc/esp/develop/esp-ai/components/esp_file_iterator /home/tjc/esp/esp-idf/components/esp_gdbstub /home/tjc/esp/esp-idf/components/esp_hid /home/tjc/esp/esp-idf/components/esp_http_client /home/tjc/esp/esp-idf/components/esp_http_server /home/tjc/esp/esp-idf/components/esp_https_ota /home/tjc/esp/esp-idf/components/esp_https_server /home/tjc/esp/esp-idf/components/esp_hw_support /home/tjc/esp/esp-idf/components/esp_lcd /home/tjc/esp/esp-idf/components/esp_local_ctrl /home/tjc/esp/esp-idf/components/esp_mm /home/tjc/esp/esp-idf/components/esp_netif /home/tjc/esp/esp-idf/components/esp_netif_stack /home/tjc/esp/esp-idf/components/esp_partition /home/tjc/esp/esp-idf/components/esp_phy /home/tjc/esp/esp-idf/components/esp_pm /home/tjc/esp/esp-idf/components/esp_psram /home/tjc/esp/esp-idf/components/esp_ringbuf /home/tjc/esp/esp-idf/components/esp_rom /home/tjc/esp/esp-idf/components/esp_system /home/tjc/esp/esp-idf/components/esp_timer /home/tjc/esp/esp-idf/components/esp_vfs_console /home/tjc/esp/esp-idf/components/esp_wifi /home/tjc/esp/esp-idf/components/espcoredump /home/tjc/esp/develop/esp-ai/managed_components/espressif__esp-dsp /home/tjc/esp/esp-idf/components/esptool_py /home/tjc/esp/esp-idf/components/fatfs /home/tjc/esp/esp-idf/components/freertos /home/tjc/esp/esp-idf/components/hal /home/tjc/esp/develop/esp-ai/components/hardware_driver /home/tjc/esp/esp-idf/components/heap /home/tjc/esp/esp-idf/components/http_parser /home/tjc/esp/esp-idf/components/idf_test /home/tjc/esp/esp-idf/components/ieee802154 /home/tjc/esp/esp-idf/components/json /home/tjc/esp/esp-idf/components/log /home/tjc/esp/esp-idf/components/lwip /home/tjc/esp/develop/esp-ai/main /home/tjc/esp/esp-idf/components/mbedtls /home/tjc/esp/esp-idf/components/mqtt /home/tjc/esp/esp-idf/components/newlib /home/tjc/esp/esp-idf/components/nvs_flash /home/tjc/esp/esp-idf/components/nvs_sec_provider /home/tjc/esp/esp-idf/components/openthread /home/tjc/esp/esp-idf/components/partition_table /home/tjc/esp/esp-idf/components/perfmon /home/tjc/esp/esp-idf/components/protobuf-c /home/tjc/esp/esp-idf/examples/common_components/protocol_examples_common /home/tjc/esp/esp-idf/components/protocomm /home/tjc/esp/esp-idf/components/pthread /home/tjc/esp/esp-idf/components/sdmmc /home/tjc/esp/esp-idf/components/soc /home/tjc/esp/esp-idf/components/spi_flash /home/tjc/esp/esp-idf/components/spiffs /home/tjc/esp/esp-idf/components/tcp_transport /home/tjc/esp/esp-idf/components/touch_element /home/tjc/esp/esp-idf/components/ulp /home/tjc/esp/esp-idf/components/unity /home/tjc/esp/esp-idf/components/usb /home/tjc/esp/esp-idf/components/vfs /home/tjc/esp/esp-idf/components/wear_levelling /home/tjc/esp/esp-idf/components/wifi_provisioning /home/tjc/esp/esp-idf/components/wpa_supplicant /home/tjc/esp/esp-idf/components/xtensa
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/tjc/esp/develop/esp-ai/build

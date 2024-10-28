@@ -1,0 +1,32 @@
+[0;33m--- esp-idf-monitor 1.5.0 on /dev/ttyUSB0 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0;33m--- 0x403888f5: remove_free_block at /home/tjc/esp/esp-idf/components/heap/tlsf/tlsf.c:332
+ (inlined by) block_locate_free at /home/tjc/esp/esp-idf/components/heap/tlsf/tlsf.c:567
+ (inlined by) tlsf_malloc at /home/tjc/esp/esp-idf/components/heap/tlsf/tlsf.c:1015
+[0m
+[0;33m--- 0x400556d5: strlen in ROM
+0x400556e5: strlen in ROM
+[0m
+[0;33m--- 0x403888f2: remove_free_block at /home/tjc/esp/esp-idf/components/heap/tlsf/tlsf.c:331 (discriminator 1)
+ (inlined by) block_locate_free at /home/tjc/esp/esp-idf/components/heap/tlsf/tlsf.c:567 (discriminator 1)
+ (inlined by) tlsf_malloc at /home/tjc/esp/esp-idf/components/heap/tlsf/tlsf.c:1015 (discriminator 1)
+0x4038835f: multi_heap_malloc_impl at /home/tjc/esp/esp-idf/components/heap/multi_heap.c:211
+0x40376b47: aligned_or_unaligned_alloc at /home/tjc/esp/esp-idf/components/heap/heap_caps_base.c:77
+ (inlined by) heap_caps_aligned_alloc_base at /home/tjc/esp/esp-idf/components/heap/heap_caps_base.c:150
+0x40376b69: heap_caps_malloc_base at /home/tjc/esp/esp-idf/components/heap/heap_caps_base.c:170
+0x4037674f: heap_caps_malloc_prefer at /home/tjc/esp/esp-idf/components/heap/heap_caps.c:180
+0x4208455c: mem_malloc at /home/tjc/esp/esp-idf/components/lwip/lwip/src/core/mem.c:209
+0x42085673: pbuf_alloc at /home/tjc/esp/esp-idf/components/lwip/lwip/src/core/pbuf.c:284
+0x420838c5: dns_send at /home/tjc/esp/esp-idf/components/lwip/lwip/src/core/dns.c:839 (discriminator 1)
+0x42083b52: dns_check_entry at /home/tjc/esp/esp-idf/components/lwip/lwip/src/core/dns.c:1168
+0x42084414: dns_enqueue at /home/tjc/esp/esp-idf/components/lwip/lwip/src/core/dns.c:1571
+ (inlined by) dns_gethostbyname_addrtype at /home/tjc/esp/esp-idf/components/lwip/lwip/src/core/dns.c:1722
+0x4208449d: dns_gethostbyname at /home/tjc/esp/esp-idf/components/lwip/lwip/src/core/dns.c:1607
+0x4208338d: sntp_request at /home/tjc/esp/esp-idf/components/lwip/lwip/src/apps/sntp/sntp.c:621
+0x4208b96e: sys_check_timeouts at /home/tjc/esp/esp-idf/components/lwip/lwip/src/core/timeouts.c:403
+0x42083038: tcpip_timeouts_mbox_fetch at /home/tjc/esp/esp-idf/components/lwip/lwip/src/api/tcpip.c:98
+ (inlined by) tcpip_thread at /home/tjc/esp/esp-idf/components/lwip/lwip/src/api/tcpip.c:142
+[0m
+[0;33m--- 0x40375f38: esp_restart_noos at /home/tjc/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:158
+[0m
+[0m
