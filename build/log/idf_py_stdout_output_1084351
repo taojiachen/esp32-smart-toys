@@ -1,0 +1,71 @@
+[1/6] cd /home/tjc/esp/develop/esp-ai/build/esp-idf/esptool_py && /home/tjc/.espressif/python_env/idf5.3_py3.8_env/bin/python /home/tjc/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /home/tjc/esp/develop/esp-ai/build/partition_table/partition-table.bin /home/tjc/esp/develop/esp-ai/build/esp-ai.bin
+esp-ai.bin binary size 0x1742c0 bytes. Smallest app partition is 0x400000 bytes. 0x28bd40 bytes (64%) free.
+[2/6] Performing build step for 'bootloader'
+[1/1] cd /home/tjc/esp/develop/esp-ai/build/bootloader/esp-idf/esptool_py && /home/tjc/.espressif/python_env/idf5.3_py3.8_env/bin/python /home/tjc/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x0 /home/tjc/esp/develop/esp-ai/build/bootloader/bootloader.bin
+Bootloader binary size 0x5810 bytes. 0x27f0 bytes (31%) free.
+[3/4] cd /home/tjc/esp/develop/esp-ai/build/esp-idf/main && /home/tjc/.espressif/python_env/idf5.3_py3.8_env/bin/python /home/tjc/esp/esp-idf/components/spiffs/spiffsgen.py 0x600000 /home/tjc/esp/develop/esp-ai/spiffs /home/tjc/esp/develop/esp-ai/build/storage.bin --page-size=256 --obj-name-len=32 --meta-len=4 --use-magic --use-magic-len
+[3/4] cd /home/tjc/esp/esp-idf/components/esptool_py && /usr/bin/cmake -D IDF_PATH=/home/tjc/esp/esp-idf -D "SERIAL_TOOL=/home/tjc/.espressif/python_env/idf5.3_py3.8_env/bin/python;;/home/tjc/esp/esp-idf/components/esptool_py/esptool/esptool.py;--chip;esp32s3" -D "SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args" -D WORKING_DIRECTORY=/home/tjc/esp/develop/esp-ai/build -P /home/tjc/esp/esp-idf/components/esptool_py/run_serial_tool.cmake
+esptool.py --chip esp32s3 -p /dev/ttyUSB0 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 80m --flash_size 16MB 0x0 bootloader/bootloader.bin 0x20000 esp-ai.bin 0x8000 partition_table/partition-table.bin 0x420000 storage.bin 0xa20000 srmodels/srmodels.bin
+esptool.py v4.8.1
+Serial port /dev/ttyUSB0
+Connecting.....
+Chip is ESP32-S3 (QFN56) (revision v0.2)
+Features: WiFi, BLE, Embedded PSRAM 8MB (AP_3v3)
+Crystal is 40MHz
+MAC: f0:9e:9e:22:22:dc
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Configuring flash size...
+Flash will be erased from 0x00000000 to 0x00005fff...
+Flash will be erased from 0x00020000 to 0x00194fff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+Flash will be erased from 0x00420000 to 0x00a1ffff...
+Flash will be erased from 0x00a20000 to 0x00cf5fff...
+SHA digest in image updated
+Compressed 22544 bytes to 13929...
+Writing at 0x00000000... (100 %)
+Wrote 22544 bytes (13929 compressed) at 0x00000000 in 0.8 seconds (effective 227.3 kbit/s)...
+Hash of data verified.
+Compressed 1524416 bytes to 961285...
+Writing at 0x00020000... (1 %)
+Writing at 0x0002e6b7... (3 %)
+Writing at 0x0003d218... (5 %)
+Writing at 0x000482f9... (6 %)
+Writing at 0x0004e177... (8 %)
+Writing at 0x00052d59... (10 %)
+Writing at 0x00058ebe... (11 %)
+Writing at 0x0005e488... (13 %)
+Writing at 0x00068587... (15 %)
+Writing at 0x00070318... (16 %)
+Writing at 0x0007619f... (18 %)
+Writing at 0x0007c143... (20 %)
+Writing at 0x00081ffe... (22 %)
+Writing at 0x00087e27... (23 %)
+Writing at 0x0008d58f... (25 %)
+Writing at 0x00092b1b... (27 %)
+Writing at 0x000983ea... (28 %)
+Writing at 0x0009def0... (30 %)
+Writing at 0x000a3c0d... (32 %)
+Writing at 0x000a9796... (33 %)
+Writing at 0x000aefbf... (35 %)
+Writing at 0x000b4898... (37 %)
+Writing at 0x000bac24... (38 %)
+Writing at 0x000c0ce7... (40 %)
+Writing at 0x000c639a... (42 %)
+Writing at 0x000cc5e8... (44 %)
+Writing at 0x000d2761... (45 %)
+Writing at 0x000d803e... (47 %)
+Writing at 0x000e30b1... (49 %)
+Writing at 0x000e864f... (50 %)
+Writing at 0x000ede51... (52 %)
+Writing at 0x000f357b... (54 %)
+Writing at 0x000f87f1... (55 %)
+Writing at 0x000fdce5... (57 %)
+Writing at 0x00102dd6... (59 %)
+Writing at 0x001081a2... (61 %)
+Writing at 0x0010d9eb... (62 %)
+Writing at 0x00112d94... (64 %)
+Writing at 0x001185b0... (66 %)

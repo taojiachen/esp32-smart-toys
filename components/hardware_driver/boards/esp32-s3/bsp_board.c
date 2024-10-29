@@ -111,35 +111,32 @@ size_t bytes_written = 0;
 // 获取i2s设备数据，并将获取到的数据存入到一个数组中，(i2s通道，数组名，数组长度)
 esp_err_t bsp_i2s_read(int32_t *buffer, int buffer_len)
 {
-   // int32_t *inmp441_data = heap_caps_malloc(BUFFER_SIZE * sizeof(int32_t), MALLOC_CAP_8BIT);
-
+    // int32_t *inmp441_data = heap_caps_malloc(BUFFER_SIZE * sizeof(int32_t), MALLOC_CAP_8BIT);
+    //int16_t *max98357a_data = heap_caps_malloc(buffer_len / 2, MALLOC_CAP_8BIT);
     ESP_ERROR_CHECK(i2s_channel_read(rx_handle, buffer,
-                                     BUFFER_SIZE * sizeof(int32_t),
+                                     buffer_len,
                                      &bytes_read, portMAX_DELAY));
 
-    // 转换32位数据到16位
-    for (int i = 0; i < bytes_read / sizeof(int32_t); i++)
-    {
-        // 右移16位将32位数据转换为16位
-        // 同时进行音量调整，这里除以8作为示例
-        buffer[i] = (int16_t)(buffer[i] >> 16);
-    }
-    ESP_LOGE(TAG, "%d", bytes_read);
-    // 可选：添加调试信息
+    // 转换32位数据到16位  1024
+    // for (int i = 0; i < bytes_read / sizeof(int32_t); i++)
+    // {
+    //     // 右移16位将32位数据转换为16位
+    //     // 同时进行音量调整，这里除以8作为示例
+    //     max98357a_data[i] = (int16_t)(buffer[i] >> 16);
+    // }
+    // buffer_len  等于  &bytes_read ==4096
+    // sizeof(int32_t)==4
+    // 写入数据到MAX98357A
+    // ESP_ERROR_CHECK(i2s_channel_write(tx_handle, max98357a_data,
+    //                                   bytes_read / 2, // 因为从32位转换到16位，所以字节数减半
+    //                                   &bytes_written, portMAX_DELAY));
     return ESP_OK;
 }
 
-esp_err_t bsp_audio_play(const int16_t *data, size_t size)
+esp_err_t bsp_audio_play(const int16_t *data, size_t buffer_len)
 {
-    int16_t *max98357a_data = heap_caps_malloc(BUFFER_SIZE * sizeof(int16_t), MALLOC_CAP_8BIT);
-
-    for (int i = 0; i < size; i++)
-    {
-        max98357a_data[i] = data[i];
-    }
-
-    ESP_ERROR_CHECK(i2s_channel_write(tx_handle, max98357a_data,
-                                      bytes_read / 2,
+    ESP_ERROR_CHECK(i2s_channel_write(tx_handle, data,
+                                      buffer_len,
                                       &bytes_written, portMAX_DELAY));
     return ESP_OK;
 }

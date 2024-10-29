@@ -1,0 +1,14 @@
+[0;33m--- esp-idf-monitor 1.5.0 on /dev/ttyUSB0 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0;33m--- 0x4200da3d: bsp_i2s_read at /home/tjc/esp/develop/esp-ai/build/../components/hardware_driver/boards/esp32-s3/bsp_board.c:125
+[0m
+[0;33m--- 0x4200da38: bsp_i2s_read at /home/tjc/esp/develop/esp-ai/build/../components/hardware_driver/boards/esp32-s3/bsp_board.c:125
+0x4200da42: bsp_i2s_read at /home/tjc/esp/develop/esp-ai/build/../components/hardware_driver/boards/esp32-s3/bsp_board.c:128
+[0m
+[0;33m--- 0x4200da3a: bsp_i2s_read at /home/tjc/esp/develop/esp-ai/build/../components/hardware_driver/boards/esp32-s3/bsp_board.c:125
+0x4200d855: esp_i2s_read at /home/tjc/esp/develop/esp-ai/build/../components/hardware_driver/esp_board_init.c:25
+0x4200b960: audio_feed_task at /home/tjc/esp/develop/esp-ai/build/../main/app/app_sr.c:69
+[0m
+[0;33m--- 0x4037f9ae: esp_cpu_wait_for_intr at /home/tjc/esp/esp-idf/components/esp_hw_support/cpu.c:64
+[0m
+[0m

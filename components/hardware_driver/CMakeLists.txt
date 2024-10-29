@@ -11,7 +11,6 @@ idf_component_register(
         driver
         fatfs
         spiffs
-        esp_codec_dev
         esp_driver_i2s
         )
 component_compile_options(-w)

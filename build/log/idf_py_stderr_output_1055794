@@ -1,0 +1,39 @@
+[0;33m--- esp-idf-monitor 1.5.0 on /dev/ttyUSB0 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0;33m--- 0x403888f5: remove_free_block at /home/tjc/esp/esp-idf/components/heap/tlsf/tlsf.c:332
+ (inlined by) block_locate_free at /home/tjc/esp/esp-idf/components/heap/tlsf/tlsf.c:567
+ (inlined by) tlsf_malloc at /home/tjc/esp/esp-idf/components/heap/tlsf/tlsf.c:1015
+[0m
+[0;33m--- 0x400570e8: memset in ROM
+0x400570f3: memset in ROM
+[0m
+[0;33m--- 0x403888f2: remove_free_block at /home/tjc/esp/esp-idf/components/heap/tlsf/tlsf.c:331 (discriminator 1)
+ (inlined by) block_locate_free at /home/tjc/esp/esp-idf/components/heap/tlsf/tlsf.c:567 (discriminator 1)
+ (inlined by) tlsf_malloc at /home/tjc/esp/esp-idf/components/heap/tlsf/tlsf.c:1015 (discriminator 1)
+0x4038835f: multi_heap_malloc_impl at /home/tjc/esp/esp-idf/components/heap/multi_heap.c:211
+0x40376b47: aligned_or_unaligned_alloc at /home/tjc/esp/esp-idf/components/heap/heap_caps_base.c:77
+ (inlined by) heap_caps_aligned_alloc_base at /home/tjc/esp/esp-idf/components/heap/heap_caps_base.c:150
+0x40376b69: heap_caps_malloc_base at /home/tjc/esp/esp-idf/components/heap/heap_caps_base.c:170
+0x40376ccb: heap_caps_calloc_base at /home/tjc/esp/esp-idf/components/heap/heap_caps_base.c:284
+0x403768dc: heap_caps_calloc at /home/tjc/esp/esp-idf/components/heap/heap_caps.c:255
+0x4209e1bd: esp_mbedtls_mem_calloc at /home/tjc/esp/esp-idf/components/mbedtls/port/esp_mem.c:19
+0x4209d191: mbedtls_calloc at /home/tjc/esp/esp-idf/components/mbedtls/mbedtls/library/platform.c:49
+0x4209c80b: mbedtls_md_setup at /home/tjc/esp/esp-idf/components/mbedtls/mbedtls/library/md.c:461
+0x42097570: hmac_vector at /home/tjc/esp/esp-idf/components/wpa_supplicant/esp_supplicant/src/crypto/crypto_mbedtls.c:301
+0x4209762d: hmac_sha1_vector at /home/tjc/esp/esp-idf/components/wpa_supplicant/esp_supplicant/src/crypto/crypto_mbedtls.c:368
+0x42097495: sha1_prf at /home/tjc/esp/esp-idf/components/wpa_supplicant/src/crypto/sha1-prf.c:51
+0x420d548a: wpa_pmk_to_ptk at /home/tjc/esp/esp-idf/components/wpa_supplicant/src/common/wpa_common.c:1256
+0x420d5f0e: wpa_derive_ptk at /home/tjc/esp/esp-idf/components/wpa_supplicant/src/rsn_supp/wpa.c:639
+ (inlined by) wpa_supplicant_process_1_of_4 at /home/tjc/esp/esp-idf/components/wpa_supplicant/src/rsn_supp/wpa.c:715
+0x420d6c11: wpa_sm_rx_eapol at /home/tjc/esp/esp-idf/components/wpa_supplicant/src/rsn_supp/wpa.c:2058
+0x42109539: sta_rx_eapol at ??:?
+0x4210a96e: sta_input at ??:?
+0x4210aae9: sta_rx_cb at ??:?
+0x4210c565: ppRxPkt at ??:?
+0x42108db3: ppTask at ??:?
+[0m
+[0;33m--- 0x40375f38: esp_restart_noos at /home/tjc/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:158
+[0m
+[1;31m--- Error: device reports readiness to read but returned no data (device disconnected or multiple access on port?)[0m
+[0;33m--- Waiting for the device to reconnect[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m[0m
+[0m

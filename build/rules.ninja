@@ -1926,25 +1926,6 @@ rule C_STATIC_LIBRARY_LINKER____idf_esp-sr
 #############################################
 # Rule for compiling C files.
 
-rule C_COMPILER____idf_esp_codec_dev
-  depfile = $DEP_FILE
-  deps = gcc
-  command = /home/tjc/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out   -c $in
-  description = Building C object $out
-
-
-#############################################
-# Rule for linking C static library.
-
-rule C_STATIC_LIBRARY_LINKER____idf_esp_codec_dev
-  command = $PRE_LINK && /usr/bin/cmake -E remove $TARGET_FILE && /home/tjc/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/bin/xtensa-esp32s3-elf-ar qc $TARGET_FILE $LINK_FLAGS $in && /home/tjc/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/bin/xtensa-esp32s3-elf-ranlib $TARGET_FILE && $POST_BUILD
-  description = Linking C static library $TARGET_FILE
-  restat = $RESTAT
-
-
-#############################################
-# Rule for compiling C files.
-
 rule C_COMPILER____idf_esp_file_iterator
   depfile = $DEP_FILE
   deps = gcc

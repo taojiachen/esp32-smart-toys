@@ -44,6 +44,8 @@
         "err.h": "c",
         "sys.h": "c",
         "esp_blufi_api.h": "c",
-        "bsp_err_check.h": "c"
+        "bsp_err_check.h": "c",
+        "compare": "c",
+        "cstdint": "c"
     }
 }

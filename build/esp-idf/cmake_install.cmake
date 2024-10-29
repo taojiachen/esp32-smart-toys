@@ -564,11 +564,6 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/tjc/esp/develop/esp-ai/build/esp-idf/esp_codec_dev/cmake_install.cmake")
-endif()
-
-if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for the subdirectory.
   include("/home/tjc/esp/develop/esp-ai/build/esp-idf/esp_file_iterator/cmake_install.cmake")
 endif()
 

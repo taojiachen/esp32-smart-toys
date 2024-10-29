@@ -1,0 +1,5 @@
+[1/6] cd /home/tjc/esp/develop/esp-ai/build/esp-idf/esptool_py && /home/tjc/.espressif/python_env/idf5.3_py3.8_env/bin/python /home/tjc/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /home/tjc/esp/develop/esp-ai/build/partition_table/partition-table.bin /home/tjc/esp/develop/esp-ai/build/esp-ai.bin
+esp-ai.bin binary size 0x1742b0 bytes. Smallest app partition is 0x400000 bytes. 0x28bd50 bytes (64%) free.
+[2/6] Performing build step for 'bootloader'
+[1/1] cd /home/tjc/esp/develop/esp-ai/build/bootloader/esp-idf/esptool_py && /home/tjc/.espressif/python_env/idf5.3_py3.8_env/bin/python /home/tjc/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x0 /home/tjc/esp/develop/esp-ai/build/bootloader/bootloader.bin
+Bootloader binary size 0x5810 bytes. 0x27f0 bytes (31%) free.

@@ -53,10 +53,12 @@ static void audio_feed_task(void *pvParam)
     size_t bytes_read = 0;
     esp_afe_sr_data_t *afe_data = (esp_afe_sr_data_t *)pvParam;
     int audio_chunksize = afe_handle->get_feed_chunksize(afe_data);
-    ESP_LOGI(TAG, "audio_chunksize=%d, feed_channel=%d", audio_chunksize, 3);
+    // ESP_LOGI(TAG, "audio_chunksize=%d, feed_channel=%d", audio_chunksize, 3);
 
     /* Allocate audio buffer and check for result */
-    int16_t *audio_buffer = heap_caps_malloc(audio_chunksize * sizeof(int32_t), MALLOC_CAP_SPIRAM | MALLOC_CAP_8BIT);
+    // int16_t *audio_buffer = heap_caps_malloc(audio_chunksize * sizeof(int16_t), MALLOC_CAP_SPIRAM | MALLOC_CAP_8BIT);
+    int16_t *max98357a_data = heap_caps_malloc(audio_chunksize * sizeof(int16_t), MALLOC_CAP_8BIT);
+    int32_t *audio_buffer = heap_caps_malloc(audio_chunksize * sizeof(int16_t) * 2, MALLOC_CAP_8BIT);
     if (NULL == audio_buffer)
     {
         esp_system_abort("No mem for audio buffer");
@@ -65,14 +67,23 @@ static void audio_feed_task(void *pvParam)
     while (true)
     {
         /* Read audio data from I2S bus */
-        esp_err_t read_result = esp_i2s_read((int32_t *)audio_buffer, BUFFER_SIZE * sizeof(int32_t));
+        esp_err_t read_result = esp_i2s_read(audio_buffer, audio_chunksize * sizeof(int16_t) * 2);
+        //printf("audio_chunksize * sizeof(int16_t)   %d", audio_chunksize * sizeof(int16_t));
         if (read_result != ESP_OK)
         {
             ESP_LOGE(TAG, "======== bsp_extra_i2s_read failed ==========");
         }
         /* Feed samples of an audio stream to the AFE_SR */
-        afe_handle->feed(afe_data, audio_buffer);
-
+        for (int i = 0; i < audio_chunksize * sizeof(int32_t) / sizeof(int32_t); i++)
+        {
+            // 右移16位将32位数据转换为16位
+            // 同时进行音量调整，这里除以8作为示例
+            max98357a_data[i] = (int16_t)(audio_buffer[i] >> 16);
+        }
+        afe_handle->feed(afe_data, max98357a_data);
+        ESP_ERROR_CHECK(esp_audio_play(max98357a_data,
+                                       audio_chunksize * sizeof(int16_t) // 因为从32位转换到16位，所以字节数减半
+                                       ));
         // esp_audio_play(audio_buffer,1024*audio_chunksize * I2S_CHANNEL_NUM * sizeof(int16_t));
     }
 
@@ -91,12 +102,14 @@ static void audio_detect_task(void *pvParam)
     /* Check if audio data has same chunksize with multinet */
     int afe_chunksize = afe_handle->get_fetch_chunksize(afe_data);
     int mu_chunksize = multinet->get_samp_chunksize(model_data);
+    printf("afe_chunksize  %d   mu_chunksize  %d", afe_chunksize, mu_chunksize);
     assert(mu_chunksize == afe_chunksize);
     ESP_LOGI(TAG, "------------detect start------------\n");
 
     while (true)
     {
         afe_fetch_result_t *res = afe_handle->fetch(afe_data);
+
         if (!res || res->ret_value == ESP_FAIL)
         {
             ESP_LOGE(TAG, "fetch error!");

@@ -88,6 +88,5 @@ $<TARGET_FILE:__idf_protocol_examples_common>
 $<TARGET_FILE:__idf_blufi>
 $<TARGET_FILE:__idf_espressif__esp-dsp>
 $<TARGET_FILE:__idf_esp-sr>
-$<TARGET_FILE:__idf_esp_codec_dev>
 $<TARGET_FILE:__idf_esp_file_iterator>
 $<TARGET_FILE:__idf_hardware_driver>

@@ -1,0 +1,138 @@
+[0;33m--- esp-idf-monitor 1.5.0 on /dev/ttyUSB0 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0;33m--- 0x403888f5: remove_free_block at /home/tjc/esp/esp-idf/components/heap/tlsf/tlsf.c:332
+ (inlined by) block_locate_free at /home/tjc/esp/esp-idf/components/heap/tlsf/tlsf.c:567
+ (inlined by) tlsf_malloc at /home/tjc/esp/esp-idf/components/heap/tlsf/tlsf.c:1015
+[0m
+[0;33m--- 0x400556d5: strlen in ROM
+0x400556e5: strlen in ROM
+[0m
+[0;33m--- 0x403888f2: remove_free_block at /home/tjc/esp/esp-idf/components/heap/tlsf/tlsf.c:331 (discriminator 1)
+ (inlined by) block_locate_free at /home/tjc/esp/esp-idf/components/heap/tlsf/tlsf.c:567 (discriminator 1)
+ (inlined by) tlsf_malloc at /home/tjc/esp/esp-idf/components/heap/tlsf/tlsf.c:1015 (discriminator 1)
+0x4038835f: multi_heap_malloc_impl at /home/tjc/esp/esp-idf/components/heap/multi_heap.c:211
+0x40376b47: aligned_or_unaligned_alloc at /home/tjc/esp/esp-idf/components/heap/heap_caps_base.c:77
+ (inlined by) heap_caps_aligned_alloc_base at /home/tjc/esp/esp-idf/components/heap/heap_caps_base.c:150
+0x40376b69: heap_caps_malloc_base at /home/tjc/esp/esp-idf/components/heap/heap_caps_base.c:170
+0x403765fd: heap_caps_malloc at /home/tjc/esp/esp-idf/components/heap/heap_caps.c:84
+0x4200a497: esp_vfs_register_common at /home/tjc/esp/esp-idf/components/vfs/vfs.c:90
+0x4200a555: esp_vfs_register at /home/tjc/esp/esp-idf/components/vfs/vfs.c:127 (discriminator 1)
+0x42075c7d: esp_vfs_spiffs_register at /home/tjc/esp/esp-idf/components/spiffs/esp_spiffs.c:453
+0x4200da6f: bsp_spiffs_mount at /home/tjc/esp/develop/esp-ai/build/../components/hardware_driver/boards/esp32-s3/bsp_board.c:168
+0x4200d833: esp_spiffs_mount at /home/tjc/esp/develop/esp-ai/build/../components/hardware_driver/esp_board_init.c:10
+0x4200b510: app_main at /home/tjc/esp/develop/esp-ai/build/../main/main.c:35
+0x4210f7c7: main_task at /home/tjc/esp/esp-idf/components/freertos/app_startup.c:208
+[0m
+[0;33m--- 0x40375f38: esp_restart_noos at /home/tjc/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:158
+[0m
+[0;33m--- 0x403888f5: remove_free_block at /home/tjc/esp/esp-idf/components/heap/tlsf/tlsf.c:332
+ (inlined by) block_locate_free at /home/tjc/esp/esp-idf/components/heap/tlsf/tlsf.c:567
+ (inlined by) tlsf_malloc at /home/tjc/esp/esp-idf/components/heap/tlsf/tlsf.c:1015
+[0m
+[0;33m--- 0x40056f5c: memcpy in ROM
+0x40056f72: memcpy in ROM
+[0m
+[0;33m--- 0x403888f2: remove_free_block at /home/tjc/esp/esp-idf/components/heap/tlsf/tlsf.c:331 (discriminator 1)
+ (inlined by) block_locate_free at /home/tjc/esp/esp-idf/components/heap/tlsf/tlsf.c:567 (discriminator 1)
+ (inlined by) tlsf_malloc at /home/tjc/esp/esp-idf/components/heap/tlsf/tlsf.c:1015 (discriminator 1)
+0x4038835f: multi_heap_malloc_impl at /home/tjc/esp/esp-idf/components/heap/multi_heap.c:211
+0x40376b47: aligned_or_unaligned_alloc at /home/tjc/esp/esp-idf/components/heap/heap_caps_base.c:77
+ (inlined by) heap_caps_aligned_alloc_base at /home/tjc/esp/esp-idf/components/heap/heap_caps_base.c:150
+0x40376b69: heap_caps_malloc_base at /home/tjc/esp/esp-idf/components/heap/heap_caps_base.c:170
+0x4037674f: heap_caps_malloc_prefer at /home/tjc/esp/esp-idf/components/heap/heap_caps.c:180
+0x4037d911: wifi_malloc at /home/tjc/esp/esp-idf/components/esp_wifi/esp32s3/esp_adapter.c:71
+0x420be9ff: ieee80211_timer_process at ??:?
+0x420c735f: pp_timer_process at ??:?
+0x420c47f9: lmac_stop_hw_txq at ??:?
+0x4207d621: timer_process_alarm at /home/tjc/esp/esp-idf/components/esp_timer/src/esp_timer.c:456
+ (inlined by) timer_task at /home/tjc/esp/esp-idf/components/esp_timer/src/esp_timer.c:482
+[0m
+[0;33m--- 0x40375f38: esp_restart_noos at /home/tjc/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:158
+[0m
+[0;33m--- 0x403888f5: remove_free_block at /home/tjc/esp/esp-idf/components/heap/tlsf/tlsf.c:332
+ (inlined by) block_locate_free at /home/tjc/esp/esp-idf/components/heap/tlsf/tlsf.c:567
+ (inlined by) tlsf_malloc at /home/tjc/esp/esp-idf/components/heap/tlsf/tlsf.c:1015
+[0m
+[0;33m--- 0x40056f5c: memcpy in ROM
+0x40056f72: memcpy in ROM
+[0m
+[0;33m--- 0x403888f2: remove_free_block at /home/tjc/esp/esp-idf/components/heap/tlsf/tlsf.c:331 (discriminator 1)
+ (inlined by) block_locate_free at /home/tjc/esp/esp-idf/components/heap/tlsf/tlsf.c:567 (discriminator 1)
+ (inlined by) tlsf_malloc at /home/tjc/esp/esp-idf/components/heap/tlsf/tlsf.c:1015 (discriminator 1)
+0x4038835f: multi_heap_malloc_impl at /home/tjc/esp/esp-idf/components/heap/multi_heap.c:211
+0x40376b47: aligned_or_unaligned_alloc at /home/tjc/esp/esp-idf/components/heap/heap_caps_base.c:77
+ (inlined by) heap_caps_aligned_alloc_base at /home/tjc/esp/esp-idf/components/heap/heap_caps_base.c:150
+0x40376b69: heap_caps_malloc_base at /home/tjc/esp/esp-idf/components/heap/heap_caps_base.c:170
+0x4037674f: heap_caps_malloc_prefer at /home/tjc/esp/esp-idf/components/heap/heap_caps.c:180
+0x4037d911: wifi_malloc at /home/tjc/esp/esp-idf/components/esp_wifi/esp32s3/esp_adapter.c:71
+0x420be0d9: ppInstallKey at ??:?
+0x420be225: esp_wifi_set_sta_key_internal at ??:?
+0x420ccf7a: wpa_install_key at /home/tjc/esp/esp-idf/components/wpa_supplicant/esp_supplicant/src/esp_wpa_main.c:59
+0x420d61a7: wpa_sm_set_key at /home/tjc/esp/esp-idf/components/wpa_supplicant/src/rsn_supp/wpa.c:2551
+0x420d6367: wpa_supplicant_install_ptk at /home/tjc/esp/esp-idf/components/wpa_supplicant/src/rsn_supp/wpa.c:785
+0x420d701b: wpa_supplicant_send_4_of_4_txcallback at /home/tjc/esp/esp-idf/components/wpa_supplicant/src/rsn_supp/wpa.c:1399
+ (inlined by) eapol_txcb at /home/tjc/esp/esp-idf/components/wpa_supplicant/src/rsn_supp/wpa.c:2668
+0x420baeff: sta_eapol_txdone_cb at ??:?
+0x4003f58a: ppProcTxCallback in ROM
+0x4003b1ff: lmacTxDone in ROM
+0x4003b0d5: lmacRecycleMPDU in ROM
+0x4210844d: lmacEndFrameExchangeSequence at ??:?
+0x42109912: lmacProcessTxSuccess at ??:?
+0x421099c7: lmacProcessTxComplete at ??:?
+0x42108cae: ppTask at ??:?
+[0m
+[0;33m--- 0x40375f38: esp_restart_noos at /home/tjc/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:158
+[0m
+[0;33m--- 0x403888f5: remove_free_block at /home/tjc/esp/esp-idf/components/heap/tlsf/tlsf.c:332
+ (inlined by) block_locate_free at /home/tjc/esp/esp-idf/components/heap/tlsf/tlsf.c:567
+ (inlined by) tlsf_malloc at /home/tjc/esp/esp-idf/components/heap/tlsf/tlsf.c:1015
+[0m
+[0;33m--- 0x400570e8: memset in ROM
+0x400570f3: memset in ROM
+[0m
+[0;33m--- 0x403888f2: remove_free_block at /home/tjc/esp/esp-idf/components/heap/tlsf/tlsf.c:331 (discriminator 1)
+ (inlined by) block_locate_free at /home/tjc/esp/esp-idf/components/heap/tlsf/tlsf.c:567 (discriminator 1)
+ (inlined by) tlsf_malloc at /home/tjc/esp/esp-idf/components/heap/tlsf/tlsf.c:1015 (discriminator 1)
+0x4038835f: multi_heap_malloc_impl at /home/tjc/esp/esp-idf/components/heap/multi_heap.c:211
+0x40376b47: aligned_or_unaligned_alloc at /home/tjc/esp/esp-idf/components/heap/heap_caps_base.c:77
+ (inlined by) heap_caps_aligned_alloc_base at /home/tjc/esp/esp-idf/components/heap/heap_caps_base.c:150
+0x40376b69: heap_caps_malloc_base at /home/tjc/esp/esp-idf/components/heap/heap_caps_base.c:170
+0x4037674f: heap_caps_malloc_prefer at /home/tjc/esp/esp-idf/components/heap/heap_caps.c:180
+0x42084558: mem_malloc at /home/tjc/esp/esp-idf/components/lwip/lwip/src/core/mem.c:209
+0x4208566f: pbuf_alloc at /home/tjc/esp/esp-idf/components/lwip/lwip/src/core/pbuf.c:284
+0x4208c621: dhcp_create_msg at /home/tjc/esp/esp-idf/components/lwip/lwip/src/core/ipv4/dhcp.c:1999
+0x4208cb1b: dhcp_discover at /home/tjc/esp/esp-idf/components/lwip/lwip/src/core/ipv4/dhcp.c:1110
+0x4208dac7: dhcp_start at /home/tjc/esp/esp-idf/components/lwip/lwip/src/core/ipv4/dhcp.c:905
+0x420967f9: esp_netif_dhcpc_start_api at /home/tjc/esp/esp-idf/components/esp_netif/lwip/esp_netif_lwip.c:1474
+0x4209626b: esp_netif_api_cb at /home/tjc/esp/esp-idf/components/esp_netif/lwip/esp_netif_lwip.c:209
+0x420830c5: tcpip_thread_handle_msg at /home/tjc/esp/esp-idf/components/lwip/lwip/src/api/tcpip.c:202
+ (inlined by) tcpip_thread at /home/tjc/esp/esp-idf/components/lwip/lwip/src/api/tcpip.c:148
+[0m
+[0;33m--- 0x42048237: afe_fetch at /home/sunxiangyu/workspace/esp_sr_lib/components/esp_audio_front_end/esp_afe_sr.c:804 (discriminator 1)
+[0m
+[0;33m--- 0x403888f5: remove_free_block at /home/tjc/esp/esp-idf/components/heap/tlsf/tlsf.c:332
+ (inlined by) block_locate_free at /home/tjc/esp/esp-idf/components/heap/tlsf/tlsf.c:567
+ (inlined by) tlsf_malloc at /home/tjc/esp/esp-idf/components/heap/tlsf/tlsf.c:1015
+[0m
+[0;33m--- 0x400556d5: strlen in ROM
+0x400556e5: strlen in ROM
+[0m
+[0;33m--- 0x403888f2: remove_free_block at /home/tjc/esp/esp-idf/components/heap/tlsf/tlsf.c:331 (discriminator 1)
+ (inlined by) block_locate_free at /home/tjc/esp/esp-idf/components/heap/tlsf/tlsf.c:567 (discriminator 1)
+ (inlined by) tlsf_malloc at /home/tjc/esp/esp-idf/components/heap/tlsf/tlsf.c:1015 (discriminator 1)
+0x4038835f: multi_heap_malloc_impl at /home/tjc/esp/esp-idf/components/heap/multi_heap.c:211
+0x40376b47: aligned_or_unaligned_alloc at /home/tjc/esp/esp-idf/components/heap/heap_caps_base.c:77
+ (inlined by) heap_caps_aligned_alloc_base at /home/tjc/esp/esp-idf/components/heap/heap_caps_base.c:150
+0x40376b69: heap_caps_malloc_base at /home/tjc/esp/esp-idf/components/heap/heap_caps_base.c:170
+0x403765fd: heap_caps_malloc at /home/tjc/esp/esp-idf/components/heap/heap_caps.c:84
+0x4200a497: esp_vfs_register_common at /home/tjc/esp/esp-idf/components/vfs/vfs.c:90
+0x4200a555: esp_vfs_register at /home/tjc/esp/esp-idf/components/vfs/vfs.c:127 (discriminator 1)
+0x42075c7d: esp_vfs_spiffs_register at /home/tjc/esp/esp-idf/components/spiffs/esp_spiffs.c:453
+0x4200da6f: bsp_spiffs_mount at /home/tjc/esp/develop/esp-ai/build/../components/hardware_driver/boards/esp32-s3/bsp_board.c:168
+0x4200d833: esp_spiffs_mount at /home/tjc/esp/develop/esp-ai/build/../components/hardware_driver/esp_board_init.c:10
+0x4200b510: app_main at /home/tjc/esp/develop/esp-ai/build/../main/main.c:35
+0x4210f7c7: main_task at /home/tjc/esp/esp-idf/components/freertos/app_startup.c:208
+[0m
+[0;33m--- 0x40375f38: esp_restart_noos at /home/tjc/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:158
+[0m
+[0m
