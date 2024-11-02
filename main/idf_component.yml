@@ -1,0 +1,5 @@
+# IDF Component Manager Manifest File
+dependencies:
+  idf: ">=4.1.0"
+  espressif/esp-sr: "*"
+  abobija/rc522: "*"
