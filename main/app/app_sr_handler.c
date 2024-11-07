@@ -119,6 +119,7 @@ void sr_handler_task(void *pvParam)
                 // _ui_screen_change(&ui_Screen3, LV_SCR_LOAD_ANIM_FADE_ON, 100, 0, &ui_Screen1_screen_init);
                 break;
             default:
+            
                 break;
             }
             /* **************** REGISTER COMMAND CALLBACK HERE **************** */

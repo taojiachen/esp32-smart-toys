@@ -67,7 +67,7 @@ static void audio_feed_task(void *pvParam)
     {
         /* Read audio data from I2S bus */
         esp_err_t read_result = esp_i2s_read(audio_buffer, audio_chunksize * sizeof(int32_t));
-        //printf("audio_chunksize * sizeof(int16_t)   %d", audio_chunksize * sizeof(int16_t));
+        // printf("audio_chunksize * sizeof(int16_t)   %d", audio_chunksize * sizeof(int16_t));
         if (read_result != ESP_OK)
         {
             ESP_LOGE(TAG, "======== bsp_extra_i2s_read failed ==========");
@@ -99,7 +99,7 @@ static void audio_detect_task(void *pvParam)
     /* Check if audio data has same chunksize with multinet */
     int afe_chunksize = afe_handle->get_fetch_chunksize(afe_data);
     int mu_chunksize = multinet->get_samp_chunksize(model_data);
-    //printf("afe_chunksize  %d   mu_chunksize  %d", afe_chunksize, mu_chunksize);
+    // printf("afe_chunksize  %d   mu_chunksize  %d", afe_chunksize, mu_chunksize);
     assert(mu_chunksize == afe_chunksize);
     ESP_LOGI(TAG, "------------detect start------------\n");
 
@@ -259,7 +259,7 @@ esp_err_t app_sr_start(void)
     esp_mn_commands_print();
     multinet->print_active_speech_commands(model_data);
 
-    BaseType_t ret_val = xTaskCreatePinnedToCore(audio_feed_task, "Feed Task", 4 * 1024, afe_data, 5, NULL, 1);
+    BaseType_t ret_val = xTaskCreatePinnedToCore(audio_feed_task, "Feed Task", 8 * 1024, afe_data, 5, NULL, 1);
     ESP_RETURN_ON_FALSE(pdPASS == ret_val, ESP_FAIL, TAG, "Failed create audio feed task");
 
     ret_val = xTaskCreatePinnedToCore(audio_detect_task, "Detect Task", 6 * 1024, afe_data, 5, NULL, 0);

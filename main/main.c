@@ -21,24 +21,24 @@
 #include <app_sntp.h>
 #include <esp_psram.h>
 #include <app_RFID.h>
+//#include <event.h>
 
 static const char *TAG = "main";
 
 void app_main(void)
 {
-    ESP_ERROR_CHECK(nvs_flash_init());
-    ESP_ERROR_CHECK(esp_netif_init());
-    ESP_ERROR_CHECK(esp_event_loop_create_default());
-    blufi_start();
-    app_sntp_init();
-    esp_board_init();
-    //xTaskCreatePinnedToCore(app_sr_start, TAG, 4 * 1024, NULL, 5, NULL, 0);
-    ESP_ERROR_CHECK(app_sr_start());
-    esp_spiffs_mount();
-    ESP_LOGI(TAG, "Free memory after start: %d bytes", heap_caps_get_total_size(MALLOC_CAP_INTERNAL));
-
-    // RFID_start();
-
+    // ESP_ERROR_CHECK(nvs_flash_init());
+    // ESP_ERROR_CHECK(esp_netif_init());
+    // ESP_ERROR_CHECK(esp_event_loop_create_default());
+    // blufi_start();
+    // app_sntp_init();
+    // esp_board_init();
+    // ESP_ERROR_CHECK(app_sr_start());
+    // esp_spiffs_mount();
+    //ESP_LOGI(TAG, "Free memory after start: %d bytes", heap_caps_get_total_size(MALLOC_CAP_INTERNAL));
+    //xTaskCreatePinnedToCore(RFID_start, TAG, 4 * 1024, NULL, 6, NULL, 0);
+    //event_start();
+    RFID_start();
     while (1)
     {
         vTaskDelay(1000 / portTICK_PERIOD_MS);
