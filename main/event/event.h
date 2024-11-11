@@ -1,0 +1,1 @@
+void event_start(void);

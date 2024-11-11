@@ -53,7 +53,7 @@ static void audio_feed_task(void *pvParam)
     size_t bytes_read = 0;
     esp_afe_sr_data_t *afe_data = (esp_afe_sr_data_t *)pvParam;
     int audio_chunksize = afe_handle->get_feed_chunksize(afe_data);
-    ESP_LOGI(TAG, "audio_chunksize=%d, feed_channel=%d", audio_chunksize, 3);
+    ESP_LOGI(TAG, "audio_chunksize=%d, feed_channel=%d", audio_chunksize, 1);
 
     /* Allocate audio buffer and check for result */
     int16_t *max98357a_data = heap_caps_malloc(audio_chunksize * sizeof(int16_t), MALLOC_CAP_SPIRAM | MALLOC_CAP_8BIT);

@@ -16,11 +16,10 @@
 #include "blufi_example.h"
 #include "esp_blufi.h"
 #include "esp_board_init.h"
-#include <app_sr.h>
-#include <app_sr_handler.h>
 #include <app_sntp.h>
 #include <esp_psram.h>
-#include <app_RFID.h>
+#include<event.h>
+#include<app_RFID.h>
 
 static const char *TAG = "main";
 
@@ -32,11 +31,11 @@ void app_main(void)
     blufi_start();
     app_sntp_init();
     esp_board_init();
-    ESP_ERROR_CHECK(app_sr_start());
-    esp_spiffs_mount();
+    spi_bus_init();
+    event_start();
+    //ESP_ERROR_CHECK(app_sr_start());
+    //esp_spiffs_mount();
     ESP_LOGI(TAG, "Free memory after start: %d bytes", heap_caps_get_total_size(MALLOC_CAP_INTERNAL));
-    //xTaskCreatePinnedToCore(RFID_start, TAG, 4 * 1024, NULL, 6, NULL, 0);
-    //RFID_start();
     while (1)
     {
         vTaskDelay(1000 / portTICK_PERIOD_MS);
