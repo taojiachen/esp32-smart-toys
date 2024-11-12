@@ -20,6 +20,7 @@
 #include <esp_psram.h>
 #include<event.h>
 #include<app_RFID.h>
+#include<app_aliyun_mqtt.h>
 
 static const char *TAG = "main";
 
@@ -29,6 +30,7 @@ void app_main(void)
     ESP_ERROR_CHECK(esp_netif_init());
     ESP_ERROR_CHECK(esp_event_loop_create_default());
     blufi_start();
+    app_aliyun_mqtt_init();
     app_sntp_init();
     esp_board_init();
     spi_bus_init();

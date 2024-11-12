@@ -1,0 +1,42 @@
+@startuml
+title Detailed Aliyun MQTT Process Flow
+
+participant MAIN as "App Main"
+participant App as "App MQTT"
+participant MQTT as "MQTT Component"
+participant ESP as "ESP Component"
+
+== Start of MQTT Process ==
+
+MAIN ->MAIN : nvs_flash_init()
+MAIN ->MAIN : wifi_init_sta()
+MAIN ->App : app_aliyun_mqtt_init()
+note right of App: Initialize MQTT
+note right of App: Initialize MQTT
+
+App->MQTT : aliyun_mqtt_init(app_mqtt_event_handler)
+App->App :app_mqtt_event_handler
+note right of App:  Init mqtt event handler.
+
+MQTT->MQTT : aliyun_mqtt_start(app_mqtt_event_handler)
+MQTT->ESP: esp_mqtt_client_init()
+MQTT->ESP: esp_mqtt_client_register_event(app_mqtt_event_handler)
+MQTT->ESP: esp_mqtt_client_start()
+ESP->MQTT : MQTT EVENT
+note right of MQTT: Start MQTT  
+
+== MQTT Event Trigger ==
+
+MQTT -> App : app_mqtt_event_handler_cb(EVENT)
+note right of App: Handle various mqtt events
+activate App
+App->ESP : esp_mqtt_client_publish(DATA)
+note right of MQTT: Publish data
+App->ESP : esp_mqtt_client_subscribe(DATA)
+note right of MQTT: Subscription confirmation
+App->App: MQTT_EVENT_DATA
+note right of App: Data arrives, parses and processes data 
+deactivate MQTT
+
+ 
+@enduml

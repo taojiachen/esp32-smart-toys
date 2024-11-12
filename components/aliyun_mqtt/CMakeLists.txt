@@ -1,0 +1,9 @@
+idf_component_register(SRCS 
+                           "src/aliyun_mqtt.c" 
+                    INCLUDE_DIRS 
+                            "."
+                            "include" 
+                    REQUIRES 
+                            driver   
+                            mqtt                
+)

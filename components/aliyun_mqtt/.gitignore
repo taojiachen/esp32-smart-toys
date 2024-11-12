@@ -1,0 +1,10 @@
+**/build/
+**/.vscode/
+**/.devcontainer/
+**/managed_components/
+**/sdkconfig
+**/sdkconfig.old
+**/dependencies.lock
+**/ui
+**/components/bsp/
+

@@ -2424,6 +2424,20 @@ CONFIG_WIFI_PROV_STA_ALL_CHANNEL_SCAN=y
 # end of Wi-Fi Provisioning Manager
 
 #
+# AliYun MQTT Component Configuration
+#
+CONFIG_AliYun_MQTT_HOST_URL="mqtt://a1PYTqKfFAI.iot-as-mqtt.cn-shanghai.aliyuncs.com:1883"
+CONFIG_AliYun_MQTT_PORT=1883
+CONFIG_AliYun_MQTT_CLIENT_ID="a1PYTqKfFAI.water_ctrl_001|securemode=2,signmethod=hmacsha256,timestamp=1726138058443|"
+CONFIG_AliYun_MQTT_USERNAME="water_ctrl_001&a1PYTqKfFAI"
+CONFIG_AliYun_MQTT_PASSWORD="93acb1ca6939186653c5a8a433eec166efebf05f8f0a96c11e16aafe4bac0ced"
+CONFIG_AliYun_PUBLISH_TOPIC_USER_POST="/sys/a1PYTqKfFAI/water_ctrl_001/thing/event/property/post"
+CONFIG_AliYun_SUBSCRIBE_TOPIC_USER_GET="/a1PYTqKfFAI/water_ctrl_001/user/get"
+CONFIG_AliYun_PUBLISH_TOPIC_USER_UPDATE="/a1PYTqKfFAI/water_ctrl_001/user/data"
+CONFIG_AliYun_PUBLISH_TOPIC_USER_POST_REPLY="/sys/a1PYTqKfFAI/water_ctrl_001/thing/event/property/post_reply"
+# end of AliYun MQTT Component Configuration
+
+#
 # RC522
 #
 CONFIG_RC522_PREVENT_SECTOR_TRAILER_WRITE=y
