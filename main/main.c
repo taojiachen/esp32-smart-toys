@@ -30,12 +30,12 @@ void app_main(void)
     ESP_ERROR_CHECK(esp_netif_init());
     ESP_ERROR_CHECK(esp_event_loop_create_default());
     blufi_start();
-    app_aliyun_mqtt_init();
-    app_sntp_init();
+    //app_sntp_init();
     esp_board_init();
     spi_bus_init();
-    event_start();
-    //ESP_ERROR_CHECK(app_sr_start());
+    app_aliyun_mqtt_init();
+    //event_start();
+    //ESP_ERROR_CHECK(app_sr_start()); 
     //esp_spiffs_mount();
     ESP_LOGI(TAG, "Free memory after start: %d bytes", heap_caps_get_total_size(MALLOC_CAP_INTERNAL));
     while (1)

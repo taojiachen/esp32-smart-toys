@@ -2426,15 +2426,15 @@ CONFIG_WIFI_PROV_STA_ALL_CHANNEL_SCAN=y
 #
 # AliYun MQTT Component Configuration
 #
-CONFIG_AliYun_MQTT_HOST_URL="mqtt://a1PYTqKfFAI.iot-as-mqtt.cn-shanghai.aliyuncs.com:1883"
+CONFIG_AliYun_MQTT_HOST_URL="mqtt://iot-06z00ezwg4s9fzu.mqtt.iothub.aliyuncs.com:1883"
 CONFIG_AliYun_MQTT_PORT=1883
-CONFIG_AliYun_MQTT_CLIENT_ID="a1PYTqKfFAI.water_ctrl_001|securemode=2,signmethod=hmacsha256,timestamp=1726138058443|"
-CONFIG_AliYun_MQTT_USERNAME="water_ctrl_001&a1PYTqKfFAI"
-CONFIG_AliYun_MQTT_PASSWORD="93acb1ca6939186653c5a8a433eec166efebf05f8f0a96c11e16aafe4bac0ced"
-CONFIG_AliYun_PUBLISH_TOPIC_USER_POST="/sys/a1PYTqKfFAI/water_ctrl_001/thing/event/property/post"
-CONFIG_AliYun_SUBSCRIBE_TOPIC_USER_GET="/a1PYTqKfFAI/water_ctrl_001/user/get"
-CONFIG_AliYun_PUBLISH_TOPIC_USER_UPDATE="/a1PYTqKfFAI/water_ctrl_001/user/data"
-CONFIG_AliYun_PUBLISH_TOPIC_USER_POST_REPLY="/sys/a1PYTqKfFAI/water_ctrl_001/thing/event/property/post_reply"
+CONFIG_AliYun_MQTT_CLIENT_ID="k1kwuo5hqAl.Toy_001|securemode=2,signmethod=hmacsha256,timestamp=1731424153082|"
+CONFIG_AliYun_MQTT_USERNAME="Toy_001&k1kwuo5hqAl"
+CONFIG_AliYun_MQTT_PASSWORD="a825816e8a4552517fc370729b8c3f3b64e05bb4542c92729bfba66dcefdda4d"
+CONFIG_AliYun_PUBLISH_TOPIC_USER_POST="/sys/k1kwuo5hqAl/Toy_001/thing/event/property/post"
+CONFIG_AliYun_SUBSCRIBE_TOPIC_USER_GET="/k1kwuo5hqAl/Toy_001/user/get"
+CONFIG_AliYun_PUBLISH_TOPIC_USER_UPDATE="/k1kwuo5hqAl/Toy_001/user/data"
+CONFIG_AliYun_PUBLISH_TOPIC_USER_POST_REPLY="/sys/k1kwuo5hqAl/Toy_001/thing/event/property/post_reply"
 # end of AliYun MQTT Component Configuration
 
 #

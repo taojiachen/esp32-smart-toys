@@ -14,7 +14,7 @@ config AliYun_MQTT_PORT
 
 config AliYun_MQTT_CLIENT_ID
     string "AliYun MQTT Client ID"
-    default "k1kwuo5hqAl.Toy_001|securemode=2,signmethod=hmacsha256,timestamp=1731394629613|"
+    default "k1kwuo5hqAl.Toy_001|securemode=2,signmethod=hmacsha256,timestamp=1731424153082|"
     help
       Unique client identifier for AliYun MQTT connection. Customize according to your device and AliYun's security requirements.
 
@@ -26,7 +26,7 @@ config AliYun_MQTT_USERNAME
 
 config AliYun_MQTT_PASSWORD
     string "AliYun MQTT Password"
-    default "377b9740881881f3a7b48a04e9b381e738429bf7b401430ac74abd860525b7d3"
+    default "a825816e8a4552517fc370729b8c3f3b64e05bb4542c92729bfba66dcefdda4d"
     help
       Password for AliYun MQTT authentication. Ensure to use the secure access key assigned by AliYun for your device.
 

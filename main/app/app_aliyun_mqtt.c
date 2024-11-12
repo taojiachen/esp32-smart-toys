@@ -25,7 +25,6 @@
 #include "mqtt_client.h"
 #include "aliyun_mqtt.h"
 #include "cJSON.h"
-//#include "motor_ctrl.h"
 
 #include "esp_system.h"
 #include "esp_sntp.h"
@@ -51,12 +50,9 @@ static esp_err_t app_mqtt_event_handler_cb(esp_mqtt_event_handle_t event)
     {
     case MQTT_EVENT_CONNECTED:
         ESP_LOGI(TAG, "MQTT_EVENT_CONNECTED");
-        char *msg_id;
+        // char *msg_id;
         // msg_id = esp_mqtt_client_subscribe(client, CONFIG_AliYun_SUBSCRIBE_TOPIC_USER_GET, 0);
         // ESP_LOGI(TAG, "sent subscribe successful, msg_id=%d", msg_id);
-        msg_id = "{\"method\": \"thing.service.property.set\",\"id\": \"1490775934\",\"params\": {\"RealTime_Hydration\": {\"waterport\": 0,\"switch\": 0}},\"version\": \"1.0.0\"}";
-        //motor_sta(msg_id);
-
         break;
     case MQTT_EVENT_DISCONNECTED:
         ESP_LOGI(TAG, "MQTT_EVENT_DISCONNECTED");
@@ -79,7 +75,6 @@ static esp_err_t app_mqtt_event_handler_cb(esp_mqtt_event_handle_t event)
         ESP_LOGE(TAG, "MQTT_EVENT_DATA");
         const char *jsonStr = event->data;
         ESP_LOGE(TAG, "DATA=%.*s\r\n", event->data_len, jsonStr);
-        //motor_sta(jsonStr);
         break;
     case MQTT_EVENT_ERROR:
         ESP_LOGI(TAG, "MQTT_EVENT_ERROR");
@@ -101,13 +96,10 @@ static void app_mqtt_event_handler(void *handler_args, esp_event_base_t base, in
 
 void app_aliyun_mqtt_init(void)
 {
-
     aliyun_mqtt_init(app_mqtt_event_handler);
-    vTaskDelay(2000 / portTICK_PERIOD_MS);
     vTaskDelete(NULL);
 }
 
 // {"method":"thing.service.property.set","id":"27738049","params":{"RealTime_Hydration":{"waterport":0,"switch":0}},"version":"1.0.0"}
 
 // {"method":"thing.service.property.set","id":"1898751389","params":{"RealTime_Hydration":{"waterport":1,"switch":1}},"version":"1.0.0"}
-
