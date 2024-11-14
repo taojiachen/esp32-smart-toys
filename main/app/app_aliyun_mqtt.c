@@ -30,9 +30,7 @@
 #include "esp_sntp.h"
 #include "esp_pm.h"
 
-#define ADC_CHANNEL GPIO_NUM_0 // IO1 引脚
-#define ADC_WIDTH ADC_WIDTH_BIT_DEFAULT
-#define ADC_ATTEN ADC_ATTEN_DB_12
+#include<event.h>
 
 char local_data_buffer[1024] = {0};
 char mqtt_publish_data1[] = "mqtt connect ok ";
@@ -75,6 +73,7 @@ static esp_err_t app_mqtt_event_handler_cb(esp_mqtt_event_handle_t event)
         ESP_LOGE(TAG, "MQTT_EVENT_DATA");
         const char *jsonStr = event->data;
         ESP_LOGE(TAG, "DATA=%.*s\r\n", event->data_len, jsonStr);
+        set_task(jsonStr);
         break;
     case MQTT_EVENT_ERROR:
         ESP_LOGI(TAG, "MQTT_EVENT_ERROR");
@@ -97,7 +96,7 @@ static void app_mqtt_event_handler(void *handler_args, esp_event_base_t base, in
 void app_aliyun_mqtt_init(void)
 {
     aliyun_mqtt_init(app_mqtt_event_handler);
-    vTaskDelete(NULL);
+    //vTaskDelete(NULL);
 }
 
 // {"method":"thing.service.property.set","id":"27738049","params":{"RealTime_Hydration":{"waterport":0,"switch":0}},"version":"1.0.0"}

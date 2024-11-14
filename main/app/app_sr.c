@@ -34,6 +34,9 @@ static const esp_afe_sr_iface_t *afe_handle = NULL;
 static QueueHandle_t g_result_que = NULL;
 static srmodel_list_t *models = NULL;
 
+TaskHandle_t audio_feed_task_handle = NULL;
+TaskHandle_t audio_detect_task_handle = NULL;
+
 const char *cmd_phoneme[12] = {
     "da kai kong qi jing hua qi",
     "guan bi kong qi jing hua qi",
@@ -259,16 +262,33 @@ esp_err_t app_sr_start(void)
     esp_mn_commands_print();
     multinet->print_active_speech_commands(model_data);
 
-    BaseType_t ret_val = xTaskCreatePinnedToCore(audio_feed_task, "Feed Task", 8 * 1024, afe_data, 5, NULL, 1);
+    BaseType_t ret_val = xTaskCreatePinnedToCore(audio_feed_task, "Feed Task", 8 * 1024, afe_data, 5, audio_feed_task_handle, 1);
     ESP_RETURN_ON_FALSE(pdPASS == ret_val, ESP_FAIL, TAG, "Failed create audio feed task");
 
-    ret_val = xTaskCreatePinnedToCore(audio_detect_task, "Detect Task", 6 * 1024, afe_data, 5, NULL, 0);
+    ret_val = xTaskCreatePinnedToCore(audio_detect_task, "Detect Task", 6 * 1024, afe_data, 5, audio_detect_task_handle, 0);
     ESP_RETURN_ON_FALSE(pdPASS == ret_val, ESP_FAIL, TAG, "Failed create audio detect task");
 
     ret_val = xTaskCreatePinnedToCore(sr_handler_task, "SR Handler Task", 4 * 1024, g_result_que, 1, NULL, 1);
     ESP_RETURN_ON_FALSE(pdPASS == ret_val, ESP_FAIL, TAG, "Failed create audio handler task");
 
     return ESP_OK;
+}
+
+void Suspend_audio_feed_task()
+{
+    vTaskSuspend(audio_feed_task_handle);
+}
+void Suspend_audio_detect_task()
+{
+    vTaskSuspend(audio_detect_task_handle);
+}
+void Resume_audio_feed_task()
+{
+    vTaskResume(audio_feed_task_handle);
+}
+void Resume_audio_detect_task()
+{
+    vTaskResume(audio_detect_task_handle);
 }
 
 esp_err_t app_sr_reset_command_list(char *command_list)

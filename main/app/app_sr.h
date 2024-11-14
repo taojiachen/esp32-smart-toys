@@ -12,38 +12,45 @@
 #include "esp_mn_models.h"
 
 #ifdef __cplusplus
-extern "C" {
+extern "C"
+{
 #endif
 
 #define SR_CONTINUE_DET 1
 
-typedef struct {
-    wakenet_state_t     wakenet_mode;
-    esp_mn_state_t      state;
-    int                 command_id;
-} sr_result_t;
+    typedef struct
+    {
+        wakenet_state_t wakenet_mode;
+        esp_mn_state_t state;
+        int command_id;
+    } sr_result_t;
 
-/**
- * @brief Start speech recognition task
- *
- * @param record_en Record audio to SD crad if set to `true`
- * @return
- *    - ESP_OK: Success
- *    - ESP_ERR_NO_MEM: No enough memory for speech recognition
- *    - Others: Fail
- */
-esp_err_t app_sr_start(void);
+    /**
+     * @brief Start speech recognition task
+     *
+     * @param record_en Record audio to SD crad if set to `true`
+     * @return
+     *    - ESP_OK: Success
+     *    - ESP_ERR_NO_MEM: No enough memory for speech recognition
+     *    - Others: Fail
+     */
+    esp_err_t app_sr_start(void);
 
-/**
- * @brief Reset command list
- *
- * @param command_list New command string
- * @return
- *    - ESP_OK: Success
- *    - ESP_ERR_NO_MEM: No enough memory for err_id string
- *    - Others: Fail
- */
-esp_err_t app_sr_reset_command_list(char *command_list);
+    /**
+     * @brief Reset command list
+     *
+     * @param command_list New command string
+     * @return
+     *    - ESP_OK: Success
+     *    - ESP_ERR_NO_MEM: No enough memory for err_id string
+     *    - Others: Fail
+     */
+    esp_err_t app_sr_reset_command_list(char *command_list);
+
+    void Suspend_audio_feed_task();
+    void Suspend_audio_detect_task();
+    void Resume_audio_feed_task();
+    void Resume_audio_detect_task();
 
 #ifdef __cplusplus
 }

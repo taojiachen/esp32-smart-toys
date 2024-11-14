@@ -9,12 +9,13 @@
 #include <sys/time.h>
 #include <app_sr.h>
 #include <app_RFID.h>
+#include <cJSON.h>
+#include<app_sr.h>
 
 static const char *TAG = "TIMER_EVENT";
 
 // 定义自定义事件基础值
 ESP_EVENT_DEFINE_BASE(TIMER_EVENTS);
-
 // 定义事件类型
 enum
 {
@@ -29,6 +30,62 @@ TaskHandle_t Task1_handle = NULL;
 
 // 事件循环句柄
 static esp_event_loop_handle_t timer_event_loop;
+
+//声明结构体链表
+typedef struct task_list
+{
+    char *task_type;
+    char *tart_time;
+    char *end_time;
+    struct task_list *next;
+} task_list;
+
+//创建链表节点函数
+task_list *create_task_list(char *task_type, char *tart_time, char *end_time)
+{
+    task_list *newNode = (task_list *)malloc(sizeof(task_list));
+    newNode->task_type = task_type;
+    newNode->tart_time = tart_time;
+    newNode->end_time = end_time;
+    newNode->next = NULL;
+    return newNode;
+}
+
+//在链表尾部插入新节点函数
+task_list *insertAtTail(task_list **head, int data) {
+    task_list *newNode = create_task_list(1,2,3);
+    if (*head == NULL) {
+        *head = newNode;
+        return newNode;
+    }
+    task_list *current = *head;
+    while (current->next!= NULL) {
+        current = current->next;
+    }
+    current->next = newNode;
+    return newNode;
+}
+
+//释放无用链表内存函数
+void freeList(task_list **head) {
+    task_list *current = *head;
+    while (current!= NULL) {
+        task_list *temp = current;
+        current = current->next;
+        free(temp);
+    }
+    *head = NULL;
+}
+
+
+
+// 阿里云端任务下发
+void set_task(char *JOSN_str)
+{
+    cJSON *json = cJSON_Parse(JOSN_str);
+
+    
+}
 
 // 事件处理函数 - 任务1
 static void task1_handler(void *handler_args, esp_event_base_t base, int32_t id, void *event_data)
@@ -93,13 +150,18 @@ static void timer_callback(void *arg)
            tm_info->tm_year + 1900, tm_info->tm_mon + 1, tm_info->tm_mday,
            tm_info->tm_hour, tm_info->tm_min, tm_info->tm_sec);
 
-    if (tm_info->tm_hour == 22 &&(tm_info->tm_min == 38||tm_info->tm_min == 40) && tm_info->tm_sec == 0)
+    if (tm_info->tm_sec == 0)
     {
+        //Suspend_audio_feed_task();
+        //Suspend_audio_detect_task();
         esp_event_post_to(timer_event_loop, TIMER_EVENTS, TIMER_EVENT_TASK1, NULL, 0, portMAX_DELAY);
+
     }
-    if (tm_info->tm_hour == 22 && tm_info->tm_min == 39 && tm_info->tm_sec == 0)
+    if (tm_info->tm_sec == 30)
     {
         RFID_stop();
+        //Resume_audio_feed_task();
+        //Resume_audio_detect_task();
     }
     // else if ( <= 20)
     // {
