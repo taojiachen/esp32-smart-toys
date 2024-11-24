@@ -13,11 +13,17 @@
 #include <esp_spiffs.h>
 #include <bsp_err_check.h>
 
+#define CODEC_DEFAULT_SAMPLE_RATE          (16000)
+#define CODEC_DEFAULT_BIT_WIDTH            (16)
+#define CODEC_DEFAULT_ADC_VOLUME           (24.0)
+#define CODEC_DEFAULT_CHANNEL              (2)
+
 #define ADC_I2S_CHANNEL 1
 static const char *TAG = "board";
 
 i2s_chan_handle_t rx_handle;
 i2s_chan_handle_t tx_handle;
+static file_iterator_instance_t *file_iterator;
 
 void init_i2s_input(void)
 {
@@ -29,7 +35,7 @@ void init_i2s_input(void)
 
     // 配置I2S输入参数
     i2s_std_config_t rx_std_cfg = {
-        .clk_cfg = I2S_STD_CLK_DEFAULT_CONFIG(SAMPLE_RATE),
+        .clk_cfg = I2S_STD_CLK_DEFAULT_CONFIG(SAMPLE_RX_RATE),
         .slot_cfg = {
             .data_bit_width = I2S_DATA_BIT_WIDTH_32BIT,
             .slot_bit_width = I2S_SLOT_BIT_WIDTH_32BIT,
@@ -59,7 +65,7 @@ void init_i2s_input(void)
     ESP_ERROR_CHECK(i2s_channel_enable(rx_handle));
 }
 
-void init_i2s_output(void)
+i2s_chan_handle_t init_i2s_output(void)
 {
     // 配置I2S输出通道
     i2s_chan_config_t tx_chan_cfg = I2S_CHANNEL_DEFAULT_CONFIG(I2S_NUM_1, I2S_ROLE_MASTER);
@@ -69,7 +75,7 @@ void init_i2s_output(void)
 
     // 配置I2S输出参数
     i2s_std_config_t tx_std_cfg = {
-        .clk_cfg = I2S_STD_CLK_DEFAULT_CONFIG(SAMPLE_RATE),
+        .clk_cfg = I2S_STD_CLK_DEFAULT_CONFIG(SAMPLE_TX_RATE),
         .slot_cfg = {
             .data_bit_width = I2S_DATA_BIT_WIDTH_16BIT,
             .slot_bit_width = I2S_SLOT_BIT_WIDTH_16BIT,
@@ -77,7 +83,7 @@ void init_i2s_output(void)
             .slot_mask = I2S_STD_SLOT_LEFT,
             .ws_width = 16,
             .ws_pol = false,
-            .bit_shift = false,
+            .bit_shift = true,
             .left_align = false,
             .big_endian = false,
             .bit_order_lsb = false},
@@ -97,12 +103,9 @@ void init_i2s_output(void)
 
     ESP_ERROR_CHECK(i2s_channel_init_std_mode(tx_handle, &tx_std_cfg));
     ESP_ERROR_CHECK(i2s_channel_enable(tx_handle));
-}
 
-// 获取需要处理的通道数
-int bsp_get_channel()
-{
-    return ADC_I2S_CHANNEL;
+    return tx_handle;
+
 }
 
 size_t bytes_read = 0;
@@ -112,7 +115,7 @@ size_t bytes_written = 0;
 esp_err_t bsp_i2s_read(int32_t *buffer, int buffer_len)
 {
     // int32_t *inmp441_data = heap_caps_malloc(BUFFER_SIZE * sizeof(int32_t), MALLOC_CAP_8BIT);
-    //int16_t *max98357a_data = heap_caps_malloc(buffer_len / 2, MALLOC_CAP_8BIT);
+    // int16_t *max98357a_data = heap_caps_malloc(buffer_len / 2, MALLOC_CAP_8BIT);
     ESP_ERROR_CHECK(i2s_channel_read(rx_handle, buffer,
                                      buffer_len,
                                      &bytes_read, portMAX_DELAY));
@@ -141,10 +144,9 @@ esp_err_t bsp_audio_play(const int16_t *data, size_t buffer_len)
     return ESP_OK;
 }
 
-esp_err_t bsp_board_init(uint32_t sample_rate, int channel_format, int bits_per_chan)
+esp_err_t bsp_board_init()
 {
     init_i2s_input();
-    init_i2s_output();
     return ESP_OK;
 }
 
@@ -154,7 +156,7 @@ esp_err_t bsp_spiffs_mount(void)
         // 挂载点路径、分区标签、最大文件数
         .base_path = "/spiffs",
         .partition_label = "storage",
-        .max_files = 5,
+        .max_files = 10,
 #ifdef CONFIG_BSP_SPIFFS_FORMAT_ON_MOUNT_FAIL
         .format_if_mount_failed = true,
 #else
@@ -179,3 +181,10 @@ esp_err_t bsp_spiffs_mount(void)
 
     return ret_val;
 }
+
+esp_err_t bsp_spiffs_unmount(void)
+{
+    return esp_vfs_spiffs_unregister("storage");
+}
+
+

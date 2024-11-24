@@ -274,23 +274,6 @@ esp_err_t app_sr_start(void)
     return ESP_OK;
 }
 
-void Suspend_audio_feed_task()
-{
-    vTaskSuspend(audio_feed_task_handle);
-}
-void Suspend_audio_detect_task()
-{
-    vTaskSuspend(audio_detect_task_handle);
-}
-void Resume_audio_feed_task()
-{
-    vTaskResume(audio_feed_task_handle);
-}
-void Resume_audio_detect_task()
-{
-    vTaskResume(audio_detect_task_handle);
-}
-
 esp_err_t app_sr_reset_command_list(char *command_list)
 {
     char *err_id = heap_caps_malloc(1024, MALLOC_CAP_SPIRAM);

@@ -47,11 +47,6 @@ extern "C"
      */
     esp_err_t app_sr_reset_command_list(char *command_list);
 
-    void Suspend_audio_feed_task();
-    void Suspend_audio_detect_task();
-    void Resume_audio_feed_task();
-    void Resume_audio_detect_task();
-
 #ifdef __cplusplus
 }
 #endif

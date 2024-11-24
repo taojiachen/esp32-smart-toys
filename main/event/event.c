@@ -10,7 +10,13 @@
 #include <app_sr.h>
 #include <app_RFID.h>
 #include <cJSON.h>
-#include<app_sr.h>
+#include <app_sr.h>
+#include <string.h>
+#include "nvs_flash.h"
+#include <app_play_music.h>
+
+#define NAME_SPACE "JSON_TASK"
+nvs_handle_t nvshandle;
 
 static const char *TAG = "TIMER_EVENT";
 
@@ -31,7 +37,7 @@ TaskHandle_t Task1_handle = NULL;
 // 事件循环句柄
 static esp_event_loop_handle_t timer_event_loop;
 
-//声明结构体链表
+// 声明结构体链表
 typedef struct task_list
 {
     char *task_type;
@@ -40,7 +46,7 @@ typedef struct task_list
     struct task_list *next;
 } task_list;
 
-//创建链表节点函数
+// 创建链表节点函数
 task_list *create_task_list(char *task_type, char *tart_time, char *end_time)
 {
     task_list *newNode = (task_list *)malloc(sizeof(task_list));
@@ -51,25 +57,30 @@ task_list *create_task_list(char *task_type, char *tart_time, char *end_time)
     return newNode;
 }
 
-//在链表尾部插入新节点函数
-task_list *insertAtTail(task_list **head, int data) {
-    task_list *newNode = create_task_list(1,2,3);
-    if (*head == NULL) {
+// 在链表尾部插入新节点函数
+task_list *insertAtTail(task_list **head, int data)
+{
+    task_list *newNode = create_task_list(1, 2, 3);
+    if (*head == NULL)
+    {
         *head = newNode;
         return newNode;
     }
     task_list *current = *head;
-    while (current->next!= NULL) {
+    while (current->next != NULL)
+    {
         current = current->next;
     }
     current->next = newNode;
     return newNode;
 }
 
-//释放无用链表内存函数
-void freeList(task_list **head) {
+// 释放无用链表内存函数
+void freeList(task_list **head)
+{
     task_list *current = *head;
-    while (current!= NULL) {
+    while (current != NULL)
+    {
         task_list *temp = current;
         current = current->next;
         free(temp);
@@ -77,66 +88,48 @@ void freeList(task_list **head) {
     *head = NULL;
 }
 
+void nvs_write(char *jsonStr)
+{
+}
 
+void nvs_erase()
+{
+}
 
 // 阿里云端任务下发
-void set_task(char *JOSN_str)
+void set_task(const char *JOSN_str)
 {
     cJSON *json = cJSON_Parse(JOSN_str);
-    
-    
 }
 
 // 事件处理函数 - 任务1
 static void task1_handler(void *handler_args, esp_event_base_t base, int32_t id, void *event_data)
 {
-    gettimeofday(&tv, NULL);
 
-    // 将时间戳转换为本地时间
-    tm_info = localtime(&tv.tv_sec);
-
-    // 打印本地时间
-    printf("Current local time: %d-%02d-%02d %02d:%02d:%02d\n",
-           tm_info->tm_year + 1900, tm_info->tm_mon + 1, tm_info->tm_mday,
-           tm_info->tm_hour, tm_info->tm_min, tm_info->tm_sec);
-    // app_sr_start();
-    RFID_start();
+    // RFID_start();
     printf("Task 1: Output 1\n");
 }
 
 // 事件处理函数 - 任务2
 static void task2_handler(void *handler_args, esp_event_base_t base, int32_t id, void *event_data)
 {
-    gettimeofday(&tv, NULL);
 
-    // 将时间戳转换为本地时间
-    tm_info = localtime(&tv.tv_sec);
-
-    // 打印本地时间
-    printf("Current local time: %d-%02d-%02d %02d:%02d:%02d\n",
-           tm_info->tm_year + 1900, tm_info->tm_mon + 1, tm_info->tm_mday,
-           tm_info->tm_hour, tm_info->tm_min, tm_info->tm_sec);
     printf("Task 2: Output 2\n");
 }
 
 // 事件处理函数 - 任务3
 static void task3_handler(void *handler_args, esp_event_base_t base, int32_t id, void *event_data)
 {
-    gettimeofday(&tv, NULL);
 
-    // 将时间戳转换为本地时间
-    tm_info = localtime(&tv.tv_sec);
-
-    // 打印本地时间
-    printf("Current local time: %d-%02d-%02d %02d:%02d:%02d\n",
-           tm_info->tm_year + 1900, tm_info->tm_mon + 1, tm_info->tm_mday,
-           tm_info->tm_hour, tm_info->tm_min, tm_info->tm_sec);
     printf("Task 3: Output 3\n");
 }
 
 // 定时器回调函数
 static void timer_callback(void *arg)
 {
+    char *task_type;
+    char *tart_time;
+    char *end_time;
     struct timeval tv;
     struct tm *tm_info;
 
@@ -152,25 +145,12 @@ static void timer_callback(void *arg)
 
     if (tm_info->tm_sec == 0)
     {
-        //Suspend_audio_feed_task();
-        //Suspend_audio_detect_task();
-        esp_event_post_to(timer_event_loop, TIMER_EVENTS, TIMER_EVENT_TASK1, NULL, 0, portMAX_DELAY);
-
+        // esp_event_post_to(timer_event_loop, TIMER_EVENTS, TIMER_EVENT_TASK1, NULL, 0, portMAX_DELAY);
     }
     if (tm_info->tm_sec == 30)
     {
-        RFID_stop();
-        //Resume_audio_feed_task();
-        //Resume_audio_detect_task();
+        // RFID_stop();
     }
-    // else if ( <= 20)
-    // {
-    //     esp_event_post_to(timer_event_loop, TIMER_EVENTS, TIMER_EVENT_TASK2, NULL, 0, portMAX_DELAY);
-    // }
-    // else if ( <= 30)
-    // {
-    //     esp_event_post_to(timer_event_loop, TIMER_EVENTS, TIMER_EVENT_TASK3, NULL, 0, portMAX_DELAY);
-    // }
 }
 
 void event_start(void)
@@ -180,7 +160,7 @@ void event_start(void)
         .queue_size = 10,
         .task_name = "timer_event_task",
         .task_priority = 6,
-        .task_stack_size = 1024 * 20,
+        .task_stack_size = 1024 * 10,
         .task_core_id = 0};
 
     ESP_ERROR_CHECK(esp_event_loop_create(&loop_args, &timer_event_loop));

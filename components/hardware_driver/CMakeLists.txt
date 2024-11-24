@@ -12,6 +12,7 @@ idf_component_register(
         fatfs
         spiffs
         esp_driver_i2s
+        esp-file-iterator
         )
 component_compile_options(-w)
 target_compile_options(${COMPONENT_LIB} PRIVATE "-Wno-format")

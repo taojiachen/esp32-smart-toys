@@ -70,10 +70,15 @@ static esp_err_t app_mqtt_event_handler_cb(esp_mqtt_event_handle_t event)
     case MQTT_EVENT_DATA:
         // 云端事件处理
         // 云流转
+        //获取到JSON字符串 -> jsonStr
         ESP_LOGE(TAG, "MQTT_EVENT_DATA");
+        //常量指针，指针的值不能改变，但是可以通过指针改变指向的值，指向的值也可以改变
         const char *jsonStr = event->data;
+        //%.*s 是一个特殊的格式化指令，它允许你指定字符串的长度
         ESP_LOGE(TAG, "DATA=%.*s\r\n", event->data_len, jsonStr);
         set_task(jsonStr);
+
+
         break;
     case MQTT_EVENT_ERROR:
         ESP_LOGI(TAG, "MQTT_EVENT_ERROR");
@@ -98,7 +103,3 @@ void app_aliyun_mqtt_init(void)
     aliyun_mqtt_init(app_mqtt_event_handler);
     //vTaskDelete(NULL);
 }
-
-// {"method":"thing.service.property.set","id":"27738049","params":{"RealTime_Hydration":{"waterport":0,"switch":0}},"version":"1.0.0"}
-
-// {"method":"thing.service.property.set","id":"1898751389","params":{"RealTime_Hydration":{"waterport":1,"switch":1}},"version":"1.0.0"}

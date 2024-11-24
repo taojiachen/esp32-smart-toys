@@ -22,7 +22,10 @@
 #include <app_RFID.h>
 #include <app_aliyun_mqtt.h>
 #include <app_health.h>
-#include<app_sr.h>
+#include <app_sr.h>
+#include <app_play_music.h>
+#include <bsp_board.h>
+#include "i2s_stream.h"
 
 static const char *TAG = "main";
 
@@ -32,14 +35,14 @@ void app_main(void)
     ESP_ERROR_CHECK(esp_netif_init());
     ESP_ERROR_CHECK(esp_event_loop_create_default());
     health_init();
-    blufi_start();
-    app_sntp_init();
     esp_board_init();
     spi_bus_init();
+    esp_spiffs_mount();
+    blufi_start();
+    app_sntp_init();
+    ESP_ERROR_CHECK(app_sr_start());
     app_aliyun_mqtt_init();
     event_start();
-    ESP_ERROR_CHECK(app_sr_start());
-    esp_spiffs_mount();
     ESP_LOGI(TAG, "Free memory after start: %d bytes", heap_caps_get_total_size(MALLOC_CAP_INTERNAL));
     while (1)
     {
