@@ -25,7 +25,6 @@
 #include <app_sr.h>
 #include <app_play_music.h>
 #include <bsp_board.h>
-#include "i2s_stream.h"
 
 static const char *TAG = "main";
 
@@ -42,6 +41,7 @@ void app_main(void)
     app_sntp_init();
     ESP_ERROR_CHECK(app_sr_start());
     app_aliyun_mqtt_init();
+    app_play_music();
     event_start();
     ESP_LOGI(TAG, "Free memory after start: %d bytes", heap_caps_get_total_size(MALLOC_CAP_INTERNAL));
     while (1)

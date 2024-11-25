@@ -6,6 +6,6 @@ set(EXTRA_COMPONENT_DIRS $ENV{IDF_PATH}/examples/common_components/protocol_exam
 add_compile_options(-Wno-unused-variable)
 add_compile_options(-Wno-unused-function)
 add_compile_options(-Wno-ignored-qualifiers)
-include($ENV{IDF_PATH}/tools/cmake/project.cmake)
 include($ENV{ADF_PATH}/CMakeLists.txt)
+include($ENV{IDF_PATH}/tools/cmake/project.cmake)
 project(esp32-AIChat)
