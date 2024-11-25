@@ -65,48 +65,48 @@ void init_i2s_input(void)
     ESP_ERROR_CHECK(i2s_channel_enable(rx_handle));
 }
 
-i2s_chan_handle_t init_i2s_output(void)
-{
-    // 配置I2S输出通道
-    i2s_chan_config_t tx_chan_cfg = I2S_CHANNEL_DEFAULT_CONFIG(I2S_NUM_1, I2S_ROLE_MASTER);
-    tx_chan_cfg.dma_desc_num = DMA_BUF_COUNT;
-    tx_chan_cfg.dma_frame_num = DMA_BUF_LEN;
-    ESP_ERROR_CHECK(i2s_new_channel(&tx_chan_cfg, &tx_handle, NULL));
+// i2s_chan_handle_t init_i2s_output(void)
+// {
+//     // 配置I2S输出通道
+//     i2s_chan_config_t tx_chan_cfg = I2S_CHANNEL_DEFAULT_CONFIG(I2S_NUM_1, I2S_ROLE_MASTER);
+//     tx_chan_cfg.dma_desc_num = DMA_BUF_COUNT;
+//     tx_chan_cfg.dma_frame_num = DMA_BUF_LEN;
+//     ESP_ERROR_CHECK(i2s_new_channel(&tx_chan_cfg, &tx_handle, NULL));
 
-    // 配置I2S输出参数
-    i2s_std_config_t tx_std_cfg = {
-        .clk_cfg = I2S_STD_CLK_DEFAULT_CONFIG(SAMPLE_TX_RATE),
-        .slot_cfg = {
-            .data_bit_width = I2S_DATA_BIT_WIDTH_16BIT,
-            .slot_bit_width = I2S_SLOT_BIT_WIDTH_16BIT,
-            .slot_mode = I2S_SLOT_MODE_MONO,
-            .slot_mask = I2S_STD_SLOT_LEFT,
-            .ws_width = 16,
-            .ws_pol = false,
-            .bit_shift = true,
-            .left_align = false,
-            .big_endian = false,
-            .bit_order_lsb = false},
-        .gpio_cfg = {
-            .mclk = I2S_GPIO_UNUSED,
-            .bclk = MAX98357A_BCLK_PIN,
-            .ws = MAX98357A_LRC_PIN,
-            .dout = MAX98357A_DIN_PIN,
-            .din = I2S_GPIO_UNUSED,
-            .invert_flags = {
-                .mclk_inv = false,
-                .bclk_inv = false,
-                .ws_inv = false,
-            },
-        },
-    };
+//     // 配置I2S输出参数
+//     i2s_std_config_t tx_std_cfg = {
+//         .clk_cfg = I2S_STD_CLK_DEFAULT_CONFIG(SAMPLE_TX_RATE),
+//         .slot_cfg = {
+//             .data_bit_width = I2S_DATA_BIT_WIDTH_16BIT,
+//             .slot_bit_width = I2S_SLOT_BIT_WIDTH_16BIT,
+//             .slot_mode = I2S_SLOT_MODE_MONO,
+//             .slot_mask = I2S_STD_SLOT_LEFT,
+//             .ws_width = 16,
+//             .ws_pol = false,
+//             .bit_shift = true,
+//             .left_align = false,
+//             .big_endian = false,
+//             .bit_order_lsb = false},
+//         .gpio_cfg = {
+//             .mclk = I2S_GPIO_UNUSED,
+//             .bclk = MAX98357A_BCLK_PIN,
+//             .ws = MAX98357A_LRC_PIN,
+//             .dout = MAX98357A_DIN_PIN,
+//             .din = I2S_GPIO_UNUSED,
+//             .invert_flags = {
+//                 .mclk_inv = false,
+//                 .bclk_inv = false,
+//                 .ws_inv = false,
+//             },
+//         },
+//     };
 
-    ESP_ERROR_CHECK(i2s_channel_init_std_mode(tx_handle, &tx_std_cfg));
-    ESP_ERROR_CHECK(i2s_channel_enable(tx_handle));
+//     ESP_ERROR_CHECK(i2s_channel_init_std_mode(tx_handle, &tx_std_cfg));
+//     ESP_ERROR_CHECK(i2s_channel_enable(tx_handle));
 
-    return tx_handle;
+//     return tx_handle;
 
-}
+// }
 
 size_t bytes_read = 0;
 size_t bytes_written = 0;

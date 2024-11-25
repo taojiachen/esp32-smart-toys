@@ -34,12 +34,12 @@ void app_main(void)
     ESP_ERROR_CHECK(esp_netif_init());
     ESP_ERROR_CHECK(esp_event_loop_create_default());
     health_init();
-    esp_board_init();
+    //esp_board_init();
     spi_bus_init();
-    esp_spiffs_mount();
+    //esp_spiffs_mount();
     blufi_start();
     app_sntp_init();
-    ESP_ERROR_CHECK(app_sr_start());
+    //ESP_ERROR_CHECK(app_sr_start());
     app_aliyun_mqtt_init();
     app_play_music();
     event_start();
