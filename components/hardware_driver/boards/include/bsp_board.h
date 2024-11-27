@@ -5,7 +5,6 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/semphr.h"
 #include "driver/i2s_std.h"
-#include "file_iterator.h"
 
 // INMP441 引脚定义
 #define INMP441_WS_PIN 4
@@ -27,7 +26,7 @@
 
 esp_err_t bsp_board_init();
 
-i2s_chan_handle_t init_i2s_output(void);
+// i2s_chan_handle_t init_i2s_output(void);
 
 esp_err_t bsp_i2s_read(int32_t *buffer, int buffer_len);
 

@@ -23,7 +23,6 @@ static const char *TAG = "board";
 
 i2s_chan_handle_t rx_handle;
 i2s_chan_handle_t tx_handle;
-static file_iterator_instance_t *file_iterator;
 
 void init_i2s_input(void)
 {
@@ -136,13 +135,13 @@ esp_err_t bsp_i2s_read(int32_t *buffer, int buffer_len)
     return ESP_OK;
 }
 
-esp_err_t bsp_audio_play(const int16_t *data, size_t buffer_len)
-{
-    ESP_ERROR_CHECK(i2s_channel_write(tx_handle, data,
-                                      buffer_len,
-                                      &bytes_written, portMAX_DELAY));
-    return ESP_OK;
-}
+// esp_err_t bsp_audio_play(const int16_t *data, size_t buffer_len)
+// {
+//     ESP_ERROR_CHECK(i2s_channel_write(tx_handle, data,
+//                                       buffer_len,
+//                                       &bytes_written, portMAX_DELAY));
+//     return ESP_OK;
+// }
 
 esp_err_t bsp_board_init()
 {
@@ -186,5 +185,4 @@ esp_err_t bsp_spiffs_unmount(void)
 {
     return esp_vfs_spiffs_unregister("storage");
 }
-
 

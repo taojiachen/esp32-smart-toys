@@ -3,5 +3,5 @@ dependencies:
   idf: ">=4.1.0"
   espressif/esp-sr: ">=1.9.2"
   abobija/rc522: "*"
-  chmorgan/esp-file-iterator: "1.0.0"
+  # chmorgan/esp-file-iterator: "1.0.0"
   # chmorgan/esp-audio-player: "1.0.6"
