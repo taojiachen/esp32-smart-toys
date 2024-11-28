@@ -33,16 +33,16 @@ void app_main(void)
     ESP_ERROR_CHECK(nvs_flash_init());
     ESP_ERROR_CHECK(esp_netif_init());
     ESP_ERROR_CHECK(esp_event_loop_create_default());
-    //health_init();
-    //esp_board_init();
-    //spi_bus_init();
-    //esp_spiffs_mount();
-    //blufi_start();
-    //app_sntp_init();
+    health_init();
+    esp_board_init();
+    spi_bus_init();
+    esp_spiffs_mount();
+    blufi_start();
+    app_sntp_init();
+    app_aliyun_mqtt_init();
+    app_play_music("LemonTree");
+    event_start();
     //ESP_ERROR_CHECK(app_sr_start());
-    //app_aliyun_mqtt_init();
-    app_play_music();
-    //event_start();
     ESP_LOGI(TAG, "Free memory after start: %d bytes", heap_caps_get_total_size(MALLOC_CAP_INTERNAL));
     while (1)
     {

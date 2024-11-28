@@ -133,6 +133,7 @@ static void audio_detect_task(void *pvParam)
             afe_handle->disable_wakenet(afe_data);
         }
 
+        //detect
         if (true == detect_flag)
         {
             esp_mn_state_t mn_state = ESP_MN_STATE_DETECTING;

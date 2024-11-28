@@ -1,1 +1,1 @@
-void app_play_music(void);
+void app_play_music(char * music);

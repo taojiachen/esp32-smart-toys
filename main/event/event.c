@@ -106,7 +106,7 @@ void set_task(const char *JOSN_str)
 static void task1_handler(void *handler_args, esp_event_base_t base, int32_t id, void *event_data)
 {
 
-    // RFID_start();
+    RFID_start();
     printf("Task 1: Output 1\n");
 }
 
@@ -145,11 +145,11 @@ static void timer_callback(void *arg)
 
     if (tm_info->tm_sec == 0)
     {
-        // esp_event_post_to(timer_event_loop, TIMER_EVENTS, TIMER_EVENT_TASK1, NULL, 0, portMAX_DELAY);
+        esp_event_post_to(timer_event_loop, TIMER_EVENTS, TIMER_EVENT_TASK1, NULL, 0, portMAX_DELAY);
     }
     if (tm_info->tm_sec == 30)
     {
-        // RFID_stop();
+        RFID_stop();
     }
 }
 

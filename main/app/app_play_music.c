@@ -27,7 +27,7 @@
 
 static const char *TAG = "SPIFFS_MP3_EXAMPLE";
 
-void app_play_music(void)
+void app_play_music(char *music)
 {
     audio_pipeline_handle_t pipeline;
     audio_element_handle_t spiffs_stream_reader, i2s_stream_writer, mp3_decoder;
@@ -41,21 +41,21 @@ void app_play_music(void)
 
     ESP_LOGI(TAG, "[ 1 ] Mount spiffs");
     // Initialize Spiffs peripheral
-    periph_spiffs_cfg_t spiffs_cfg = {
-        .root = "/spiffs",
-        .partition_label = NULL,
-        .max_files = 5,
-        .format_if_mount_failed = true
-    };
-    esp_periph_handle_t spiffs_handle = periph_spiffs_init(&spiffs_cfg);
+    // periph_spiffs_cfg_t spiffs_cfg = {
+    //     .root = "/spiffs",
+    //     .partition_label = NULL,
+    //     .max_files = 5,
+    //     .format_if_mount_failed = true};
+    // esp_periph_handle_t spiffs_handle = periph_spiffs_init(&spiffs_cfg);
 
-    // Start spiffs
-    esp_periph_start(set, spiffs_handle);
+    // // Start spiffs
+    // esp_periph_start(set, spiffs_handle);
 
-    // Wait until spiffs is mounted
-    while (!periph_spiffs_is_mounted(spiffs_handle)) {
-        vTaskDelay(500 / portTICK_PERIOD_MS);
-    }
+    // // Wait until spiffs is mounted
+    // while (!periph_spiffs_is_mounted(spiffs_handle))
+    // {
+    //     vTaskDelay(500 / portTICK_PERIOD_MS);
+    // }
 
     ESP_LOGI(TAG, "[ 2 ] Start codec chip");
     audio_board_handle_t board_handle = audio_board_init();
@@ -94,7 +94,9 @@ void app_play_music(void)
     audio_pipeline_link(pipeline, &link_tag[0], 3);
 
     ESP_LOGI(TAG, "[3.6] Set up  uri (file as spiffs, mp3 as mp3 decoder, and default output is i2s)");
-    audio_element_set_uri(spiffs_stream_reader, "/spiffs/LemonTree.mp3");
+    char uri[20]; // 确保这个数组足够大来存储完整的URI和音乐文件名
+    sprintf(uri, "/spiffs/%s.mp3", music);
+    audio_element_set_uri(spiffs_stream_reader, uri);
 
     ESP_LOGI(TAG, "[ 4 ] Set up  event listener");
     audio_event_iface_cfg_t evt_cfg = AUDIO_EVENT_IFACE_DEFAULT_CFG();
@@ -110,16 +112,18 @@ void app_play_music(void)
     audio_pipeline_run(pipeline);
 
     ESP_LOGI(TAG, "[ 6 ] Listen for all pipeline events");
-    while (1) {
+    while (1)
+    {
         audio_event_iface_msg_t msg;
         esp_err_t ret = audio_event_iface_listen(evt, &msg, portMAX_DELAY);
-        if (ret != ESP_OK) {
+        if (ret != ESP_OK)
+        {
             ESP_LOGE(TAG, "[ * ] Event interface error : %d", ret);
             continue;
         }
 
-        if (msg.source_type == AUDIO_ELEMENT_TYPE_ELEMENT && msg.source == (void *) mp3_decoder
-            && msg.cmd == AEL_MSG_CMD_REPORT_MUSIC_INFO) {
+        if (msg.source_type == AUDIO_ELEMENT_TYPE_ELEMENT && msg.source == (void *)mp3_decoder && msg.cmd == AEL_MSG_CMD_REPORT_MUSIC_INFO)
+        {
             audio_element_info_t music_info = {0};
             audio_element_getinfo(mp3_decoder, &music_info);
 
@@ -131,9 +135,8 @@ void app_play_music(void)
         }
 
         /* Stop when the last pipeline element (i2s_stream_writer in this case) receives stop event */
-        if (msg.source_type == AUDIO_ELEMENT_TYPE_ELEMENT && msg.source == (void *) i2s_stream_writer
-            && msg.cmd == AEL_MSG_CMD_REPORT_STATUS
-            && (((int)msg.data == AEL_STATUS_STATE_STOPPED) || ((int)msg.data == AEL_STATUS_STATE_FINISHED))) {
+        if (msg.source_type == AUDIO_ELEMENT_TYPE_ELEMENT && msg.source == (void *)i2s_stream_writer && msg.cmd == AEL_MSG_CMD_REPORT_STATUS && (((int)msg.data == AEL_STATUS_STATE_STOPPED) || ((int)msg.data == AEL_STATUS_STATE_FINISHED)))
+        {
             ESP_LOGW(TAG, "[ * ] Stop event received");
             break;
         }
