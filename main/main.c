@@ -12,9 +12,6 @@
 #include "esp_bt.h"
 #include "lwip/err.h"
 #include "lwip/sys.h"
-#include "esp_blufi_api.h"
-#include "blufi_example.h"
-#include "esp_blufi.h"
 #include "esp_board_init.h"
 #include <app_sntp.h>
 #include <esp_psram.h>
@@ -25,6 +22,7 @@
 #include <app_sr.h>
 #include <app_play_music.h>
 #include <bsp_board.h>
+#include <app_wifi_config.h>
 
 static const char *TAG = "main";
 
@@ -36,7 +34,7 @@ void app_main(void)
     health_init();
     esp_board_init();
     spi_bus_init();
-    blufi_start();
+    wifi_init();
     app_sntp_init();
     app_aliyun_mqtt_init();
     app_play_music("001");

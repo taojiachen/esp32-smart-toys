@@ -1,7 +1,3 @@
-/* WiFi Manager Example
-   This code implements a WiFi configuration portal for ESP32
-*/
-
 #include <string.h>
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
@@ -28,7 +24,7 @@ static const char *html_page = "<!DOCTYPE html>\
     <meta name='viewport' content='width=device-width, initial-scale=1'>\
     <style>\
         body { font-family: Arial; text-align: center; margin: 20px; }\
-        .form-container { max-width: 400px; margin: 0 auto; padding: 20px; }\
+       .form-container { max-width: 400px; margin: 0 auto; padding: 20px; }\
         input[type=text], input[type=password] { width: 100%; padding: 12px 20px; \
             margin: 8px 0; display: inline-block; border: 1px solid #ccc; \
             box-sizing: border-box; }\
@@ -58,10 +54,24 @@ typedef struct
 
 static saved_wifi_config_t saved_wifi_config;
 
+// 事件处理函数，用于处理WiFi连接相关事件
+static void event_handler(void *arg, esp_event_base_t event_base,
+                          int32_t event_id, void *event_data)
+{
+    if (event_base == WIFI_EVENT && event_id == WIFI_EVENT_STA_START)
+    {
+        esp_wifi_connect();
+    }
+    else if (event_base == WIFI_EVENT && event_id == WIFI_EVENT_STA_DISCONNECTED)
+    {
+        esp_wifi_connect();
+    }
+}
+
+// WiFi AP模式初始化函数
 static void wifi_init_softap(void)
 {
     ESP_ERROR_CHECK(esp_netif_init());
-    ESP_ERROR_CHECK(esp_event_loop_create_default());
     esp_netif_create_default_wifi_ap();
 
     wifi_init_config_t cfg = WIFI_INIT_CONFIG_DEFAULT();
@@ -89,12 +99,84 @@ static void wifi_init_softap(void)
              WIFI_AP_SSID, WIFI_AP_PASS);
 }
 
+// WiFi STA模式初始化及连接函数
+static void wifi_init_sta(void)
+{
+    ESP_ERROR_CHECK(esp_netif_init());
+    esp_netif_create_default_wifi_sta();
+    esp_event_handler_instance_t instance_any_id;
+    esp_event_handler_instance_t instance_got_ip;
+    // 注册WiFi事件处理函数
+    ESP_ERROR_CHECK(esp_event_handler_instance_register(WIFI_EVENT,
+                                                        ESP_EVENT_ANY_ID,
+                                                        &event_handler,
+                                                        NULL,
+                                                        &instance_any_id));
+    ESP_ERROR_CHECK(esp_event_handler_instance_register(IP_EVENT,
+                                                        IP_EVENT_STA_GOT_IP,
+                                                        &event_handler,
+                                                        NULL,
+                                                        &instance_got_ip));
+
+    wifi_init_config_t cfg = WIFI_INIT_CONFIG_DEFAULT();
+    ESP_ERROR_CHECK(esp_wifi_init(&cfg));
+
+    nvs_handle_t nvs_handle;
+    esp_err_t ret = nvs_open("wifi_config", NVS_READWRITE, &nvs_handle);
+    if (ret == ESP_ERR_NVS_NOT_FOUND)
+    {
+            nvs_close(nvs_handle);
+            return ;
+    }
+    size_t ssid_size = sizeof(saved_wifi_config.ssid);
+    size_t password_size = sizeof(saved_wifi_config.password);
+    ESP_ERROR_CHECK_WITHOUT_ABORT(nvs_get_str(nvs_handle, "ssid", saved_wifi_config.ssid, &ssid_size));
+    ESP_ERROR_CHECK_WITHOUT_ABORT(nvs_get_str(nvs_handle, "password", saved_wifi_config.password, &password_size));
+    nvs_close(nvs_handle);
+    ESP_LOGI(TAG, "WiFi STA mode started, trying to connect to SSID:%s----  password:%s----", saved_wifi_config.ssid, saved_wifi_config.password);
+
+    char *ssid = saved_wifi_config.ssid;
+    char *password = saved_wifi_config.password;
+    wifi_config_t wifi_config;
+
+    if (!ssid)
+    {
+        return;
+    }
+
+    bzero(&wifi_config, sizeof(wifi_config_t));
+    strcpy((char *)wifi_config.sta.ssid, ssid);
+    if (password != NULL && password[0] != '\0')
+    {
+        strcpy((char *)wifi_config.sta.password, password);
+        wifi_config.sta.threshold.authmode = WIFI_AUTH_WPA2_PSK;
+    }
+    else
+    {
+        wifi_config.sta.threshold.authmode = WIFI_AUTH_OPEN;
+    }
+
+    ESP_LOGI(TAG, "SSID:%s", ssid);
+    ESP_LOGI(TAG, "PASSWORD:%s", password);
+
+    ESP_ERROR_CHECK(esp_wifi_set_mode(WIFI_MODE_STA));
+    ESP_ERROR_CHECK(esp_wifi_set_config(WIFI_IF_STA, &wifi_config));
+    ESP_ERROR_CHECK(esp_wifi_start());
+
+    ESP_LOGI(TAG, "Configured SSID for STA: %s----", (char *)wifi_config.sta.ssid);
+    ESP_LOGI(TAG, "Configured password for STA: %s----", (char *)wifi_config.sta.password);
+
+    ESP_LOGI(TAG, "WiFi STA mode started, trying to connect to SSID:%s---password:%s", saved_wifi_config.ssid, saved_wifi_config.password);
+}
+
+// HTTP服务器根路径处理函数
 static esp_err_t root_handler(httpd_req_t *req)
 {
     httpd_resp_send(req, html_page, strlen(html_page));
     return ESP_OK;
 }
 
+// 保存配置处理函数
 static esp_err_t save_config_handler(httpd_req_t *req)
 {
     char content[100];
@@ -117,6 +199,9 @@ static esp_err_t save_config_handler(httpd_req_t *req)
         // 使用正确的结构体成员名
         strcpy(saved_wifi_config.ssid, ssid);
         strcpy(saved_wifi_config.password, password);
+
+        ESP_LOGE(TAG, "%s", ssid);
+        ESP_LOGE(TAG, "%s", password);
 
         // 保存到NVS
         nvs_handle_t nvs_handle;
@@ -180,20 +265,42 @@ static httpd_handle_t start_webserver(void)
     return NULL;
 }
 
-void app_main(void)
+// 主函数，进行整体的初始化和模式选择等操作
+void wifi_init(void)
 {
-    // 初始化NVS
-    esp_err_t ret = nvs_flash_init();
-    if (ret == ESP_ERR_NVS_NO_FREE_PAGES || ret == ESP_ERR_NVS_NEW_VERSION_FOUND)
+    // // 初始化NVS
+    // esp_err_t ret = nvs_flash_init();
+    // if (ret == ESP_ERR_NVS_NO_FREE_PAGES || ret == ESP_ERR_NVS_NEW_VERSION_FOUND)
+    // {
+    //     ESP_ERROR_CHECK(nvs_flash_erase());
+    //     ret = nvs_flash_init();
+    // }
+    // ESP_ERROR_CHECK(ret);
+
+    // 先尝试以STA模式连接WiFi
+    wifi_init_sta();
+    // 记录开始时间，用于判断是否超时
+    TickType_t start_tick = xTaskGetTickCount();
+    bool connected = false;
+    while ((xTaskGetTickCount() - start_tick) < pdMS_TO_TICKS(5000))
     {
-        ESP_ERROR_CHECK(nvs_flash_erase());
-        ret = nvs_flash_init();
+        // 检查WiFi是否连接成功，这里可以通过更完善的方式判断，比如查看WiFi状态等
+        wifi_ap_record_t ap_info;
+        if (esp_wifi_sta_get_ap_info(&ap_info) == ESP_OK)
+        {
+            connected = true;
+            break;
+        }
+        vTaskDelay(pdMS_TO_TICKS(100));
     }
-    ESP_ERROR_CHECK(ret);
 
-    // 启动AP模式
-    wifi_init_softap();
-
-    // 启动HTTP服务器
-    start_webserver();
+    if (!connected)
+    {
+        // 如果5秒内没连接上，关闭STA模式
+        esp_wifi_stop();
+        esp_wifi_set_mode(WIFI_MODE_NULL);
+        // 启动AP模式并开启HTTP服务器进行配网
+        wifi_init_softap();
+        start_webserver();
+    }
 }
