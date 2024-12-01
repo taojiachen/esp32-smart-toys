@@ -27,7 +27,7 @@ i2s_chan_handle_t tx_handle;
 void init_i2s_input(void)
 {
     // 配置I2S输入通道
-    i2s_chan_config_t rx_chan_cfg = I2S_CHANNEL_DEFAULT_CONFIG(I2S_NUM_0, I2S_ROLE_MASTER);
+    i2s_chan_config_t rx_chan_cfg = I2S_CHANNEL_DEFAULT_CONFIG(I2S_NUM_1, I2S_ROLE_MASTER);
     rx_chan_cfg.dma_desc_num = DMA_BUF_COUNT;
     rx_chan_cfg.dma_frame_num = DMA_BUF_LEN;
     ESP_ERROR_CHECK(i2s_new_channel(&rx_chan_cfg, NULL, &rx_handle));
@@ -143,11 +143,6 @@ esp_err_t bsp_i2s_read(int32_t *buffer, int buffer_len)
 //     return ESP_OK;
 // }
 
-esp_err_t bsp_board_init()
-{
-    init_i2s_input();
-    return ESP_OK;
-}
 
 esp_err_t bsp_spiffs_mount(void)
 {
@@ -186,3 +181,11 @@ esp_err_t bsp_spiffs_unmount(void)
     return esp_vfs_spiffs_unregister("storage");
 }
 
+
+
+esp_err_t bsp_board_init()
+{
+    init_i2s_input();
+    bsp_spiffs_mount();
+    return ESP_OK;
+}

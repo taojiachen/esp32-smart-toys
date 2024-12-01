@@ -27,14 +27,3 @@ esp_err_t esp_board_init()
     return bsp_board_init();
 }
 
-esp_err_t esp_audio_play(const int16_t *data, size_t size)
-{
-    return bsp_audio_play(data, size);
-}
-
-
-i2s_chan_handle_t esp_init_i2s_output(void)
-{
-    return init_i2s_output();
-}
-

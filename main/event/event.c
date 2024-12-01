@@ -161,7 +161,7 @@ void event_start(void)
         .task_name = "timer_event_task",
         .task_priority = 6,
         .task_stack_size = 1024 * 10,
-        .task_core_id = 0};
+        .task_core_id = 1};
 
     ESP_ERROR_CHECK(esp_event_loop_create(&loop_args, &timer_event_loop));
 

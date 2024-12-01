@@ -30,8 +30,6 @@ esp_err_t bsp_board_init();
 
 esp_err_t bsp_i2s_read(int32_t *buffer, int buffer_len);
 
-esp_err_t bsp_audio_play(const int16_t *data, size_t size);
-
 esp_err_t bsp_spiffs_mount(void);
 
 esp_err_t bsp_spiffs_unmount(void);

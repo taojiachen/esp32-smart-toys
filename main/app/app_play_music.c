@@ -32,8 +32,8 @@ void app_play_music(char *music)
     audio_pipeline_handle_t pipeline;
     audio_element_handle_t spiffs_stream_reader, i2s_stream_writer, mp3_decoder;
 
-    esp_log_level_set("*", ESP_LOG_WARN);
-    esp_log_level_set(TAG, ESP_LOG_INFO);
+    // esp_log_level_set("*", ESP_LOG_WARN);
+    // esp_log_level_set(TAG, ESP_LOG_INFO);
 
     // Initialize peripherals management
     esp_periph_config_t periph_cfg = DEFAULT_ESP_PERIPH_SET_CONFIG();
@@ -167,4 +167,5 @@ void app_play_music(char *music)
     audio_element_deinit(i2s_stream_writer);
     audio_element_deinit(mp3_decoder);
     esp_periph_set_destroy(set);
+    ESP_LOGW(TAG, "[ 8 ] Clean all.");
 }

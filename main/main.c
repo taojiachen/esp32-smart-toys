@@ -36,13 +36,12 @@ void app_main(void)
     health_init();
     esp_board_init();
     spi_bus_init();
-    esp_spiffs_mount();
     blufi_start();
     app_sntp_init();
     app_aliyun_mqtt_init();
-    app_play_music("LemonTree");
+    app_play_music("001");
     event_start();
-    //ESP_ERROR_CHECK(app_sr_start());
+    ESP_ERROR_CHECK(app_sr_start());
     ESP_LOGI(TAG, "Free memory after start: %d bytes", heap_caps_get_total_size(MALLOC_CAP_INTERNAL));
     while (1)
     {
