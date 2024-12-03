@@ -22,6 +22,7 @@
 #include "esp_mn_speech_commands.h"
 #include "esp_process_sdkconfig.h"
 #include <esp_board_init.h>
+#include <app_play_music.h>
 
 #define I2S_CHANNEL_NUM (1)
 #define BUFFER_SIZE (1024)
@@ -118,6 +119,7 @@ static void audio_detect_task(void *pvParam)
 
         if (res->wakeup_state == WAKENET_DETECTED)
         {
+            app_play_music("001");
             ESP_LOGI(TAG, LOG_BOLD(LOG_COLOR_GREEN) "Wakeword detected");
             sr_result_t result = {
                 .wakenet_mode = WAKENET_DETECTED,
@@ -133,7 +135,7 @@ static void audio_detect_task(void *pvParam)
             afe_handle->disable_wakenet(afe_data);
         }
 
-        //detect
+        // detect
         if (true == detect_flag)
         {
             esp_mn_state_t mn_state = ESP_MN_STATE_DETECTING;

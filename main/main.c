@@ -37,7 +37,6 @@ void app_main(void)
     wifi_init();
     app_sntp_init();
     app_aliyun_mqtt_init();
-    app_play_music("001");
     event_start();
     ESP_ERROR_CHECK(app_sr_start());
     ESP_LOGI(TAG, "Free memory after start: %d bytes", heap_caps_get_total_size(MALLOC_CAP_INTERNAL));
