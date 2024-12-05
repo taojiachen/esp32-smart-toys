@@ -23,6 +23,8 @@
 #include <app_play_music.h>
 #include <bsp_board.h>
 #include <app_wifi_config.h>
+#include<app_spiffs.h>
+
 
 static const char *TAG = "main";
 
@@ -35,6 +37,8 @@ void app_main(void)
     esp_board_init();
     spi_bus_init();
     wifi_init();
+    vTaskDelay(5000);
+    spiffs_get();
     app_sntp_init();
     app_aliyun_mqtt_init();
     event_start();

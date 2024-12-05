@@ -1,0 +1,1 @@
+void spiffs_get(void);
