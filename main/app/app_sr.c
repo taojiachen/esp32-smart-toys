@@ -119,7 +119,7 @@ static void audio_detect_task(void *pvParam)
 
         if (res->wakeup_state == WAKENET_DETECTED)
         {
-            app_play_music("your");
+            app_play_music("music");
             ESP_LOGI(TAG, LOG_BOLD(LOG_COLOR_GREEN) "Wakeword detected");
             sr_result_t result = {
                 .wakenet_mode = WAKENET_DETECTED,

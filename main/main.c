@@ -38,11 +38,11 @@ void app_main(void)
     spi_bus_init();
     wifi_init();
     vTaskDelay(5000);
-    spiffs_get();
     app_sntp_init();
     app_aliyun_mqtt_init();
     event_start();
     ESP_ERROR_CHECK(app_sr_start());
+    spiffs_get();
     ESP_LOGI(TAG, "Free memory after start: %d bytes", heap_caps_get_total_size(MALLOC_CAP_INTERNAL));
     while (1)
     {
