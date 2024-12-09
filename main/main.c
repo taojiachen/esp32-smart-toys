@@ -23,8 +23,7 @@
 #include <app_play_music.h>
 #include <bsp_board.h>
 #include <app_wifi_config.h>
-#include<app_spiffs.h>
-
+#include <app_spiffs.h>
 
 static const char *TAG = "main";
 
@@ -37,15 +36,19 @@ void app_main(void)
     esp_board_init();
     spi_bus_init();
     wifi_init();
-    vTaskDelay(5000);
     app_sntp_init();
     app_aliyun_mqtt_init();
+    // list_files_in_spiffs();
+    // spiffs_get();
+    // delete_file_in_spiffs("For Elise");
+
+    // delete_file_in_spiffs("LemonTree");
+    // list_files_in_spiffs();
     event_start();
     ESP_ERROR_CHECK(app_sr_start());
-    spiffs_get();
-    ESP_LOGI(TAG, "Free memory after start: %d bytes", heap_caps_get_total_size(MALLOC_CAP_INTERNAL));
     while (1)
     {
-        vTaskDelay(1000 / portTICK_PERIOD_MS);
+        vTaskDelay(5000 / portTICK_PERIOD_MS);
+        ESP_LOGI(TAG, "Free memory after start: %d bytes", heap_caps_get_total_size(MALLOC_CAP_INTERNAL));
     }
 }

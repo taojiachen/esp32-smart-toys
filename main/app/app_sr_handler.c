@@ -12,6 +12,7 @@
 #include "esp_afe_sr_iface.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/queue.h"
+#include<app_play_music.h>
 
 static const char *TAG = "app_sr_handler";
 
@@ -101,6 +102,7 @@ void sr_handler_task(void *pvParam)
                 // lv_label_set_text(ui_Labelwakenet, "好的！");
                 // _ui_screen_change(&ui_Screen4, LV_SCR_LOAD_ANIM_FADE_ON, 100, 0, &ui_Screen4_screen_init);
                 // music_play_resume();
+                app_play_music("music");
                 break;
             case 9:
                 ESP_LOGI(TAG, "Stop Music");

@@ -156,19 +156,15 @@ static void wifi_init_sta(void)
         wifi_config.sta.threshold.authmode = WIFI_AUTH_OPEN;
     }
 
-    ESP_LOGI(TAG, "SSID:%s", ssid);
-    ESP_LOGI(TAG, "PASSWORD:%s", password);
-
     ESP_ERROR_CHECK(esp_wifi_set_mode(WIFI_MODE_STA));
     ESP_ERROR_CHECK(esp_wifi_set_config(WIFI_IF_STA, &wifi_config));
     ESP_ERROR_CHECK(esp_wifi_start());
 
-    ESP_LOGI(TAG, "Configured SSID for STA: %s----", (char *)wifi_config.sta.ssid);
-    ESP_LOGI(TAG, "Configured password for STA: %s----", (char *)wifi_config.sta.password);
+    ESP_LOGI(TAG, "Configured SSID for STA: %s", (char *)wifi_config.sta.ssid);
+    ESP_LOGI(TAG, "Configured password for STA: %s", (char *)wifi_config.sta.password);
 
-    ESP_LOGI(TAG, "WiFi STA mode started, trying to connect to SSID:%s---password:%s", saved_wifi_config.ssid, saved_wifi_config.password);
 }
-
+ 
 // HTTP服务器根路径处理函数
 static esp_err_t root_handler(httpd_req_t *req)
 {
