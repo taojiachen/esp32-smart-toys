@@ -1,58 +1,117 @@
+# menu "AliYun MQTT Component Configuration"
+
+# config AliYun_MQTT_HOST_URL
+#     string "AliYun MQTT Host URL"
+#     default "mqtt://iot-06z00ezwg4s9fzu.mqtt.iothub.aliyuncs.com:1883"
+#     help
+#       Specify the AliYun MQTT server URL. Adjust as per your AliYun IoT Platform setup.
+
+# config AliYun_MQTT_PORT
+#     int "AliYun MQTT Port"
+#     default 1883
+#     help
+#       MQTT port for connecting to AliYun IoT Platform. Change only if your AliYun service uses a different port.
+
+# config AliYun_MQTT_CLIENT_ID
+#     string "AliYun MQTT Client ID"
+#     default "k1kwuo5hqAl.Toy_001|securemode=2,signmethod=hmacsha256,timestamp=1731424153082|"
+#     help
+#       Unique client identifier for AliYun MQTT connection. Customize according to your device and AliYun's security requirements.
+
+# config AliYun_MQTT_USERNAME
+#     string "AliYun MQTT Username"
+#     default "Toy_001&k1kwuo5hqAl"
+#     help
+#       Username for AliYun MQTT authentication. Use the credentials provided by AliYun for your device.
+
+# config AliYun_MQTT_PASSWORD
+#     string "AliYun MQTT Password"
+#     default "a825816e8a4552517fc370729b8c3f3b64e05bb4542c92729bfba66dcefdda4d"
+#     help
+#       Password for AliYun MQTT authentication. Ensure to use the secure access key assigned by AliYun for your device.
+
+
+
+# config AliYun_PUBLISH_TOPIC_USER_POST
+#     string "AliYun Publish Topic for User Post"
+#     default "/sys/k1kwuo5hqAl/Toy_001/thing/event/property/post"
+#     help
+#       Default topic for publishing device events to AliYun. Modify if your AliYun service requires a different topic.
+
+# config AliYun_SUBSCRIBE_TOPIC_USER_GET
+#     string "AliYun Subscribe Topic for User Get"
+#     default "/k1kwuo5hqAl/Toy_001/user/get"
+#     help
+#       Topic to subscribe for receiving user get requests from AliYun. Adjust if your AliYun service uses a different topic.
+
+# config AliYun_PUBLISH_TOPIC_USER_UPDATE
+#     string "AliYun Publish Topic for User Update"
+#     default "/k1kwuo5hqAl/Toy_001/user/data"
+#     help
+#       Topic for sending user updates to AliYun. Customize if your AliYun service has a different topic structure.
+
+# config AliYun_PUBLISH_TOPIC_USER_POST_REPLY
+#     string "AliYun Publish Topic for Device p set"
+#     default "/sys/k1kwuo5hqAl/Toy_001/thing/event/property/post_reply"
+#     help
+#       Topic for sending user updates to AliYun. Customize if your AliYun service has a different topic structure.
+# endmenu
+
 menu "AliYun MQTT Component Configuration"
 
-config AliYun_MQTT_HOST_URL
-    string "AliYun MQTT Host URL"
-    default "mqtt://iot-06z00ezwg4s9fzu.mqtt.iothub.aliyuncs.com:1883"
-    help
-      Specify the AliYun MQTT server URL. Adjust as per your AliYun IoT Platform setup.
-
-config AliYun_MQTT_PORT
-    int "AliYun MQTT Port"
-    default 1883
-    help
-      MQTT port for connecting to AliYun IoT Platform. Change only if your AliYun service uses a different port.
-
-config AliYun_MQTT_CLIENT_ID
-    string "AliYun MQTT Client ID"
-    default "k1kwuo5hqAl.Toy_001|securemode=2,signmethod=hmacsha256,timestamp=1731424153082|"
-    help
-      Unique client identifier for AliYun MQTT connection. Customize according to your device and AliYun's security requirements.
-
-config AliYun_MQTT_USERNAME
-    string "AliYun MQTT Username"
-    default "Toy_001&k1kwuo5hqAl"
-    help
-      Username for AliYun MQTT authentication. Use the credentials provided by AliYun for your device.
-
-config AliYun_MQTT_PASSWORD
-    string "AliYun MQTT Password"
-    default "a825816e8a4552517fc370729b8c3f3b64e05bb4542c92729bfba66dcefdda4d"
-    help
-      Password for AliYun MQTT authentication. Ensure to use the secure access key assigned by AliYun for your device.
-
-
-
-config AliYun_PUBLISH_TOPIC_USER_POST
-    string "AliYun Publish Topic for User Post"
-    default "/sys/k1kwuo5hqAl/Toy_001/thing/event/property/post"
-    help
-      Default topic for publishing device events to AliYun. Modify if your AliYun service requires a different topic.
-
-config AliYun_SUBSCRIBE_TOPIC_USER_GET
-    string "AliYun Subscribe Topic for User Get"
-    default "/k1kwuo5hqAl/Toy_001/user/get"
-    help
-      Topic to subscribe for receiving user get requests from AliYun. Adjust if your AliYun service uses a different topic.
-
-config AliYun_PUBLISH_TOPIC_USER_UPDATE
-    string "AliYun Publish Topic for User Update"
-    default "/k1kwuo5hqAl/Toy_001/user/data"
-    help
-      Topic for sending user updates to AliYun. Customize if your AliYun service has a different topic structure.
-
-config AliYun_PUBLISH_TOPIC_USER_POST_REPLY
-    string "AliYun Publish Topic for Device p set"
-    default "/sys/k1kwuo5hqAl/Toy_001/thing/event/property/post_reply"
-    help
-      Topic for sending user updates to AliYun. Customize if your AliYun service has a different topic structure.
-endmenu
+  config AliYun_MQTT_HOST_URL
+      string "AliYun MQTT Host URL"
+      default "mqtt://a1T80GJEE6L.iot-as-mqtt.cn-shanghai.aliyuncs.com:1883"
+      help
+        Specify the AliYun MQTT server URL. Adjust as per your AliYun IoT Platform setup.
+  
+  config AliYun_MQTT_PORT
+      int "AliYun MQTT Port"
+      default 1883
+      help
+        MQTT port for connecting to AliYun IoT Platform. Change only if your AliYun service uses a different port.
+  
+  config AliYun_MQTT_CLIENT_ID
+      string "AliYun MQTT Client ID"
+      default "a1T80GJEE6L.toy01|securemode=2,signmethod=hmacsha256,timestamp=1733829091432|"
+      help
+        Unique client identifier for AliYun MQTT connection. Customize according to your device and AliYun's security requirements.
+  
+  config AliYun_MQTT_USERNAME
+      string "AliYun MQTT Username"
+      default "toy01&a1T80GJEE6L"
+      help
+        Username for AliYun MQTT authentication. Use the credentials provided by AliYun for your device.
+  
+  config AliYun_MQTT_PASSWORD
+      string "AliYun MQTT Password"
+      default "55b70dc02ccfcbfcb7fe39e10e59446ab273338c60b6eb62ce8e957aeefbfcac"
+      help
+        Password for AliYun MQTT authentication. Ensure to use the secure access key assigned by AliYun for your device.
+  
+  
+  
+  config AliYun_PUBLISH_TOPIC_USER_POST
+      string "AliYun Publish Topic for User Post"
+      default "/sys/a1T80GJEE6L/toy01/thing/event/property/post"
+      help
+        Default topic for publishing device events to AliYun. Modify if your AliYun service requires a different topic.
+  
+  config AliYun_SUBSCRIBE_TOPIC_USER_GET
+      string "AliYun Subscribe Topic for User Get"
+      default "/a1T80GJEE6L/toy01/user/get"
+      help
+        Topic to subscribe for receiving user get requests from AliYun. Adjust if your AliYun service uses a different topic.
+  
+  config AliYun_PUBLISH_TOPIC_USER_UPDATE
+      string "AliYun Publish Topic for User Update"
+      default "/a1T80GJEE6L/toy01/user/data"
+      help
+        Topic for sending user updates to AliYun. Customize if your AliYun service has a different topic structure.
+  
+  config AliYun_PUBLISH_TOPIC_USER_POST_REPLY
+      string "AliYun Publish Topic for Device p set"
+      default "/sys/a1T80GJEE6L/toy01/thing/event/property/post_reply"
+      help
+        Topic for sending user updates to AliYun. Customize if your AliYun service has a different topic structure.
+  endmenu
