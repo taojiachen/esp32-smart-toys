@@ -38,7 +38,7 @@ void app_main(void)
     wifi_init();
     app_sntp_init();
     app_aliyun_mqtt_init();
-    // list_files_in_spiffs();
+    list_files_in_spiffs();
     // spiffs_get();
     // delete_file_in_spiffs("For Elise");
 
