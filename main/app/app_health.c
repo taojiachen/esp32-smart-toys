@@ -1,20 +1,25 @@
 #include <stdio.h>
 #include <esp_log.h>
+#include<app_aliyun_mqtt.h>
+#include <mqtt_client.h>
 
 #define TAG "健康度:  "
-//饥饿度
+
+char pub_payload[512];
+
+// 饥饿度
 int satiation;
-//清洁度
+// 清洁度
 int cleanliness;
 
-//初始化健康状态
+// 初始化健康状态
 void health_init()
 {
     satiation = 100;
     cleanliness = 100;
 }
 
-//判断是否健康
+// 判断是否健康
 void is_health()
 {
     if (satiation <= 50 || cleanliness <= 50)
@@ -23,14 +28,14 @@ void is_health()
     }
 }
 
-//治疗
+// 治疗
 void treatment()
 {
     satiation = 100;
     cleanliness = 100;
 }
 
-//RFID触发喂食
+// RFID触发喂食
 void set_satiation(int sat)
 {
     if (sat >= 0)
@@ -44,7 +49,7 @@ void set_satiation(int sat)
     is_health();
 }
 
-//RFID触发清洁
+// RFID触发清洁
 void set_cleanliness(int clean)
 {
     if (clean >= 0)
@@ -56,4 +61,21 @@ void set_cleanliness(int clean)
         cleanliness -= clean;
     }
     is_health();
+}
+
+extern esp_mqtt_client_handle_t client;
+
+void update_value()
+{
+    sprintf(pub_payload,"{\"params\": {\"Hunger_Level\":%d ,\"Cleaning_Metrics\":%d, \"MSI\":%d, \"health_value\":%d }, \"method\": \"thing.event.property.post\"}",satiation,cleanliness,99,99);
+
+     int ret = esp_mqtt_client_publish(client, CONFIG_AliYun_PUBLISH_TOPIC_USER_POST, pub_payload, strlen(pub_payload), 2, 0);
+    if (ret >= 0) {
+        printf("正常发布，返回消息 ID: %d\n", ret);
+    } else if (ret == -1) {
+        printf("发布出现错误，返回 -1\n");
+    } else if (ret == -2) {
+        printf("缓冲区已满，返回 -2\n");
+    }
+
 }

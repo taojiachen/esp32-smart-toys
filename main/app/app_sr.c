@@ -39,7 +39,8 @@ TaskHandle_t audio_feed_task_handle = NULL;
 TaskHandle_t audio_detect_task_handle = NULL;
 
 const char *cmd_phoneme[12] = {
-    "da kai kong qi jing hua qi",
+    //"da kai kong qi jing hua qi",
+    "ni chi bao le ma",
     "guan bi kong qi jing hua qi",
     "da kai tai deng",
     "guan bi tai deng",
@@ -120,6 +121,7 @@ static void audio_detect_task(void *pvParam)
         if (res->wakeup_state == WAKENET_DETECTED)
         {
             app_play_music("wozai");
+            //vTaskDelay(pdMS_TO_TICKS(500));
             ESP_LOGI(TAG, LOG_BOLD(LOG_COLOR_GREEN) "Wakeword detected");
             sr_result_t result = {
                 .wakenet_mode = WAKENET_DETECTED,

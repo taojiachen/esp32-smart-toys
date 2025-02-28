@@ -14,20 +14,19 @@
 #include <string.h>
 #include "nvs_flash.h"
 #include <app_play_music.h>
+#include <app_task_list.h>
 
 #define NAME_SPACE "JSON_TASK"
-nvs_handle_t nvshandle;
 
 static const char *TAG = "TIMER_EVENT";
 
 // 定义自定义事件基础值
 ESP_EVENT_DEFINE_BASE(TIMER_EVENTS);
-// 定义事件类型
+
 enum
 {
-    TIMER_EVENT_TASK1,
-    TIMER_EVENT_TASK2,
-    TIMER_EVENT_TASK3,
+    EAT,
+    BRUSH_TEETH,
 };
 
 struct timeval tv;
@@ -37,81 +36,51 @@ TaskHandle_t Task1_handle = NULL;
 // 事件循环句柄
 static esp_event_loop_handle_t timer_event_loop;
 
-// 声明结构体链表
-typedef struct task_list
+struct Nearest_Task
 {
-    char *task_type;
-    char *tart_time;
-    char *end_time;
-    struct task_list *next;
-} task_list;
+    char *key;
+    char *datavalue;
+    char *starttime;
+    long keeptime;
+} Nearest_Task;
 
-// 创建链表节点函数
-task_list *create_task_list(char *task_type, char *tart_time, char *end_time)
-{
-    task_list *newNode = (task_list *)malloc(sizeof(task_list));
-    newNode->task_type = task_type;
-    newNode->tart_time = tart_time;
-    newNode->end_time = end_time;
-    newNode->next = NULL;
-    return newNode;
-}
+int Hour = 0;
+int Minute = 0;
+int Second = 0;
 
-// 在链表尾部插入新节点函数
-task_list *insertAtTail(task_list **head, int data)
+// 定义事件类型
+void Update_Nearest_Task()
 {
-    task_list *newNode = create_task_list(1, 2, 3);
-    if (*head == NULL)
+    char time_str[9];
+    gettimeofday(&tv, NULL);
+    tm_info = localtime(&tv.tv_sec);
+    snprintf(time_str, sizeof(time_str), "%02d:%02d:%02d", tm_info->tm_hour, tm_info->tm_min, tm_info->tm_sec);
+    Nearest_Task.key = NULL;
+    Nearest_Task.datavalue = NULL;
+    Nearest_Task.starttime = NULL;
+    Nearest_Task.keeptime = 0;
+    get_nearest_task(time_str, &Nearest_Task.key, &Nearest_Task.datavalue, &Nearest_Task.starttime, &Nearest_Task.keeptime);
+    if (Nearest_Task.key != NULL && Nearest_Task.datavalue != NULL && Nearest_Task.starttime != NULL)
     {
-        *head = newNode;
-        return newNode;
+        printf("Nearest task: key=%s, datavalue=%s, starttime=%s, keeptime=%ld\n", Nearest_Task.key, Nearest_Task.datavalue, Nearest_Task.starttime, Nearest_Task.keeptime);
+    }else{
+        printf("No nearest task found\n");
     }
-    task_list *current = *head;
-    while (current->next != NULL)
-    {
-        current = current->next;
-    }
-    current->next = newNode;
-    return newNode;
+    free(Nearest_Task.key);
+    free(Nearest_Task.datavalue);
+    free(Nearest_Task.starttime);
 }
 
-// 释放无用链表内存函数
-void freeList(task_list **head)
-{
-    task_list *current = *head;
-    while (current != NULL)
-    {
-        task_list *temp = current;
-        current = current->next;
-        free(temp);
-    }
-    *head = NULL;
-}
-
-void nvs_write(char *jsonStr)
-{
-}
-
-void nvs_erase()
-{
-}
-
-// 阿里云端任务下发
-void set_task(const char *JOSN_str)
-{
-    cJSON *json = cJSON_Parse(JOSN_str);
-}
-
-// 事件处理函数 - 任务1
-static void task1_handler(void *handler_args, esp_event_base_t base, int32_t id, void *event_data)
+// 事件处理函数 - 吃饭
+static void EAT_task(void *handler_args, esp_event_base_t base, int32_t id, void *event_data)
 {
 
     RFID_start();
     printf("Task 1: Output 1\n");
 }
 
-// 事件处理函数 - 任务2
-static void task2_handler(void *handler_args, esp_event_base_t base, int32_t id, void *event_data)
+// 事件处理函数 - 刷牙
+static void BRUSH_TEETH_task(void *handler_args, esp_event_base_t base, int32_t id, void *event_data)
 {
 
     printf("Task 2: Output 2\n");
@@ -138,17 +107,21 @@ static void timer_callback(void *arg)
     // 将时间戳转换为本地时间
     tm_info = localtime(&tv.tv_sec);
 
-    // 打印本地时间
+    //打印本地时间
     printf("Current local time: %d-%02d-%02d %02d:%02d:%02d\n",
            tm_info->tm_year + 1900, tm_info->tm_mon + 1, tm_info->tm_mday,
            tm_info->tm_hour, tm_info->tm_min, tm_info->tm_sec);
+    Update_Nearest_Task();
 
-    if (tm_info->tm_sec == 0)
+    // 任务执行处理：根据任务类型和时间执行相应的操作
+    if ( tm_info->tm_sec == 0)
     {
-        esp_event_post_to(timer_event_loop, TIMER_EVENTS, TIMER_EVENT_TASK1, NULL, 0, portMAX_DELAY);
+        RFID_start();
+        // esp_event_post_to(timer_event_loop, TIMER_EVENTS, TIMER_EVENT_TASK1, NULL, 0, portMAX_DELAY);
     }
     if (tm_info->tm_sec == 30)
     {
+
         RFID_stop();
     }
 }
@@ -166,9 +139,8 @@ void event_start(void)
     ESP_ERROR_CHECK(esp_event_loop_create(&loop_args, &timer_event_loop));
 
     // 注册事件处理程序
-    ESP_ERROR_CHECK(esp_event_handler_register_with(timer_event_loop, TIMER_EVENTS, TIMER_EVENT_TASK1, task1_handler, NULL));
-    ESP_ERROR_CHECK(esp_event_handler_register_with(timer_event_loop, TIMER_EVENTS, TIMER_EVENT_TASK2, task2_handler, NULL));
-    ESP_ERROR_CHECK(esp_event_handler_register_with(timer_event_loop, TIMER_EVENTS, TIMER_EVENT_TASK3, task3_handler, NULL));
+    ESP_ERROR_CHECK(esp_event_handler_register_with(timer_event_loop, TIMER_EVENTS, EAT, EAT_task, NULL));
+    ESP_ERROR_CHECK(esp_event_handler_register_with(timer_event_loop, TIMER_EVENTS, BRUSH_TEETH, BRUSH_TEETH_task, NULL));
 
     // 创建定时器
     esp_timer_handle_t timer;

@@ -94,7 +94,7 @@ void app_play_music(char *music)
     audio_pipeline_link(pipeline, &link_tag[0], 3);
 
     ESP_LOGI(TAG, "[3.6] Set up  uri (file as spiffs, mp3 as mp3 decoder, and default output is i2s)");
-    char uri[20]; // 确保这个数组足够大来存储完整的URI和音乐文件名
+    char uri[50]; // 确保这个数组足够大来存储完整的URI和音乐文件名
     sprintf(uri, "/spiffs/%s.mp3", music);
     audio_element_set_uri(spiffs_stream_reader, uri);
 

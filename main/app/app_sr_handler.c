@@ -61,6 +61,7 @@ void sr_handler_task(void *pvParam)
                 ESP_LOGI(TAG, "Turn on the air purifier");
                 // lv_label_set_text(ui_Labelwakenet, "已打开");
                 // mqtt_air_purifer_on();
+                app_play_music("chiwanfanle");
                 break;
             case 1:
                 ESP_LOGI(TAG, "Turn off the air purifier");

@@ -30,13 +30,17 @@
 #include "esp_sntp.h"
 #include "esp_pm.h"
 
+#include "app_task_list.h" 
+
 #include<event.h>
+
+#include<app_task_list.h>
 
 char local_data_buffer[1024] = {0};
 char mqtt_publish_data1[] = "mqtt connect ok ";
 char mqtt_publish_data2[] = "mqtt subscribe successful";
 char mqtt_publish_data3[] = "mqtt i am esp32";
-char pub_payload[512];
+//char pub_payload[512];
 static const char *TAG = "APP_ALIYUN_MQTT";
 
 esp_mqtt_client_handle_t client;
@@ -76,9 +80,11 @@ static esp_err_t app_mqtt_event_handler_cb(esp_mqtt_event_handle_t event)
         const char *jsonStr = event->data;
         //%.*s 是一个特殊的格式化指令，它允许你指定字符串的长度
         ESP_LOGE(TAG, "DATA=%.*s\r\n", event->data_len, jsonStr);
-        set_task(jsonStr);
-
-
+        update_task(jsonStr);
+        Update_Nearest_Task();
+        /*
+        {"method":"thing.service.property.set","id":"2115005914","params":{"tasks":[{"datavalue":"33","index":1,"starttime":"123","type":1,"key":"eat","keeptime":30}]},"version":"1.0.0"}
+        */
         break;
     case MQTT_EVENT_ERROR:
         ESP_LOGI(TAG, "MQTT_EVENT_ERROR");
