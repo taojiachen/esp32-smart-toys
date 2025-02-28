@@ -44,6 +44,7 @@ void app_main(void)
     // spiffs_get();
     // delete_file_in_spiffs("For Elise");
     update_value();
+    Update_Nearest_Task();
     event_start();
 
     //clear_all_tasks();
@@ -52,6 +53,6 @@ void app_main(void)
     {
         vTaskDelay(5000 / portTICK_PERIOD_MS);
         ESP_LOGI(TAG, "Free memory after start: %d bytes", heap_caps_get_total_size(MALLOC_CAP_INTERNAL));
-        print_all_tasks();
+        //print_all_tasks();
     }
 }

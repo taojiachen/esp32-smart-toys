@@ -15,6 +15,16 @@ static const char *TAG = "rc522-read-write-example";
 #define RC522_SPI_SCANNER_GPIO_SDA (20)
 #define RC522_SCANNER_GPIO_RST (8) // soft-reset
 
+extern struct Nearest_Task
+{
+    char *key;
+    char *datavalue;
+    char *starttime;
+    long keeptime;
+} Nearest_Task;
+
+int flag = 0;
+
 static rc522_spi_config_t driver_config = {
     .host_id = SPI3_HOST,
     .bus_config = &(spi_bus_config_t){
@@ -42,17 +52,22 @@ static void on_picc_state_changed(void *arg, esp_event_base_t base, int32_t even
         char uid[RC522_PICC_UID_STR_BUFFER_SIZE_MAX];
         rc522_picc_uid_to_str(&picc->uid, uid, sizeof(uid));
         ESP_LOGE(TAG, "RFID卡UID: %s", uid);
+        ESP_LOGE(TAG, "datavalue: %s", Nearest_Task.datavalue);
+        if (!strcmp(Nearest_Task.datavalue, uid))
+        {
+            ESP_LOGE(TAG, "卡号对接成功");
+            flag = 1;
+        }
     }
     else if (picc->state == RC522_PICC_STATE_IDLE && event->old_state >= RC522_PICC_STATE_ACTIVE)
     {
         ESP_LOGI(TAG, "Card has been removed");
+        flag = 0;
     }
 }
 
 void spi_bus_init()
 {
-    srand(time(NULL)); // Initialize random generator
-
     rc522_spi_create(&driver_config, &driver);
     rc522_driver_install(driver);
     rc522_config_t scanner_config = {
