@@ -15,10 +15,13 @@
 #include "nvs_flash.h"
 #include <app_play_music.h>
 #include <app_task_list.h>
+#include <app_health.h>
 
 #define NAME_SPACE "JSON_TASK"
 
 static const char *TAG = "TIMER_EVENT";
+
+extern int flag;
 
 // 定义自定义事件基础值
 ESP_EVENT_DEFINE_BASE(TIMER_EVENTS);
@@ -34,27 +37,32 @@ struct Nearest_Task
 {
     char *key;
     char *datavalue;
-    char *starttime;
-    long keeptime;
+    int starttime;
+    int keeptime;
+    int average_time;
 } Nearest_Task;
 
-char Current_time[9];
+int Current_time;
 
 // 更新距离当前时间最近的任务信息
 void Update_Nearest_Task()
 {
     gettimeofday(&tv, NULL);
     tm_info = localtime(&tv.tv_sec);
-    snprintf(Current_time, sizeof(Current_time), "%02d:%02d:%02d", tm_info->tm_hour, tm_info->tm_min, tm_info->tm_sec);
     Nearest_Task.key = NULL;
     Nearest_Task.datavalue = NULL;
-    Nearest_Task.starttime = NULL;
-    Nearest_Task.keeptime = 0;
+    Nearest_Task.starttime = -1;
+    Nearest_Task.keeptime = -1;
+    Nearest_Task.average_time = -1;
+    Current_time = tm_info->tm_hour * 3600 + tm_info->tm_min * 60 + tm_info->tm_sec;
     get_nearest_task(Current_time, &Nearest_Task.key, &Nearest_Task.datavalue, &Nearest_Task.starttime, &Nearest_Task.keeptime);
-    if (Nearest_Task.key != NULL && Nearest_Task.datavalue != NULL && Nearest_Task.starttime != NULL)
+    Nearest_Task.average_time = Nearest_Task.keeptime * 60 / 5;
+    if (Nearest_Task.key != NULL && Nearest_Task.datavalue != NULL && Nearest_Task.starttime != -1 && Nearest_Task.keeptime != -1 && Nearest_Task.average_time != -1)
     {
-        printf("Nearest task: key=%s, datavalue=%s, starttime=%s, keeptime=%ld\n", Nearest_Task.key, Nearest_Task.datavalue, Nearest_Task.starttime, Nearest_Task.keeptime);
-    }else{
+        printf("Nearest task: key=%s, datavalue=%s, starttime=%d, keeptime=%d, average_time=%d\n", Nearest_Task.key, Nearest_Task.datavalue, Nearest_Task.starttime, Nearest_Task.keeptime, Nearest_Task.average_time);
+    }
+    else
+    {
         printf("No nearest task found\n");
     }
     // free(Nearest_Task.key);
@@ -65,32 +73,80 @@ void Update_Nearest_Task()
 // 事件处理函数（到达距离当前时间最近的任务时间触发事件）
 static void task(void *handler_args, esp_event_base_t base, int32_t id, void *event_data)
 {
+    int temp = 1;
+    int flag = 0;
     printf("--------------------------------------------------------------------\n");
-    RFID_start();
-    if(!strcmp(Nearest_Task.key,"test")){
-        
-    }else if(!strcmp(Nearest_Task.key,"eat_breakfast")){
+    if (!strcmp(Nearest_Task.key, "test"))
+    {
         app_play_music("woele");
+        set_health_down(Nearest_Task.key);
+        update_value();
     }
-    else if(!strcmp(Nearest_Task.key,"eat_lunch")){
+    else if (!strcmp(Nearest_Task.key, "breakfast"))
+    {
         app_play_music("woele");
+        set_health_down(Nearest_Task.key);
+        update_value();
     }
-    else if(!strcmp(Nearest_Task.key,"eat")){
+    else if (!strcmp(Nearest_Task.key, "lunch"))
+    {
         app_play_music("woele");
+        set_health_down(Nearest_Task.key);
+        update_value();
     }
-    else if(!strcmp(Nearest_Task.key,"flash")){
+    else if (!strcmp(Nearest_Task.key, "dinner"))
+    {
+        app_play_music("woele");
+        set_health_down(Nearest_Task.key);
+        update_value();
+    }
+    else if (!strcmp(Nearest_Task.key, "flash"))
+    {
         app_play_music("shuaya");
+        set_health_down(Nearest_Task.key);
+        update_value();
     }
-    else if(!strcmp(Nearest_Task.key,"sleep")){
+    else if (!strcmp(Nearest_Task.key, "sleep"))
+    {
         app_play_music("kunle");
+        set_health_down(Nearest_Task.key);
+        update_value();
     }
+    RFID_start();
+    ESP_LOGI("TASK中的Current_time:  ", "%d", Current_time);
+    while (Current_time <= Nearest_Task.starttime + Nearest_Task.keeptime * 60)
+    {
+        if (flag == 1)
+        {
 
+            if (temp == 1)
+            {
+                set_health_up(Nearest_Task.key);
+                update_value();
+                temp = 0;
+            }
+            ESP_LOGI("flag:                    ", "%d", flag);
+            RFID_stop();
+            vTaskDelay(pdMS_TO_TICKS(1000));
+            if (Current_time == Nearest_Task.starttime + Nearest_Task.average_time || Current_time == Nearest_Task.starttime + Nearest_Task.average_time * 2 || Current_time == Nearest_Task.starttime + Nearest_Task.average_time * 3 || Current_time == Nearest_Task.starttime + Nearest_Task.average_time * 4)
+            {
+                RFID_start();
+                temp = 1;
+            }
+        }
+        else if (flag == 0)
+        {
+            ESP_LOGE("TASK中的flag:  ", "%d", flag);
+            vTaskDelay(pdMS_TO_TICKS(1000));
+        }
+    }
+    RFID_stop();
 }
 
 /*
 {"method":"thing.service.property.set","id":"2115005914","params":{"tasks":[{"datavalue":"5B 9D 44 0C","index":1,"starttime":"22:45:00","type":1,"key":"test","keeptime":30}]},"version":"1.0.0"}
+{"method":"thing.service.property.set","id":"2115005914","params":{"tasks":[{"datavalue":"F4 21 CF EC","index":1,"starttime":"14:23:00","type":1,"key":"test","keeptime":3}]},"version":"1.0.0"}
 */
-
 
 // 定时器回调函数
 static void timer_callback(void *arg)
@@ -105,21 +161,19 @@ static void timer_callback(void *arg)
     // 将时间戳转换为本地时间
     tm_info = localtime(&tv.tv_sec);
 
-    //打印本地时间
+    // 打印本地时间
     printf("Current local time: %d-%02d-%02d %02d:%02d:%02d\n",
            tm_info->tm_year + 1900, tm_info->tm_mon + 1, tm_info->tm_mday,
            tm_info->tm_hour, tm_info->tm_min, tm_info->tm_sec);
-    //Update_Nearest_Task();
-    //printf("Nearest task: key=%s, datavalue=%s, starttime=%s, keeptime=%ld\n", Nearest_Task.key, Nearest_Task.datavalue, Nearest_Task.starttime, Nearest_Task.keeptime);
-
+    // Update_Nearest_Task();
     // 任务执行处理：根据任务类型和时间执行相应的操作
-    snprintf(Current_time, sizeof(Current_time), "%02d:%02d:%02d", tm_info->tm_hour, tm_info->tm_min, tm_info->tm_sec);
-    //printf("%s\n",Current_time);
-    if (!strcmp(Nearest_Task.starttime,Current_time))
+    Current_time = tm_info->tm_hour * 3600 + tm_info->tm_min * 60 + tm_info->tm_sec;
+    printf("%d\n", Current_time);
+    if (Nearest_Task.starttime == Current_time)
     {
-        //app_play_music("kunle");
+        // app_play_music("kunle");
         ESP_LOGE(TAG, "Timer event triggered");
-        //printf("--------------------------------------------------------------------");
+        // printf("--------------------------------------------------------------------");
         esp_event_post_to(timer_event_loop, TIMER_EVENTS, 0, NULL, 0, portMAX_DELAY);
     }
 }

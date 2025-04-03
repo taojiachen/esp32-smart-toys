@@ -6,6 +6,7 @@
 #include "cJSON.h"
 #include "esp_log.h"
 #include <limits.h>
+#include <event.h>
 
 #define TASKS_FILE "/spiffs/task_list.json"
 #define TAG "JSON_Handler"
@@ -204,6 +205,7 @@ bool update_task(const char *json_string)
     {
         success = write_file(new_content);
         free(new_content);
+        Update_Nearest_Task();
     }
 
     cJSON_Delete(root);
@@ -234,7 +236,7 @@ int time_str_to_seconds(const char *time_str)
 }
 
 // 将秒数转换为时间字符串
-void seconds_to_time_str(int total_seconds, char *time_str, size_t size)
+void seconds_to_time_str(long total_seconds, char *time_str, size_t size)
 {
     if (!time_str || size < 9)
         return; // 需要至少9个字符的空间 (HH:mm:ss\0)
@@ -246,20 +248,23 @@ void seconds_to_time_str(int total_seconds, char *time_str, size_t size)
     snprintf(time_str, size, "%02d:%02d:%02d", hours, minutes, seconds);
 }
 
-// 比较两个时间字符串，返回它们的差值（秒）
-int compare_times(const char *time1, const char *time2)
+// 给定一个开始时间字符串(HH:mm:ss\0)和一个keeptime，计算出endtime。
+void get_endtime(char **endtime, const char *starttime, int keeptime)
 {
-    int seconds1 = time_str_to_seconds(time1);
-    int seconds2 = time_str_to_seconds(time2);
-
-    if (seconds1 < 0 || seconds2 < 0)
-        return -1;
-
-    return seconds1 - seconds2;
+    if (endtime == NULL || starttime == NULL)
+    {
+        return;
+    }
+    int seconds1 = time_str_to_seconds(starttime);
+    int total_seconds = seconds1 + keeptime * 60;
+    char endtime_temp[16];
+    seconds_to_time_str(total_seconds, endtime_temp, sizeof(endtime_temp));
+    printf("截止时间:%s---\n", endtime_temp);
+    *endtime = strdup(endtime_temp);
 }
 
 // 获取最近任务函数
-bool get_nearest_task(const char *current_time, char **key, char **datavalue, char **starttime, long *keeptime)
+bool get_nearest_task(const int current_time, char **key, char **datavalue, int *starttime, int *keeptime)
 {
     if (!current_time || !key || !datavalue || !starttime || !keeptime)
     {
@@ -282,7 +287,7 @@ bool get_nearest_task(const char *current_time, char **key, char **datavalue, ch
         return false;
     }
 
-    int current_seconds = time_str_to_seconds(current_time);
+    int current_seconds = current_time;
     if (current_seconds < 0)
     {
         cJSON_Delete(root);
@@ -348,7 +353,7 @@ bool get_nearest_task(const char *current_time, char **key, char **datavalue, ch
         {
             *key = strdup(key_item->valuestring);
             *datavalue = strdup(datavalue_item->valuestring);
-            *starttime = strdup(starttime_item->valuestring);
+            *starttime = time_str_to_seconds(strdup(starttime_item->valuestring));
             *keeptime = keeptime_item->valueint;
             success = true;
         }

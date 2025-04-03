@@ -81,7 +81,7 @@ static esp_err_t app_mqtt_event_handler_cb(esp_mqtt_event_handle_t event)
         //%.*s 是一个特殊的格式化指令，它允许你指定字符串的长度
         ESP_LOGE(TAG, "DATA=%.*s\r\n", event->data_len, jsonStr);
         update_task(jsonStr);
-        Update_Nearest_Task();
+        printf("触发app_aliyun_mqtt.c的消息云流转");
         /*
         {"method":"thing.service.property.set","id":"2115005914","params":{"tasks":[{"datavalue":"33","index":1,"starttime":"123","type":1,"key":"eat","keeptime":30}]},"version":"1.0.0"}
         */

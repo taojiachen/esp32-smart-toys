@@ -41,6 +41,21 @@ static rc522_spi_config_t driver_config = {
 static rc522_driver_handle_t driver;
 static rc522_handle_t scanner;
 
+void removeSpaces(char *str) {
+    int i, j = 0;
+    // 遍历原字符串
+    for (i = 0; str[i] != '\0'; i++) {
+        // 如果当前字符不是空格
+        if (str[i] != ' ') {
+            // 将非空格字符复制到新位置
+            str[j] = str[i];
+            j++;
+        }
+    }
+    // 添加字符串结束符
+    str[j] = '\0';
+}
+
 static void on_picc_state_changed(void *arg, esp_event_base_t base, int32_t event_id, void *data)
 {
     rc522_picc_state_changed_event_t *event = (rc522_picc_state_changed_event_t *)data;
@@ -51,12 +66,16 @@ static void on_picc_state_changed(void *arg, esp_event_base_t base, int32_t even
         rc522_picc_print(picc);
         char uid[RC522_PICC_UID_STR_BUFFER_SIZE_MAX];
         rc522_picc_uid_to_str(&picc->uid, uid, sizeof(uid));
+        removeSpaces(uid);
         ESP_LOGE(TAG, "RFID卡UID: %s", uid);
         ESP_LOGE(TAG, "datavalue: %s", Nearest_Task.datavalue);
         if (!strcmp(Nearest_Task.datavalue, uid))
         {
             ESP_LOGE(TAG, "卡号对接成功");
             flag = 1;
+        }else{
+            ESP_LOGE(TAG, "卡号对接失败");
+            flag = 0;
         }
     }
     else if (picc->state == RC522_PICC_STATE_IDLE && event->old_state >= RC522_PICC_STATE_ACTIVE)

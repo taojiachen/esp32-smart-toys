@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <esp_log.h>
-#include<app_aliyun_mqtt.h>
+#include <app_aliyun_mqtt.h>
 #include <mqtt_client.h>
 
 #define TAG "健康度:  "
@@ -35,6 +35,51 @@ void treatment()
     cleanliness = 100;
 }
 
+void set_health_down(const char *type)
+{
+    if (!strcmp(type, "breakfast"))
+    {
+        satiation -= 30;
+    }
+    else if (!strcmp(type, "lunch"))
+    {
+        satiation -= 30;
+    }
+    else if (!strcmp(type, "dinner"))
+    {
+        satiation -= 30;
+    }
+    else if (!strcmp(type, "flash"))
+    {
+        cleanliness -= 20;
+    }
+    else if (!strcmp(type, "sleep"))
+    {
+    }
+}
+void set_health_up(const char *type)
+{
+    if (!strcmp(type, "breakfast"))
+    {
+        satiation += 6;
+    }
+    else if (!strcmp(type, "lunch"))
+    {
+        satiation += 6;
+    }
+    else if (!strcmp(type, "dinner"))
+    {
+        satiation += 6;
+    }
+    else if (!strcmp(type, "flash"))
+    {
+        cleanliness += 4;
+    }
+    else if (!strcmp(type, "sleep"))
+    {
+    }
+}
+
 // RFID触发喂食
 void set_satiation(int sat)
 {
@@ -67,15 +112,19 @@ extern esp_mqtt_client_handle_t client;
 
 void update_value()
 {
-    sprintf(pub_payload,"{\"params\": {\"Hunger_Level\":%d ,\"Cleaning_Metrics\":%d, \"MSI\":%d, \"health_value\":%d }, \"method\": \"thing.event.property.post\"}",satiation,cleanliness,99,99);
+    sprintf(pub_payload, "{\"params\": {\"Hunger_Level\":%d ,\"Cleaning_Metrics\":%d, \"MSI\":%d, \"health_value\":%d }, \"method\": \"thing.event.property.post\"}", satiation, cleanliness, 99, 99);
 
-     int ret = esp_mqtt_client_publish(client, CONFIG_AliYun_PUBLISH_TOPIC_USER_POST, pub_payload, strlen(pub_payload), 2, 0);
-    if (ret >= 0) {
+    int ret = esp_mqtt_client_publish(client, CONFIG_AliYun_PUBLISH_TOPIC_USER_POST, pub_payload, strlen(pub_payload), 2, 0);
+    if (ret >= 0)
+    {
         printf("正常发布，返回消息 ID: %d\n", ret);
-    } else if (ret == -1) {
+    }
+    else if (ret == -1)
+    {
         printf("发布出现错误，返回 -1\n");
-    } else if (ret == -2) {
+    }
+    else if (ret == -2)
+    {
         printf("缓冲区已满，返回 -2\n");
     }
-
 }

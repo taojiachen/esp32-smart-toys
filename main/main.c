@@ -46,7 +46,7 @@ void app_main(void)
     update_value();
     Update_Nearest_Task();
     event_start();
-
+    //RFID_start();
     //clear_all_tasks();
     ESP_ERROR_CHECK(app_sr_start());
     while (1)
